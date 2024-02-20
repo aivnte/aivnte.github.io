@@ -5,14 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zaips.com</title>
   <style>
-     body {
+    body {
       font-family: monospace;
       margin: 0;
-      padding-left: 30%;
-      padding-right: 30%;
       padding-top: 50px;
       padding-bottom: 50px;
       background-color: #fff;
+  
+      /* padding for mobile */
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  
+    /* screens wider than 768px */
+    @media (min-width: 768px) {
+      body {
+        padding-left: 30%;
+        padding-right: 30%;
+      }
     }
   </style>
 </head>
