@@ -26,18 +26,16 @@
     a {
       display: inline-block;
       padding: 10px 20px;
-      color: #171717;
+      color: #171717; 
       text-decoration: none;
-      border: 1px solid #171717;
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 50px;
       font-size: 12px;
       transition: background-color 0.3s, color 0.3s;
-  }
-
-  a:hover {
-    background-color: #171717;
-    color: white;
-  }
+      background: rgba(218, 218, 218, 0.2);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 6px rgba(99, 99, 99, 0.1); 
+    }
 
     /* screens wider than 768px */
     @media (min-width: 768px) {

@@ -37,18 +37,17 @@
     a {
       display: inline-block;
       padding: 10px 20px;
-      color: #171717;
+      color: #171717; /* This may change based on your design preference */
       text-decoration: none;
-      border: 1px solid #171717;
+      border: 1px solid rgba(255, 255, 255, 0.2); /* Lighter border for the glass effect */
       border-radius: 50px;
       font-size: 12px;
       transition: background-color 0.3s, color 0.3s;
-  }
+      background: rgba(218, 218, 218, 0.2); /* Semi-transparent white background */
+      backdrop-filter: blur(10px); /* Blur effect for the background */
+      box-shadow: 0 4px 6px rgba(99, 99, 99, 0.1); /* Optional: Adds a soft shadow around the button */
+    }
 
-  a:hover {
-    background-color: #171717;
-    color: white;
-  }
   </style>
 </head>
 <body>
