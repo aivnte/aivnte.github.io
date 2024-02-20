@@ -5,39 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>zaips.com</title>
   <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
+    html, body {
+      height: 100%;
       margin: 0;
-      padding-top: 50px;
-      padding-bottom: 50px;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
       background-color: #fff;
-  
-      /* padding for mobile */
-      padding-left: 10px;
-      padding-right: 10px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center; 
+      height: 100%;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; 
+      max-width: 600px; 
+      width: 100%; 
+      padding: 0 20px; 
+      box-sizing: border-box; 
+      text-align: left; 
     }
 
     .center-btn {
-      display: flex;
-      justify-content: center;
-      width: 100%;
+      margin-top: 20px; 
     }
 
-    /* screens wider than 768px */
-    @media (min-width: 768px) {
-      body {
-        padding-left: 30%;
-        padding-right: 30%;
-      }
-    }
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      color: #171717;
+      text-decoration: none;
+      border: 1px solid #171717;
+      border-radius: 50px;
+      font-size: 12px;
+      transition: background-color 0.3s, color 0.3s;
+  }
+
+  a:hover {
+    background-color: #171717;
+    color: white;
+  }
   </style>
 </head>
 <body>
-    <h1>/zaips</h1> 
-    <p>Our products serve as virtual brains for businesses, capable of generating high-quality content, understanding complex data, and making informed decisions in real-time.</p>
-    <br>
-    <div class="center-btn">
-      <a href="#" style="display: inline-block; padding: 10px 20px; background-color: #171717; color: white; text-decoration: none; border-radius: 50px; font-size: 12px;">Read the White-Paper</a>
+  <div class="container">
+    <div class="content">
+      <p>Our products serve as virtual brains for businesses, capable of generating high-quality content, understanding complex data, and making informed decisions in real-time.</p>
+      <div class="center-btn">
+        <a href="#">Read the White-Paper</a>
+      </div>
     </div>
+  </div>
 </body>
 </html>

@@ -20,10 +20,24 @@
     }
   
     .center-btn {
-      display: flex;
-      justify-content: center;
-      width: 100%;
+      margin-top: 20px; 
     }
+
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      color: #171717;
+      text-decoration: none;
+      border: 1px solid #171717;
+      border-radius: 50px;
+      font-size: 12px;
+      transition: background-color 0.3s, color 0.3s;
+  }
+
+  a:hover {
+    background-color: #171717;
+    color: white;
+  }
 
     /* screens wider than 768px */
     @media (min-width: 768px) {
@@ -38,8 +52,9 @@
 </head>
 
 <body>
-    <a href="index.html" style="display: inline-block; padding: 10px 20px; background-color: #171717; color: white; text-decoration: none; border-radius: 50px; font-size: 12px;">Home</a>
-  <div class="content">
+  <div class="center-btn">
+    <a href="index.html">Home</a>
+  </div>  <div class="content">
     <br>
     <h2>The Future of business intelligence.</h2> 
     <h3>Revolutionizing Business Operations using Large Language Models as Decision-Making Brains</h3>
