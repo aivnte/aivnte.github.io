@@ -47,15 +47,36 @@
       backdrop-filter: blur(10px); /* Blur effect for the background */
       box-shadow: 0 4px 6px rgba(87, 87, 87, 0.1); /* Optional: Adds a soft shadow around the button */
     }
-
   </style>
+  <script>
+    window.onload = function() {
+      const duration = 8000; // Duration in milliseconds
+      const endValue = 147000;
+      const element = document.getElementById('count');
+      let startTime = null;
+  
+      function counter(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = timestamp - startTime;
+        const currentCount = Math.min(endValue * (progress / duration), endValue);
+        element.textContent = '€' + Math.floor(currentCount).toLocaleString();
+  
+        if (progress < duration) {
+          window.requestAnimationFrame(counter);
+        }
+      }
+  
+      window.requestAnimationFrame(counter);
+    };
+  </script>  
 </head>
 <body>
   <div class="container">
     <div class="content">
       <p>Our products serve as virtual brains for businesses, capable of generating high-quality content, understanding complex data, and making informed decisions in real-time.</p>
+      <p>Over the past year we have saved our current client <strong id="count">€0</strong></p>
       <div class="center-btn">
-        <a href="white-paper.html">Read the White-Paper</a>
+        <!--<a href="white-paper.html">Read the White-Paper</a>-->
       </div>
     </div>
   </div>
