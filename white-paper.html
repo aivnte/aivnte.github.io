@@ -8,10 +8,11 @@
   <style>
     html, body {
       margin: 0;
-      padding: 0;
+      padding-left: 10px;
+      padding-right: 10px;
       font-family: "Inter", sans-serif;
       background-color: #fff;
-      font-size: 13px;
+      font-size: 15px;
     }
 
     .container {
@@ -37,6 +38,19 @@
       transition: background-color 0.3s, color 0.3s;
     }
 
+    @media screen and (min-width: 768px) {
+      body {
+        padding-left: 50px; /* Increase for larger screens */
+        padding-right: 50px; /* Increase for larger screens */
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      body {
+        padding-left: 300px; /* Even more for larger screens */
+        padding-right: 300px; /* Even more for larger screens */
+      }
+    }
   </style>
 </head>
 <body>
@@ -44,7 +58,7 @@
 <div class="container">
   <a href="index.html">Home</a>
   <br>
-  <h2>The Future of business intelligence: Efficient Business Operations using Large Language Models as Decision-Making Brains.</h2>
+  <h1 style = "text-align: left;">The Future of business intelligence: Efficient Business Operations using Large Language Models as Decision-Making Brains.</h1>
   <br>
   <p>Every task in business boils down to this: thought costs time, and time is money. Wasting seconds means bleeding cash. <i>We've decided to fix this.</i></p>
   <h3>Introduction</h3>
