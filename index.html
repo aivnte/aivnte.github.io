@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
   <title>zaips.com</title>
   <style>
     html, body {
       height: 100%;
       margin: 0;
       padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Inter", sans-serif;
+      font-weight: normal;
+      font-size: 13px;
       background-color: #fff;
     }
 
@@ -37,20 +42,32 @@
     a {
       display: inline-block;
       padding: 10px 20px;
-      color: #171717; /* This may change based on your design preference */
+      color: #171717; 
       text-decoration: none;
-      border: 1px solid rgba(255, 255, 255, 0.2); /* Lighter border for the glass effect */
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 50px;
       font-size: 12px;
       transition: background-color 0.3s, color 0.3s;
-      background: rgba(192, 192, 192, 0.2); /* Semi-transparent white background */
-      backdrop-filter: blur(10px); /* Blur effect for the background */
-      box-shadow: 0 4px 6px rgba(87, 87, 87, 0.1); /* Optional: Adds a soft shadow around the button */
+      /* Gradient background */
+      background: linear-gradient(135deg, rgba(255, 192, 203, 0.6), rgba(192, 192, 255, 0.6)); 
+      backdrop-filter: blur(10px); 
+      box-shadow: 0 4px 6px rgba(87, 87, 87, 0.1); 
     }
+    #count {
+      /* Gradient background */
+      background: linear-gradient(135deg, rgb(255, 192, 203), rgb(192, 192, 255));
+      
+      /* Ensuring the text is visible with the correct blend */
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent; /* Hide the original text color */
+      display: inline-block; /* Required for gradients on text */
+      }
+
   </style>
   <script>
     window.onload = function() {
-      const duration = 8000; // Duration in milliseconds
+      const duration = 8000; 
       const endValue = 147000;
       const element = document.getElementById('count');
       let startTime = null;
@@ -74,9 +91,9 @@
   <div class="container">
     <div class="content">
       <p>Our products serve as virtual brains for businesses, capable of generating high-quality content, understanding complex data, and making informed decisions in real-time.</p>
-      <p>Over the past year we have saved our current client <strong id="count">€0</strong></p>
+      <p>Over the past year we saved our current client <strong id="count">€0</strong></p>
       <div class="center-btn">
-        <!--<a href="white-paper.html">Read the White-Paper</a>-->
+        <a href="white-paper.html">Read the White-Paper</a>
       </div>
     </div>
   </div>
