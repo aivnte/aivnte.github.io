@@ -41,6 +41,27 @@
     .center-btn {
       margin-top: 20px; 
     }
+
+    .button-container {
+      display: flex;
+      justify-content: start; /* Adjust as needed: center, space-between, etc. */
+      gap: 20px; /* Adds space between buttons */
+    }
+
+    .button {
+      background-color: #5a587e45; /* Adjust the background color as needed */
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      display: inline-block; /* Flex items are inline-level by default */
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #2e2e45; /* Darker shade for hover effect, adjust as needed */
+    }
+
   </style>
 
 </head>
@@ -48,7 +69,11 @@
   <div class="container">
     <div class="content">
       <p>Zaips is an AI consultancy currently operating on an invite only basis. Our products serve as virtual brains for businesses, capable of generating high-quality content, understanding complex data, and making informed decisions in real-time. We work on a retainer basis, offering customized solutions tailored to each client's needs. We also offer advisory services to SMEs looking to leverage Gen AI for content and automation.</p>
-      <p>adam@zaips.com</p>
+
+      <div class="button-container">
+        <a href="paper.html" class="button">White-Paper</a>
+        <a href="mailto:adam@zaips.com" class="button">Email us</a>
+      </div>      
     </div>
   </div>
 </body>
