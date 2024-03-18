@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <title>ZAIPS</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+        body, html { width: 100%; height: 100%; font-family: JetBrains Mono, monospace; font-size: 12px;}
+      
+        main { justify-content: left; align-items: center; min-height: 90vh; }
+      
+        .content { width: 100%; max-width: 600px; padding: 20px; text-align: justify; }
+      
+        @media (max-width: 768px) { .content { max-width: 100%; } }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="content">
+            <h1>GEN AI DEPLOYMENT IN SME</h1>
+            <br>
+            <br>
+            <h2>ABSTRACT</h2>
+            <br>
+            <br>
+            <p>Large Language Models (LLMs) like the GPT series from OpenAI and a slew of open source models have transformed Natural Language Processing (NLP) technology (OpenAI, 2023, Section 4.1). Models have advanced from their initial sequential processing to parallel processing, particularly the 2017-introduced Transformer model, leading to advancements in efficiency and multimodality (Vaswani et al., 2017, p. 5). Growing computational power, cloud computing and open-source sharing has accelerated progress in this field (Amodei & Hernandez, 2018).LLMs have become pivotal in business, transforming customer service, data analysis, and decision-making (Stack Overflow, 2023). Some LLMs now also exhibit capabilities that can surpass human performance in domain specific tasks, even beating human experts (Gemini Team, 2023, p. 6). This paper delves into the integration of LLMs within SMEs and large corporations, acknowledging their unique challenges with resources. The paper will examine LLMs' necessity and application, and will focus on integration strategies tailored to each business's specific needs and resources. The exploration will differentiate strategies for both business types. SMEs will focus on accessible applications like Prompt Engineering and Retrieval Augmented Generation (RAG), while larger corporations can invest in pre-built solutions, specialised expertise, and infrastructure, leveraging their greater resources for LLM integration.</p>
+            <br>
+            <br>
+            <h2>LITERATURE REVIEW</h2>
+            <br>
+            <br>
+            <br>
+            <h3>Building and Outsourcing as Integration Methods</h3>
+            <br>
+            <br>
+            <p>Large Language Models (LLMs) have provided opportunities for automation, innovation, and operational efficiency. Large corporations, with their extensive resources, are leading the way in integration (Stack Overflow, 2023). Illustrating this trend, the recently announced partnership between the legal giant Allen & Overy and Harvey AI demonstrates how larger firms can integrate custom AI solutions to boost their service offerings and operational efficiency (Allen & Overy, 2023). This showcases the benefits of outsourcing AI development to meet specific needs. Large companies can afford to build AI solutions in-house, a resource intensive task (Krizhevsky, Sutskever, & Hinton, 2012, p. 2). Expedia exemplifies the potential for internal AI development. Significant investments in skilled personnel and computing resources lead to the creation of a sophisticated LLM-driven solution that enhances customer experience and operational performance (Expedia Group, 2023).</p>            
+            <br>
+            <br>
+            <h3>Fine Tuning</h3>
+            <br>
+            <br>
+            <p>Fine-tuning enables companies to adapt pre-trained models for specific tasks or data. This process is especially beneficial as precise interpretation and response to multimodal data can be achieved (Chen, Shi, & Xu, 2024, p. 7). This allows companies with the required resources to build on current capabilities without developing new models from scratch. To fine-tune models, companies must have access to capable compute including GPUs or TPUs which are required to successfully train and fine-tuning models (Krizhevsky, Sutskever, & Hinton, 2012, p. 2). Along with hardware, companies looking to fine-tune models require personnel skilled in machine learning, computer vision, and natural language processing (Xing et al., 2024, p. 2).</p>
+            <br>
+            <br>
+            <h3>Retrieval Augmented Generation (RAG)</h3>
+            <br>
+            <br>
+            <p>RAG is a significant advancement, merging the generative capabilities of LLMs with large datasets. RAG seeks to address the limitations of LLMs, enhancing their reliability and accuracy through the integration of external data. RAG fetches relevant data prior to output. This improves the content's accuracy and relevance, making it particularly beneficial for business integration. RAG development can be categorised into Naive RAG, Advanced RAG, and Modular RAG (Gao et al., 2024, p. 3). RAG was popularised by a seminal paper on the topic from Facebook AI Research (FAIR) in 2020.The paper showcased versatility across various domains such as chatbots, research, and content creation. By dynamically accessing relevant data before generation, RAG empowers LLMs to produce responses that can mimic company specific data (Lewis et al., 2020, p. 8).Furthermore, RAG is adaptable, scalable and cost-effective, allowing integration potential for companies of all sizes. Cloud computing services from Google Cloud, AWS, and Microsoft Azure allows companies to deploy RAG without large investment. Implementation involves setting up a queryable database, integrating a model with a retrieval system such as an API call. API calls to models like the GPT series offer a pay-per-use model democratising access to improved NLP (Gao et al., 2024, p. 10).</p>
+            <br>
+            <br>
+            <h3>Prompt Engineering</h3>
+            <br>
+            <br>
+            <p>Prompt engineering has emerged as an essential technique to improve LLM output independent of compute or model training (Wen et al., 2023, p. 3), (López Espejel et al., 2023, p. 2). This method involves crafting specific prompts that elicit accurate responses (López Espejel et al., 2023, p. 2). Prompt Engineering techniques give companies with limited resources a chance to cost effectively generate better LLM responses (Ahmed et al., 2024, p. 2). Few-shot learning is one such technique. Few-shot provides the model with examples of the required output acting similarly to a small training set (Nori et al., p. 7). This approach is invaluable for organisations lacking large datasets for traditional training methods, enabling them to achieve high-quality AI outputs. One study on few-shot prompting elicited better responses. The paper also cites the increase in model parameters as influential in this improvement. As model parameters grow, few-shot will remain a staple of prompt engineering (Brown et al., 2020, p. 7).</p>
+            <br>
+            <p>
+            Chain of thought (CoT) prompting further exemplifies prompt engineering. This method prompts models to break down complex tasks into manageable steps, enhancing response accuracy (López Espejel et al., 2023, p. 2). This is essential in eliciting detailed explanations or logical deductions in outputs, such as code. Introduced in 2022 Wei et al found that CoT prompting improved the accuracy of responses to industry standard benchmark questions over a range of models and parameter sizes (Wei et al., 2022 p. 5). This study also found a correlation between the accuracy and model parameter size. Both Wei et al and Brown et al found a disproportionate correlation between model parameter size and the effectiveness of prompt engineering, highlighting its increasing value as models inevitably become bigger in the future (Brown et al., 2020, p. 4). A perfect example of the power of Prompt Engineering is showcased by Microsoft's prompt engineering initiative, MedPrompt, using dynamic few-shot (Nori et al., p. 7). MedPrompt applied prompt engineering to the critical domain of healthcare. By encapsulating medical knowledge and nuances within prompts, MedPrompt enhanced the accuracy and utility of LLMs beating Google’s fine tuned model Med-PaLM-2 (Nori et al., p. 12).</p>
+            <br>
+            <br>
+            <h2>Conclusion</h2>
+            <br>
+            <br>
+            <p>The adoption of Large Language Models (LLMs) has the potential to revolutionise business operations, offering scalable solutions for both SMEs and large corporations. This paper highlights the versatility of LLMs in enhancing customer service, data analysis, and decision-making. For SMEs, the question arises: "Should they hire in-house prompt engineers, use agencies, or buy pre-built applications for LLM integration?" Drawing parallels with the advertising industry's reliance on external agencies for specialised services, this approach could offer SMEs a pragmatic and efficient route to leveraging AI technology (Dzhusupova, Bosch, & Holmström Olsson, 2024, p. 11). This model suggests external agencies could provide a balanced, expertise-driven solution for SMEs aiming to integrate LLMs effectively and competitively. The proposed research question would not only fill a knowledge gap in existing literature on the topic of LLM integration in business and offer solutions to SMEs with limited resources, but help to further democratise access to a vital technology that is needed to remain competitive in the market (Baabdullah, 2024, p. 7).</p>
+            <br>
+            <br>
+            <h1>REFERENCE</h1>
+            <ol style="list-style-type: none;">
+                <br>
+                <br>
+                <li>Ahmed, A., Zeng, X., Xi, R., Hou, M., & Shah, S. A. (2024). MED-Prompt: A novel prompt engineering framework for medicine prediction on free-text clinical notes. <em>Journal of King Saud University - Computer and Information Sciences</em>, 36(2), 101933. <a href="https://www.sciencedirect.com/science/article/pii/S1319157824000223">https://www.sciencedirect.com/science/article/pii/S1319157824000223</a></li>
+                <br>
+                <li>Allen & Overy. (2023). AO announces exclusive launch partnership with Harvey. <a href="https://www.allenovery.com/en-gb/global/news-and-insights/news/ao-announces-exclusive-launch-partnership-with-harvey">https://www.allenovery.com/en-gb/global/news-and-insights/news/ao-announces-exclusive-launch-partnership-with-harvey</a></li>
+                <br>
+                <li>Amodei, D., & Hernandez, D. (2018, May 16). AI and compute. OpenAI. <a href="https://openai.com/research/ai-and-compute">https://openai.com/research/ai-and-compute</a></li>
+                <br>
+                <li>Baabdullah, A. M. (2024). The precursors of AI adoption in business: Towards an efficient decision-making and functional performance. <em>International Journal of Information Management</em>, 75, 102745. <a href="https://www.sciencedirect.com/science/article/pii/S0268401223001263?fr=RR-2&ref=pdf_download&rr=842b9973a9e05aef">https://www.sciencedirect.com/science/article/pii/S0268401223001263?fr=RR-2&ref=pdf_download&rr=842b9973a9e05aef</a></li>
+                <br>
+                <li>Chen, Y., Shi, B., & Xu, K. (2024). PTCAS: Prompt tuning with continuous answer search for relation extraction. <em>Information Sciences</em>, 659, 120060. <a href="https://www.sciencedirect.com/science/article/pii/S0020025523016468?via%3Dihub">https://www.sciencedirect.com/science/article/pii/S0020025523016468?via%3Dihub</a></li>
+                <br>
+                <li>Dzhusupova, R., Bosch, J., & Holmström Olsson, H. (2024). Choosing the right path for AI integration in engineering companies: A strategic guide. <em>Journal of Systems and Software</em>, 210, 111945. <a href="https://www.sciencedirect.com/science/article/pii/S0164121223003400?via%3Dihub">https://www.sciencedirect.com/science/article/pii/S0164121223003400?via%3Dihub</a></li>
+                <br>
+                <li>Expedia Group. (2023, April 4). ChatGPT wrote this press release — No, it didn’t, but it can now assist with travel planning in the Expedia App. <a href="https://www.expediagroup.com/investors/news-and-events/financial-releases/news/news-details/2023/Chatgpt-Wrote-This-Press-Release--No-It-Didnt-But-It-Can-Now-Assist-With-Travel-Planning-In-The-Expedia-App/default.aspx">https://www.expediagroup.com/investors/news-and-events/financial-releases/news/news-details/2023/Chatgpt-Wrote-This-Press-Release--No-It-Didnt-But-It-Can-Now-Assist-With-Travel-Planning-In-The-Expedia-App/default.aspx</a></li>
+                <br>
+                <li>Gao, Y., Xiong, Y., Gao, X., Jia, K., Pan, J., Bi, Y., ... & Wang, H. (2024). Retrieval-Augmented Generation for Large Language Models: A Survey. arXiv. <a href="https://arxiv.org/pdf/2312.10997.pdf">https://arxiv.org/pdf/2312.10997.pdf</a></li>
+                <br>
+                <li>Gemini Team. (2023). Gemini: A Family of Highly Capable Multimodal Models. arXiv. Retrieved from <a href="https://arxiv.org/abs/2312.11805">https://arxiv.org/abs/2312.11805</a></li>
+                <br>
+                <li>Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. <em>Advances in Neural Information Processing Systems</em>, 25, 1097-1105. <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=x04W_mMAAAAJ&citation_for_view=x04W_mMAAAAJ:UebtZRa9Y70C">https://scholar.google.com/citations?view_op=view_citation&hl=en&user=x04W_mMAAAAJ&citation_for_view=x04W_mMAAAAJ:UebtZRa9Y70C</a></li>
+                <br>
+                <li>Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W.-t., Rocktäschel, T., Riedel, S., & Kiela, D. (2020). Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. In <em>Proceedings of the 34th Conference on Neural Information Processing Systems (NeurIPS 2020)</em>. <a href="https://proceedings.neurips.cc/paper/2020/file/6b493230205f780e1bc26945df7481e5-Paper.pdf">https://proceedings.neurips.cc/paper/2020/file/6b493230205f780e1bc26945df7481e5-Paper.pdf</a></li>
+                <br>
+                <li>López Espejel, J., Ettifouri, E. H., Yahaya Alassan, M. S., Chouham, E. M., & Dahhane, W. (2023). GPT-3.5, GPT-4, or BARD? Evaluating LLMs reasoning ability in zero-shot setting and performance boosting through prompts. <em>Natural Language Processing Journal</em>, 5, 100032. <a href="https://www.sciencedirect.com/science/article/pii/S2949719123000298">https://www.sciencedirect.com/science/article/pii/S2949719123000298</a></li>
+                <br>
+                <li>Nori, H., Lee, Y. T., Zhang, S., Carignan, D., Edgar, R., Fusi, N., King, N., Larson, J., Li, Y., Liu, W., Luo, R., McKinney, S. M., Ness, R. O., Poon, H., Qin, T., Usuyama, N., White, C., & Horvitz, E. (2023). Can Generalist Foundation Models Outcompete Special-Purpose Tuning? Case Study in Medicine. arXiv. <a href="https://arxiv.org/pdf/2311.16452.pdf">https://arxiv.org/pdf/2311.16452.pdf</a></li>
+                <br>
+                <li>OpenAI. (2023). GPT-4 technical report. <a href="https://cdn.openai.com/papers/gpt-4.pdf">https://cdn.openai.com/papers/gpt-4.pdf</a></li>
+                <br>
+                <li>Stack Overflow. (n.d.). The rise of GenAI and LLMs – Stack Overflow’s Industry Guide to AI. Retrieved 05.02.2024, from: <a href="https://stackoverflow.co/teams/resources/ai-industry-guide/history/genai-and-llms/">https://stackoverflow.co/teams/resources/ai-industry-guide/history/genai-and-llms/</a></li>
+                <br>
+                <li>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017). Attention is all you need. In <em>Advances in Neural Information Processing Systems</em> (pp. 5998-6008). <a href="https://arxiv.org/abs/1706.03762">https://arxiv.org/abs/1706.03762</a></li>
+                <br>
+                <li>Wen, Z., Cao, J., Yang, Y., Wang, H., Yang, R., & Liu, S. (2023). DesPrompt: Personality-descriptive prompt tuning for few-shot personality recognition. <em>Information Processing & Management</em>, 60(5), 103422. <a href="https://www.sciencedirect.com/science/article/pii/S0306457323001590?via%3Dihub">https://www.sciencedirect.com/science/article/pii/S0306457323001590?via%3Dihub</a></li>
+                <br>
+                <li>Wei, J., Wang, X., Schuurmans, D., Bosma, M., Chi, E. H.-h., Xia, F., Le, Q., & Zhou, D. (2022). Chain of thought prompting elicits reasoning in large language models. <a href="https://www.semanticscholar.org/paper/Chain-of-Thought-Prompting-Elicits-Reasoning-in-Wei-Wang/1b6e810ce0afd0dd093f789d2b2742d047e316d5">https://www.semanticscholar.org/paper/Chain-of-Thought-Prompting-Elicits-Reasoning-in-Wei-Wang/1b6e810ce0afd0dd093f789d2b2742d047e316d5</a></li>
+                <br>
+                <li>Xing, J., Liu, J., Wang, J., Sun, L., Chen, X., Gu, X., & Wang, Y. (2024). A survey of efficient fine-tuning methods for Vision-Language Models — Prompt and Adapter. <em>Computers & Graphics</em>. <a href="https://www.sciencedirect.com/science/article/pii/S0097849324000128?via%3Dihub">https://www.sciencedirect.com/science/article/pii/S0097849324000128?via%3Dihub</a></li>
+              </ol>
+            <br>
+            <br>
+            <h1>CONTACT</h1>
+            <br>
+            <p>adam@zaips.com</p>
+        </section>
+    </main>
+</body>
+</html>
