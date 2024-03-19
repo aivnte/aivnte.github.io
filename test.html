@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <title>ZAIPS</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+      
+        body, html { width: 100%; height: 100%; font-family: JetBrains Mono, monospace; font-size: 12px;}
+      
+        main { justify-content: left; align-items: center; min-height: 90vh; }
+      
+        .content { width: 100%; max-width: 600px; padding: 20px; text-align: justify; }
+      
+        @media (max-width: 768px) { .content { max-width: 100%; } }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="content">
+            <h1 id="library-of-research">Library of Research</h1>
+
+<ul>
+    <br>
+<li><a href="#1-the-birth-of-an-agent-construction-of-llm-based-agents">1. The Birth of An Agent: Construction of LLM-based Agents</a><ul>
+<li><a href="#11-brain-primarily-composed-of-an-llm">1.1 Brain: Primarily Composed of An LLM</a><ul>
+<li><a href="#111-natural-language-interaction">1.1.1 Natural Language Interaction</a><ul>
+<li><a href="#high-quality-generation">High-quality generation</a></li>
+<li><a href="#deep-understanding">Deep understanding</a></li>
+</ul>
+</li>
+<li><a href="#112-knowledge">1.1.2 Knowledge</a><ul>
+<li><a href="#pretrain-model">Pretrain model</a></li>
+<li><a href="#linguistic-knowledge">Linguistic knowledge</a></li>
+<li><a href="#commonsense-knowledge">Commonsense knowledge</a></li>
+<li><a href="#actionable-knowledge">Actionable knowledge</a></li>
+<li><a href="#potential-issues-of-knowledge">Potential issues of knowledge</a></li>
+</ul>
+</li>
+<li><a href="#113-memory">1.1.3 Memory</a><ul>
+<li><a href="#memory-capability">Memory capability</a><ul>
+<li><a href="#raising-the-length-limit-of-transformers">Raising the length limit of Transformers</a></li>
+<li><a href="#summarizing-memory">Summarizing memory</a></li>
+<li><a href="#compressing-memories-with-vectors-or-data-structures">Compressing memories with vectors or data structures</a></li>
+</ul>
+</li>
+<li><a href="#memory-retrieval">Memory retrieval</a></li>
+</ul>
+</li>
+<li><a href="#114-reasoning--planning">1.1.4 Reasoning \&amp; Planning</a><ul>
+<li><a href="#reasoning">Reasoning</a></li>
+<li><a href="#planning">Planning</a><ul>
+<li><a href="#plan-formulation">Plan formulation</a></li>
+<li><a href="#plan-reflection">Plan reflection</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#115-transferability-and-generalization">1.1.5 Transferability and Generalization</a><ul>
+<li><a href="#unseen-task-generalization">Unseen task generalization</a></li>
+<li><a href="#in-context-learning">In-context learning</a></li>
+<li><a href="#continual-learning">Continual learning</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#12-perception-multimodal-inputs-for-llm-based-agents">1.2 Perception: Multimodal Inputs for LLM-based Agents</a><ul>
+<li><a href="#121-visual">1.2.1 Visual</a></li>
+<li><a href="#122-audio">1.2.2 Audio</a></li>
+</ul>
+</li>
+<li><a href="#13-action-expand-action-space-of-llm-based-agents">1.3 Action: Expand Action Space of LLM-based Agents</a><ul>
+<li><a href="#131-tool-using">1.3.1 Tool Using</a></li>
+<li><a href="#132-embodied-action">1.3.2 Embodied Action</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#2-agents-in-practice-applications-of-llm-based-agents">2. Agents in Practice: Applications of LLM-based Agents</a><ul>
+<li><a href="#21-general-ability-of-single-agent">2.1 General Ability of Single Agent</a><ul>
+<li><a href="#211-task-oriented-deployment">2.1.1 Task-oriented Deployment</a></li>
+<li><a href="#212-innovation-oriented-deployment">2.1.2 Innovation-oriented Deployment</a></li>
+<li><a href="#213-lifecycle-oriented-deployment">2.1.3 Lifecycle-oriented Deployment</a></li>
+</ul>
+</li>
+<li><a href="#22-coordinating-potential-of-multiple-agents">2.2 Coordinating Potential of Multiple Agents</a><ul>
+<li><a href="#221-cooperative-interaction-for-complementarity">2.2.1 Cooperative Interaction for Complementarity</a></li>
+<li><a href="#222-adversarial-interaction-for-advancement">2.2.2 Adversarial Interaction for Advancement</a></li>
+</ul>
+</li>
+<li><a href="#23-interactive-engagement-between-human-and-agent">2.3 Interactive Engagement between Human and Agent</a><ul>
+<li><a href="#231-instructor-executor-paradigm">2.3.1 Instructor-Executor Paradigm</a><ul>
+<li><a href="#education">Education</a></li>
+<li><a href="#health">Health</a></li>
+<li><a href="#other-application">Other Application</a></li>
+</ul>
+</li>
+<li><a href="#232-equal-partnership-paradigm">2.3.2 Equal Partnership Paradigm</a><ul>
+<li><a href="#empathetic-communicator">Empathetic Communicator</a></li>
+<li><a href="#human-level-participant">Human-Level Participant</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#3-agent-society-from-individuality-to-sociality">3. Agent Society: From Individuality to Sociality</a><ul>
+<li><a href="#31-behavior-and-personality-of-llm-based-agents">3.1 Behavior and Personality of LLM-based Agents</a><ul>
+<li><a href="#311-social-behavior">3.1.1 Social Behavior</a><ul>
+<li><a href="#individual-behaviors">Individual behaviors</a></li>
+<li><a href="#group-behaviors">Group behaviors</a></li>
+</ul>
+</li>
+<li><a href="#312-personality">3.1.2 Personality</a><ul>
+<li><a href="#cognition">Cognition</a></li>
+<li><a href="#emotion">Emotion</a></li>
+<li><a href="#character">Character</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#32-environment-for-agent-society">3.2 Environment for Agent Society</a><ul>
+<li><a href="#321-text-based-environment">3.2.1 Text-based Environment</a></li>
+<li><a href="#322-virtual-sandbox-environment">3.2.2 Virtual Sandbox Environment</a></li>
+<li><a href="#323-physical-environment">3.2.3 Physical Environment</a></li>
+</ul>
+</li>
+<li><a href="#33-society-simulation-with-llm-based-agents">3.3 Society Simulation with LLM-based Agents</a></li>
+</ul>
+</li>
+<li><a href="#4-agent-benchmark-assessment-the-capabilities-of-LLM-powered-agent">4. Agent Benchmark: Assessment the capabilities of LLM-powered Agent</a></li>
+</ul><br>
+<h2 id="1-the-birth-of-an-agent-construction-of-llm-based-agents">1. The Birth of An Agent: Construction of LLM-based Agents</h2><br>
+<h3 id="1-1-brain-primarily-composed-of-an-llm">1.1 Brain: Primarily Composed of An LLM</h3><br>
+<h4 id="1-1-1-natural-language-interaction">1.1.1 Natural Language Interaction</h4><br>
+<h4 id="high-quality-generation">High-quality generation</h4>
+<ul> <br>
+<li>[2023/10] <strong>Towards End-to-End Embodied Decision Making via Multi-modal Large Language Model: Explorations with GPT4-Vision and Beyond</strong> <em>Liang Chen et al. arXiv.</em> [<a href="https://arxiv.org/abs/2310.02071">paper</a>] [<a href="https://github.com/PKUnlp-icler/PCA-EVAL">code</a>]<ul>
+<li>This work proposes PCA-EVAL, which benchmarks embodied decision making via MLLM-based End-to-End method and LLM-based Tool-Using methods from Perception, Cognition and Action Levels.</li><br>
+</ul>
+</li><br>
+<li>[2023/08] <strong>A Multitask, Multilingual, Multimodal Evaluation of ChatGPT on Reasoning, Hallucination, and Interactivity.</strong> <em>Yejin Bang et al. arXiv.</em> [<a href="https://doi.org/10.48550/arXiv.2302.04023">paper</a>]<ul>
+<li>This work evaluates the multitask, multilingual and multimodal aspects of ChatGPT using 21 data sets covering 8 different common NLP application tasks.</li><br>
+</ul>
+</li><br>
+<li>[2023/06] <strong>LLM-Eval: Unified Multi-Dimensional Automatic Evaluation for Open-Domain Conversations with Large Language Models.</strong> <em>Yen-Ting Lin et al. arXiv.</em> [<a href="https://doi.org/10.48550/arXiv.2305.13711">paper</a>]<ul>
+<li>The LLM-EVAL method evaluates multiple dimensions of evaluation, such as content, grammar, relevance, and appropriateness.</li><br>
+</ul>
+</li><br>
+<li>[2023/04] <strong>Is ChatGPT a Highly Fluent Grammatical Error Correction System? A Comprehensive Evaluation.</strong> <em>Tao Fang et al. arXiv.</em> [<a href="https://doi.org/10.48550/arXiv.2304.01746">paper</a>]<ul>
+<li>The results of evaluation demonstrate that ChatGPT has excellent error detection capabilities and can freely correct errors to make the corrected sentences very fluent. Additionally, its performance in non-English and low-resource settings highlights its potential in multilingual GEC tasks.</li><br>
+</ul>
+</li><br>
+</ul>
+<h4 id="deep-understanding">Deep understanding</h4><br>
+<ul>
+<li>[2023/06] <strong>Clever Hans or Neural Theory of Mind? Stress Testing Social Reasoning in Large Language Models.</strong> <em>Natalie Shapira et al. arXiv.</em> [<a href="https://doi.org/10.48550/arXiv.2305.14763">paper</a>]<ul>
+<li>LLMs exhibit certain theory of mind abilities, but this behavior is far from being robust.</li><br>
+</ul>
+</li><br>
+<li>[2022/08] <strong>Inferring Rewards from Language in Context.</strong> <em>Jessy Lin et al. ACL.</em> [<a href="https://doi.org/10.18653/v1/2022.acl-long.585">paper</a>]<ul>
+<li>This work presents a model that infers rewards from language and predicts optimal actions in unseen environment.</li><br>
+</ul>
+</li><br>
+<li>[2021/10] <strong>Theory of Mind Based Assistive Communication in Complex Human Robot Cooperation.</strong> <em>Moritz C. Buehler et al. arXiv.</em> [<a href="https://arxiv.org/abs/2109.01355">paper</a>]<ul>
+<li>This work designs an agent Sushi with an understanding of the human during interaction.</li><br>
+</ul>
+</li><br>
+</ul>
+<h4 id="1-1-2-knowledge">1.1.2 Knowledge</h4><br>
+<h4 id="pretrain-model">Pretrain model</h4><br>
+<ul>
+<li>[2023/04] <strong>Learning Distributed Representations of Sentences from Unlabelled Data.</strong> <em>Felix Hill (University of Cambridge) et al. arXiv.</em> [<a href="https://arxiv.org/abs/1602.03483">paper</a>]</li><br>
+<li>[2020/02] <strong>How Much Knowledge Can You Pack Into the Parameters of a Language Model?</strong> <em>Adam Roberts (Google) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2002.08910">paper</a>]</li><br>
+<li>[2020/01] <strong>Scaling Laws for Neural Language Models.</strong> <em>Jared Kaplan (Johns Hopkins University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2001.08361">paper</a>]</li><br>
+<li>[2017/12] <strong>Commonsense Knowledge in Machine Intelligence.</strong> <em>Niket Tandon (Allen Institute for Artificial Intelligence) et al. SIGMOD.</em> [<a href="https://sigmodrecord.org/publications/sigmodRecord/1712/pdfs/09_reports_Tandon.pdf">paper</a>]</li><br>
+<li>[2011/03] <strong>Natural Language Processing (almost) from Scratch.</strong> <em>Ronan Collobert (Princeton) et al. arXiv.</em> [<a href="https://arxiv.org/abs/1103.0398">paper</a>]</li><br>
+</ul>
+<h4 id="linguistic-knowledge">Linguistic knowledge</h4><br>
+<ul>
+<li>[2023/02] <strong>A Multitask, Multilingual, Multimodal Evaluation of ChatGPT on Reasoning, Hallucination, and Interactivity.</strong> <em>Yejin Bang et al. arXiv.</em> [<a href="https://arxiv.org/abs/2302.04023">paper</a>]</li><br>
+<li>[2021/06] <strong>Probing Pre-trained Language Models for Semantic Attributes and their Values.</strong> <em>Meriem Beloucif et al. EMNLP.</em> [<a href="https://aclanthology.org/2021.findings-emnlp.218/">paper</a>]</li><br>
+<li>[2020/10] <strong>Probing Pretrained Language Models for Lexical Semantics.</strong> <em>Ivan Vulić et al. arXiv.</em> [<a href="https://arxiv.org/abs/2010.05731">paper</a>]</li><br>
+<li>[2019/04] <strong>A Structural Probe for Finding Syntax in Word Representations.</strong> <em>John Hewitt et al. ACL.</em> [<a href="https://aclanthology.org/N19-1419/">paper</a>]</li><br>
+<li>[2016/04] <strong>Improved Automatic Keyword Extraction Given More Semantic Knowledge.</strong> <em>H Leung. Systems for Advanced Applications.</em> [<a href="https://link.springer.com/chapter/10.1007/978-3-319-32055-7_10">paper</a>]</li><br>
+</ul>
+<h4 id="commonsense-knowledge">Commonsense knowledge</h4><br>
+<ul>
+<li>[2022/10] <strong>Language Models of Code are Few-Shot Commonsense Learners.</strong> <em>Aman Madaan et al.arXiv.</em> [<a href="https://arxiv.org/abs/2210.07128">paper</a>]</li><br>
+<li>[2021/04] <strong>Relational World Knowledge Representation in Contextual Language Models: A Review.</strong> <em>Tara Safavi et al. arXiv.</em> [<a href="https://arxiv.org/abs/2104.05837">paper</a>]</li><br>
+<li>[2019/11] <strong>How Can We Know What Language Models Know?</strong> <em>Zhengbao Jiang et al.arXiv.</em> [<a href="https://arxiv.org/abs/1911.12543">paper</a>]</li><br>
+</ul>
+<h4 id="actionable-knowledge">Actionable knowledge</h4><br>
+<ul>
+<li>[2023/07] <strong>Large language models in medicine.</strong> <em>Arun James Thirunavukarasu et al. nature.</em> [<a href="https://www.nature.com/articles/s41591-023-02448-8">paper</a>]</li><br>
+<li>[2023/06] <strong>DS-1000: A Natural and Reliable Benchmark for Data Science Code Generation.</strong> <em>Yuhang Lai et al. ICML.</em> [<a href="https://proceedings.mlr.press/v202/lai23b.html">paper</a>]</li><br>
+<li>[2022/10] <strong>Language Models of Code are Few-Shot Commonsense Learners.</strong> <em>Aman Madaan et al. arXiv.</em> [<a href="https://arxiv.org/abs/2210.07128">paper</a>]</li><br>
+<li>[2022/02] <strong>A Systematic Evaluation of Large Language Models of Code.</strong> <em>Frank F. Xu et al.arXiv.</em> [<a href="https://arxiv.org/abs/2202.13169">paper</a>]</li><br>
+<li>[2021/10] <strong>Training Verifiers to Solve Math Word Problems.</strong> <em>Karl Cobbe et al. arXiv.</em> [<a href="https://arxiv.org/abs/2110.14168">paper</a>]</li><br>
+</ul>
+<h4 id="potential-issues-of-knowledge">Potential issues of knowledge</h4><br>
+<ul>
+<li>[2023/10] <strong>FreshLLMs: Refreshing Large Language Models with Search Engine Augmentation.</strong> <em>Tu Vu (Google) et al. arXiv</em> [<a href="https://arxiv.org/abs/2310.03214">paper</a>] [<a href="https://github.com/freshllms/freshqa">code</a>]</li><br>
+<li>[2023/05] <strong>Editing Large Language Models: Problems, Methods, and Opportunities.</strong> <em>Yunzhi Yao et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.13172">paper</a>]</li><br>
+<li>[2023/05] <strong>Self-Checker: Plug-and-Play Modules for Fact-Checking with Large Language Models.</strong> <em>Miaoran Li et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.14623">paper</a>]</li><br>
+<li>[2023/05] <strong>CRITIC: Large Language Models Can Self-Correct with Tool-Interactive Critiquing.</strong> <em>Zhibin Gou et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.11738">paper</a>]</li><br>
+<li>[2023/04] <strong>Tool Learning with Foundation Models.</strong> <em>Yujia Qin et al. arXiv.</em> [<a href="https://arxiv.org/abs/2304.08354">paper</a>]</li><br>
+<li>[2023/03] <strong>SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models.</strong> <em>Potsawee Manakul et al. arXiv.</em> [<a href="https://arxiv.org/abs/2303.08896">paper</a>]</li><br>
+<li>[2022/06] <strong>Memory-Based Model Editing at Scale.</strong> <em>Eric Mitchell et al. arXiv.</em> [<a href="https://arxiv.org/abs/2206.06520">paper</a>]</li><br>
+<li>[2022/04] <strong>A Review on Language Models as Knowledge Bases.</strong> <em>Badr AlKhamissi et al.arXiv.</em> [<a href="https://arxiv.org/abs/2204.06031">paper</a>]</li><br>
+<li>[2021/04] <strong>Editing Factual Knowledge in Language Models.</strong> <em>Nicola De Cao et al.arXiv.</em> [<a href="https://arxiv.org/abs/2104.08164">paper</a>]</li><br>
+<li>[2017/08] <strong>Measuring Catastrophic Forgetting in Neural Networks.</strong> <em>Ronald Kemker et al.arXiv.</em> [<a href="https://arxiv.org/abs/1708.02072">paper</a>]</li><br>
+</ul><br>
+<h4 id="1-1-3-memory">1.1.3 Memory</h4><br>
+<h4 id="memory-capability">Memory capability</h4><br>
+<h4 id="raising-the-length-limit-of-transformers">Raising the length limit of Transformers</h4><br>
+<ul>
+<li>[2023/10] <strong>MemGPT: Towards LLMs as Operating Systems.</strong> <em>Charles Packer (UC Berkeley) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2310.08560">paper</a>] [<a href="https://memgpt.ai/">project page</a>] [<a href="https://github.com/cpacker/MemGPT">code</a>] [<a href="https://huggingface.co/MemGPT">dataset</a>]</li><br>
+<li>[2023/05] <strong>Randomized Positional Encodings Boost Length Generalization of Transformers.</strong> <em>Anian Ruoss (DeepMind) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.16843">paper</a>] [<a href="https://github.com/google-deepmind/randomized_positional_encodings">code</a>]</li><br>
+<li>[2023-03] <strong>CoLT5: Faster Long-Range Transformers with Conditional Computation.</strong> <em>Joshua Ainslie (Google Research) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2303.09752">paper</a>]</li><br>
+<li>[2022/03] <strong>Efficient Classification of Long Documents Using Transformers.</strong> <em>Hyunji Hayley Park (Illinois University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2203.11258">paper</a>] [<a href="https://github.com/amazon-science/efficient-longdoc-classification">code</a>]</li><br>
+<li>[2021/12] <strong>LongT5: Efficient Text-To-Text Transformer for Long Sequences.</strong> <em>Mandy Guo (Google Research) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2112.07916">paper</a>] [<a href="https://github.com/google-research/longt5">code</a>]</li><br>
+<li>[2019/10] <strong>BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension.</strong> <em>Michael Lewis (Facebook AI) et al. arXiv.</em> [<a href="https://arxiv.org/abs/1910.13461">paper</a>] [<a href="https://github.com/huggingface/transformers/tree/main/src/transformers/models/bart">code</a>]</li><br>
+</ul><br>
+<h4 id="summarizing-memory">Summarizing memory</h4><br>
+<ul>
+<li>[2023/10] <strong>Walking Down the Memory Maze: Beyond Context Limit through Interactive Reading</strong> <em>Howard Chen (Princeton University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2310.05029">paper</a>]</li><br>
+<li>[2023/09] <strong>Empowering Private Tutoring by Chaining Large Language Models</strong> <em>Yulin Chen (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2309.08112">paper</a>]</li><br>
+<li>[2023/08] <strong>ExpeL: LLM Agents Are Experiential Learners.</strong> <em>Andrew Zhao (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.10144">paper</a>] [<a href="https://github.com/Andrewzh112/ExpeL">code</a>]</li><br>
+<li>[2023/08] <strong>ChatEval: Towards Better LLM-based Evaluators through Multi-Agent Debate.</strong> <em>Chi-Min Chan (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.07201">paper</a>] [<a href="https://github.com/thunlp/ChatEval">code</a>]</li><br>
+<li>[2023/05] <strong>MemoryBank: Enhancing Large Language Models with Long-Term Memory.</strong> <em>Wanjun Zhong (Harbin Institute of Technology) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.10250">paper</a>] [<a href="https://github.com/zhongwanjun/memorybank-siliconfriend">code</a>]</li><br>
+<li>[2023/04] <strong>Generative Agents: Interactive Simulacra of Human Behavior.</strong> <em>Joon Sung Park (Stanford University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2304.03442">paper</a>] [<a href="https://github.com/joonspk-research/generative_agents">code</a>]</li><br>
+<li>[2023/04] <strong>Unleashing Infinite-Length Input Capacity for Large-scale Language Models with Self-Controlled Memory System.</strong> <em>Xinnian Liang (Beihang University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2304.13343">paper</a>] [<a href="https://github.com/wbbeyourself/scm4llms">code</a>]</li><br>
+<li>[2023/03] <strong>Reflexion: Language Agents with Verbal Reinforcement Learning.</strong> <em>Noah Shinn (Northeastern University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2303.11366">paper</a>] [<a href="https://github.com/noahshinn024/reflexion">code</a>]</li><br>
+<li>[2023/05] <strong>RecurrentGPT: Interactive Generation of (Arbitrarily) Long Text.</strong> <em>Wangchunshu Zhou (AIWaves) et al. arXiv.</em> [<a href="https://arxiv.org/pdf/2305.13304.pdf">paper</a>] [<a href="https://github.com/aiwaves-cn/RecurrentGPT">code</a>]</li><br>
+</ul><br>
+<h4 id="compressing-memories-with-vectors-or-data-structures">Compressing memories with vectors or data structures</h4><br>
+<ul>
+<li>[2023/07] <strong>Communicative Agents for Software Development.</strong> <em>Chen Qian (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2307.07924">paper</a>] [<a href="https://github.com/openbmb/chatdev">code</a>]</li><br>
+<li>[2023/06] <strong>ChatDB: Augmenting LLMs with Databases as Their Symbolic Memory.</strong> <em>Chenxu Hu (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2306.03901">paper</a>] [<a href="https://github.com/huchenxucs/ChatDB">code</a>]</li><br>
+<li>[2023/05] <strong>Ghost in the Minecraft: Generally Capable Agents for Open-World Environments via Large Language Models with Text-based Knowledge and Memory.</strong> <em>Xizhou Zhu (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.17144">paper</a>] [<a href="https://github.com/OpenGVLab/GITM">code</a>]</li><br>
+<li>[2023/05] <strong>RET-LLM: Towards a General Read-Write Memory for Large Language Models.</strong> <em>Ali Modarressi (LMU Munich) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.14322">paper</a>] [<a href="https://github.com/tloen/alpaca-lora">code</a>]</li><br>
+<li>[2023/05] <strong>RecurrentGPT: Interactive Generation of (Arbitrarily) Long Text.</strong> <em>Wangchunshu Zhou (AIWaves) et al. arXiv.</em> [<a href="https://arxiv.org/pdf/2305.13304.pdf">paper</a>] [<a href="https://github.com/aiwaves-cn/RecurrentGPT">code</a>]</li><br>
+</ul><br>
+<h4 id="memory-retrieval">Memory retrieval</h4><br>
+<ul>
+<li>[2023/08] <strong>Memory Sandbox: Transparent and Interactive Memory Management for Conversational Agents.</strong> <em>Ziheng Huang (University of California—San Diego) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.01542">paper</a>]</li><br>
+<li>[2023/08] <strong>AgentSims: An Open-Source Sandbox for Large Language Model Evaluation.</strong> <em>Jiaju Lin (PTA Studio) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.04026">paper</a>] [<a href="https://www.agentsims.com/">project page</a>] [<a href="https://github.com/py499372727/AgentSims/">code</a>]</li><br>
+<li>[2023/06] <strong>ChatDB: Augmenting LLMs with Databases as Their Symbolic Memory.</strong> <em>Chenxu Hu (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2306.03901">paper</a>] [<a href="https://github.com/huchenxucs/ChatDB">code</a>]</li><br>
+<li>[2023/05] <strong>MemoryBank: Enhancing Large Language Models with Long-Term Memory.</strong> <em>Wanjun Zhong (Harbin Institute of Technology) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.10250">paper</a>] [<a href="https://github.com/zhongwanjun/memorybank-siliconfriend">code</a>]</li><br>
+<li>[2023/04] <strong>Generative Agents: Interactive Simulacra of Human Behavior.</strong> <em>Joon Sung Park (Stanford) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2304.03442">paper</a>] [<a href="https://github.com/joonspk-research/generative_agents">code</a>]</li><br>
+<li>[2023/05] <strong>RecurrentGPT: Interactive Generation of (Arbitrarily) Long Text.</strong> <em>Wangchunshu Zhou (AIWaves) et al. arXiv.</em> [<a href="https://arxiv.org/pdf/2305.13304.pdf">paper</a>] [<a href="https://github.com/aiwaves-cn/RecurrentGPT">code</a>]</li><br>
+</ul><br>
+<h4 id="1-1-4-reasoning-planning">1.1.4 Reasoning &amp; Planning</h4><br>
+<h4 id="reasoning">Reasoning</h4><br>
+<ul>
+<li>[2024/02] <strong>Training Large Language Models for Reasoning through Reverse Curriculum Reinforcement Learning.</strong> <em>Zhiheng Xi (Fudan University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2402.05808">paper</a>] [<a href="https://github.com/WooooDyy/LLM-Agent-Paper-List">Code</a>]</li><br>
+<li><p>[2023/09] <strong>ReConcile: Round-Table Conference Improves Reasoning via Consensus among Diverse LLMs.</strong> <em>Justin Chih-Yao Chen (University of North Carolina at Chapel Hill) et al. arXiv.</em> [<a href="https://arxiv.org/pdf/2309.13007.pdf">paper</a>] [<a href="https://github.com/dinobby/ReConcile">code</a>]</p>
+</li><br>
+<li><p>[2023/05] <strong>Self-Polish: Enhance Reasoning in Large Language Models via Problem Refinement.</strong> <em>Zhiheng Xi (Fudan University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.14497">paper</a>] [<a href="https://github.com/woooodyy/self-polish">code</a>]</p>
+</li><br>
+<li><p>[2023-03] <strong>Large Language Models are Zero-Shot Reasoners.</strong> <em>Takeshi Kojima (The University of Tokyo) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2205.11916">paper</a>] [<a href="https://github.com/kojima-takeshi188/zero_shot_cot">code</a>]</p>
+</li><br>
+<li><p>[2023/03] <strong>Self-Refine: Iterative Refinement with Self-Feedback.</strong> <em>Aman Madaan (Carnegie Mellon University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2303.17651">paper</a>] [<a href="https://github.com/madaan/self-refine">code</a>]</p>
+</li><br>
+<li><p>[2022/05] <strong>Selection-Inference: Exploiting Large Language Models for Interpretable Logical Reasoning.</strong> <em>Antonia Creswell (DeepMind) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2205.09712">paper</a>]</p>
+</li><br>
+<li><p>[2022/03] <strong>Self-Consistency Improves Chain of Thought Reasoning in Language Models.</strong> <em>Xuezhi Wang (Google Research) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2203.11171">paper</a>] [<a href="https://github.com/huggingface/transformers/tree/main/src/transformers/models/bart">code</a>]</p>
+</li><br>
+<li><p>[2023/02] <strong>Multimodal Chain-of-Thought Reasoning in Language Models.</strong> <em>Zhuosheng Zhang (Shanghai Jiao Tong University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2302.00923">paper</a>] [<a href="https://github.com/amazon-science/mm-cot">code</a>]</p>
+</li><br>
+<li><p>[2022/01] <strong>Chain-of-Thought Prompting Elicits Reasoning in Large Language Models.</strong> <em>Jason Wei (Google Research) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2201.11903">paper</a>]</p>
+</li><br>
+</ul><br>
+<h4 id="planning">Planning</h4><br>
+<h4 id="plan-formulation">Plan formulation</h4><br>
+<ul>
+<li>[2023/11] <strong>JARVIS-1: Open-world Multi-task Agents with Memory-Augmented Multimodal Language Models.</strong> <em>ZiHao Wang (Peking University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2311.05997">paper</a>] [<a href="https://github.com/CraftJarvis/JARVIS-1">code</a>]</li><br>
+<li>[2023/10] <strong>Language Agent Tree Search Unifies Reasoning Acting and Planning in Language Models.</strong> <em>Andy Zhou (University of Illinois Urbana-Champaign) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2310.04406">paper</a>] [<a href="https://andyz245.github.io/LanguageAgentTreeSearch/">project page</a>] [<a href="https://github.com/andyz245/LanguageAgentTreeSearch/">code</a>]</li><br>
+<li>[2023/05] <strong>Tree of Thoughts: Deliberate Problem Solving with Large Language Models.</strong> <em>Shunyu Yao (Princeton University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.10601">paper</a>] [<a href="https://github.com/princeton-nlp/tree-of-thought-llm">code</a>]</li><br>
+<li>[2023/05] <strong>Plan, Eliminate, and Track -- Language Models are Good Teachers for Embodied Agents.</strong> <em>Yue Wu (Carnegie Mellon University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.02412">paper</a>]</li><br>
+<li>[2023/05] <strong>Reasoning with Language Model is Planning with World Model.</strong> <em>Shibo Hao (UC San Diego) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.14992">paper</a>] [<a href="https://github.com/Ber666/RAP">code</a>]</li><br>
+<li>[2023/05] <strong>SwiftSage: A Generative Agent with Fast and Slow Thinking for Complex Interactive Tasks.</strong> <em>Bill Yuchen Lin (Allen Institute for Artificial Intelligence) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.17390">paper</a>] [<a href="https://github.com/yuchenlin/swiftsage">code</a>]</li><br>
+<li>[2023/04] <strong>LLM+P: Empowering Large Language Models with Optimal Planning Proficiency.</strong> <em>Bo Liu (University of Texas at Austin) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2304.11477">paper</a>] [<a href="https://github.com/Cranial-XIX/llm-pddl">code</a>]</li><br>
+<li>[2023/03] <strong>HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face.</strong> <em>Yongliang Shen (Microsoft Research Asia) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2303.17580">paper</a>] [<a href="https://github.com/microsoft/JARVIS">code</a>]</li><br>
+<li>[2023/02] <strong>Describe, Explain, Plan and Select: Interactive Planning with Large Language Models Enables Open-World Multi-Task Agents.</strong> <em>ZiHao Wang (Peking University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2302.01560">paper</a>] [<a href="https://github.com/CraftJarvis/MC-Planner">code</a>]</li><br>
+<li>[2022/05] <strong>Least-to-Most Prompting Enables Complex Reasoning in Large Language Models.</strong> <em>Denny Zhou (Google Research) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2205.10625">paper</a>]</li><br>
+<li>[2022/05] <strong>MRKL Systems: A modular, neuro-symbolic architecture that combines large language models, external knowledge sources and discrete reasoning.</strong> <em>Ehud Karpas (AI21 Labs) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2205.00445">paper</a>]</li><br>
+<li>[2022/04] <strong>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances.</strong> <em>Michael Ahn (Robotics at Google) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2204.01691">paper</a>]</li><br>
+<li>[2023/05] <strong>Agents: An Open-source Framework for Autonomous Language Agents.</strong> <em>Wangchunshu Zhou (AIWaves) et al. arXiv.</em> [<a href="https://arxiv.org/pdf/2309.07870.pdf">paper</a>] [<a href="https://github.com/aiwaves-cn/agents">code</a>]</li><br>
+<li>[2022/12] <strong>Don’t Generate, Discriminate: A Proposal for Grounding Language Models to Real-World Environments.</strong> <em>Yu Gu (The Ohio State University) et al. ACL.</em> [<a href="https://aclanthology.org/2023.acl-long.270.pdf">paper</a>] [<a href="https://github.com/dki-lab/Pangu">code</a>]</li><br>
+</ul>
+<h4 id="plan-reflection">Plan reflection</h4><br>
+<ul>
+<li>[2023/11] <strong>JARVIS-1: Open-world Multi-task Agents with Memory-Augmented Multimodal Language Models.</strong> <em>ZiHao Wang (Peking University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2311.05997">paper</a>] [<a href="https://github.com/CraftJarvis/JARVIS-1">code</a>]</li><br>
+<li>[2023/10] <strong>Chain-of-Verification Reduces Hallucination in Large Language Models.</strong> <em>Shehzaad Dhuliawala (Meta AI &amp; ETH Zu ̈rich) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2309.11495">paper</a>]</li><br>
+<li>[2023/10] <strong>FireAct: Toward Language Agent Fine-tuning.</strong> <em>Baian Chen (System2 Research) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.16291">paper</a>] [<a href="https://fireact-agent.github.io/">project page</a>] [<a href="https://github.com/anchen1011/FireAct">code</a>] [<a href="https://github.com/anchen1011/FireAct/tree/main/data">dataset</a>]</li><br>
+<li>[2023/08] <strong>SelfCheck: Using LLMs to Zero-Shot Check Their Own Step-by-Step Reasoning.</strong> <em>Ning Miao (University of Oxford) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.00436">paper</a>] [<a href="https://github.com/NingMiao/SelfCheck">code</a>]</li><br>
+<li>[2023/05] <strong>ChatCoT: Tool-Augmented Chain-of-Thought Reasoning on Chat-based Large Language Models.</strong> <em>Zhipeng Chen (Renmin University of China) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.14323">paper</a>] [<a href="https://github.com/RUCAIBOX/ChatCoT">code</a>]</li><br>
+<li>[2023/05] <strong>Voyager: An Open-Ended Embodied Agent with Large Language Models.</strong> <em>Guanzhi Wang (NVIDIA) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.16291">paper</a>] [<a href="https://voyager.minedojo.org/">project page</a>] [<a href="https://github.com/MineDojo/Voyager">code</a>]</li><br>
+<li>[2023/03] <strong>Chat with the Environment: Interactive Multimodal Perception Using Large Language Models.</strong> <em>Xufeng Zhao (University Hamburg) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2303.08268">paper</a>] [<a href="https://matcha-model.github.io/">code</a>]</li><br>
+<li>[2022/12] <strong>LLM-Planner: Few-Shot Grounded Planning for Embodied Agents with Large Language Models.</strong> <em>Chan Hee Song (The Ohio State University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2212.04088">paper</a>] [<a href="https://dki-lab.github.io/LLM-Planner/">code</a>]</li><br>
+<li>[2022/10] <strong>ReAct: Synergizing Reasoning and Acting in Language Models.</strong> <em>Shunyu Yao (Princeton University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2210.03629">paper</a>] [<a href="https://react-lm.github.io/">code</a>]</li><br>
+<li>[2022/07] <strong>Inner Monologue: Embodied Reasoning through Planning with Language Models.</strong> <em>Wenlong Huang (Robotics at Google) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2207.05608">paper</a>] [<a href="https://innermonologue.github.io/">code</a>]</li><br>
+<li>[2021/10] <strong>AI Chains: Transparent and Controllable Human-AI Interaction by Chaining Large Language Model Prompts.</strong> <em>Tongshuang Wu (University of Washington) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2110.01691">paper</a>]</li><br>
+</ul>
+<h4 id="1-1-5-transferability-and-generalization">1.1.5 Transferability and Generalization</h4><br>
+<h4 id="unseen-task-generalization">Unseen task generalization</h4>
+<ul><br>
+<li>[2023/10] <strong>AgentTuning: Enabling Generalized Agent Abilities for LLMs.</strong> <em>Aohan Zeng (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2310.12823">paper</a>] [<a href="https://thudm.github.io/AgentTuning/">project page</a>] [<a href="https://github.com/THUDM/AgentTuning">code</a>] [<a href="https://huggingface.co/datasets/THUDM/AgentInstruct">dataset</a>]</li><br>
+<li>[2023/10] <strong>Lemur: Harmonizing Natural Language and Code for Language Agents</strong> <em>Yiheng Xu (University of Hong Kong) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2310.06830">paper</a>] [<a href="https://github.com/OpenLemur/Lemur">code</a>]</li><br>
+<li>[2023/05] <strong>Training language models to follow instructions with human feedback.</strong> <em>Long Ouyang et al. NeurIPS.</em> [<a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract-Conference.html">paper</a>]<ul>
+<li>InstructGPT: Aligning language models with user intent on a wide range of tasks by fine-tuning with human feedback.</li><br>
+</ul>
+</li><br>
+<li>[2023/01] <strong>Multitask Prompted Training Enables Zero-Shot Task Generalization.</strong> <em>Victor Sanh et al. ICLR.</em> [<a href="https://openreview.net/forum?id=9Vrb9D0WI4">paper</a>] [<a href="https://github.com/bigscience-workshop/t-zero">code</a>]<ul>
+<li>T0: T0 is an encoder-decoder model that consumes textual inputs and produces target responses. It is trained on a multitask mixture of NLP datasets partitioned into different tasks.</li><br>
+</ul>
+</li><br>
+<li>[2022/10] <strong>Scaling Instruction-Finetuned Language Models.</strong> <em>Hyung Won Chung et al. arXiv.</em> [<a href="https://doi.org/10.48550/arXiv.2210.11416">paper</a>] [<a href="https://github.com/google-research/t5x">code</a>]<ul>
+<li>This work explores instruction finetuning with a particular focus on scaling the number of tasks and the model size, which  improves performance on a variety of model classes, prompting setups, and evaluation benchmarks.</li><br>
+</ul>
+</li><br>
+<li>[2022/08] <strong>Finetuned Language Models are Zero-Shot Learners.</strong> <em>Jason Wei et al. ICLR.</em> [<a href="https://openreview.net/forum?id=gEZrGCozdqR">paper</a>]<ul>
+<li>FLAN: Instruction tuning substantially improves zero-shot performance on unseen tasks.</li><br>
+</ul>
+</li><br>
+</ul>
+<h4 id="in-context-learning">In-context learning</h4>
+<ul><br>
+<li>[2023/08] <strong>Images Speak in Images: A Generalist Painter for In-Context Visual Learning.</strong> <em>Xinlong Wang et al. IEEE.</em> [<a href="https://doi.org/10.1109/CVPR52729.2023.00660">paper</a>] [<a href="https://github.com/baaivision/Painter">code</a>]<ul>
+<li>Painter: This work presents a generalist model for in-context visual learning with an &quot;image&quot;-centric solution.</li><br>
+</ul>
+</li><br>
+<li>[2023/08] <strong>Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers.</strong> <em>Chengyi Wang et al. arXiv.</em> [<a href="https://arxiv.org/abs/2301.02111">paper</a>] [<a href="https://github.com/microsoft/unilm">code</a>]<ul>
+<li>VALL-E: This work trains a neural codec language model, which emerges in-context learning capabilities.</li><br>
+</ul>
+</li><br>
+<li>[2023/07] <strong>A Survey for In-context Learning.</strong> <em>Qingxiu Dong et al. arXiv.</em> [<a href="https://doi.org/10.48550/arXiv.2301.00234">paper</a>]<ul>
+<li>This survey summarizes the progress and challenges of in-context learning (ICL).</li><br>
+</ul>
+</li><br>
+<li>[2023/05] <strong>Language Models are Few-Shot Learners.</strong> <em>Tom B. Brown (OpenAI) et al. NeurIPS.</em> [<a href="https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html">paper</a>]<ul>
+<li>GPT-3: Scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even becoming competitive with prior state-ofthe-art fine-tuning approaches.</li><br>
+</ul>
+</li><br>
+</ul>
+<h4 id="continual-learning">Continual learning</h4>
+<ul><br>
+<li>[2023/11] <strong>JARVIS-1: Open-world Multi-task Agents with Memory-Augmented Multimodal Language Models.</strong> <em>ZiHao Wang (Peking University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2311.05997">paper</a>] [<a href="https://github.com/CraftJarvis/JARVIS-1">code</a>]</li><br>
+<li>[2023/07] <strong>Progressive Prompts: Continual Learning for Language Models.</strong> <em>Razdaibiedina et al. arXiv.</em> [<a href="https://arxiv.org/abs/2301.12314">paper</a>]<ul>
+<li>This work introduces Progressive Prompts, which allows forward transfer and resists catastrophic forgetting, without relying on data replay or a large number of task-specific parameters.</li><br>
+</ul>
+</li><br>
+<li>[2023/05] <strong>Voyager: An Open-Ended Embodied Agent with Large Language Models.</strong> <em>Guanzhi Wang (NVIDIA) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.16291">paper</a>] [<a href="https://voyager.minedojo.org/">project page</a>] [<a href="https://github.com/MineDojo/Voyager">code</a>]<ul>
+<li>Voyager: This is an example of LLM-powered embodied lifelong learning agent in Minecraft that continuously explores the world, acquires diverse skills, and makes novel discoveries without human intervention.</li><br>
+</ul>
+</li><br>
+<li>[2023/01] <strong>A Comprehensive Survey of Continual Learning: Theory, Method and Application.</strong> <em>Liyuan Wang et al. arXiv.</em> [<a href="https://arxiv.org/abs/2302.00487">paper</a>]<ul>
+<li>This survey presents a comprehensive survey of continual learning, seeking to bridge the basic settings, theoretical foundations, representative methods, and practical applications.</li><br>
+</ul>
+</li><br>
+<li>[2022/11] <strong>Continual Learning of Natural Language Processing Tasks: A Survey.</strong> <em>Zixuan Ke et al. arXiv.</em> [<a href="https://arxiv.org/abs/2211.12701">paper</a>]<ul>
+<li>This survey presents a comprehensive review and analysis of the recent progress of CL in NLP.</li><br>
+</ul>
+</li><br>
+</ul>
+<h3 id="1-2-perception-multimodal-inputs-for-llm-based-agents">1.2 Perception: Multimodal Inputs for LLM-based Agents</h3><br>
+<h4 id="1-2-1-visual">1.2.1 Visual</h4><br>
+<ul>
+<li>[2024/01] <strong>Agent ai: Surveying the horizons of multimodal interaction.</strong> <em>Zane Durante et al. arXiv.</em> [<a href="https://arxiv.org/abs/2401.03568">paper</a>]</li><br>
+<li>[2023/10] <strong>Towards End-to-End Embodied Decision Making via Multi-modal Large Language Model: Explorations with GPT4-Vision and Beyond</strong> <em>Liang Chen et al. arXiv.</em> [<a href="https://arxiv.org/abs/2310.02071">paper</a>] [<a href="https://github.com/PKUnlp-icler/PCA-EVAL">code</a>]</li><br>
+<li>[2023/05] <strong>Language Is Not All You Need: Aligning Perception with Language Models.</strong> <em>Shaohan Huang et al. arXiv.</em> [<a href="https://arxiv.org/abs/2302.14045">paper</a>]</li><br>
+<li>[2023/05] <strong>InstructBLIP: Towards General-purpose Vision-Language Models with Instruction Tuning.</strong> <em>Wenliang Dai et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.06500">paper</a>]</li><br>
+<li>[2023/05] <strong>MultiModal-GPT: A Vision and Language Model for Dialogue with Humans.</strong> <em>Tao Gong et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.04790">paper</a>]</li><br>
+<li>[2023/05] <strong>PandaGPT: One Model To Instruction-Follow Them All.</strong> <em>Yixuan Su et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.16355">paper</a>]</li><br>
+<li>[2023/04] <strong>Visual Instruction Tuning.</strong> <em>Haotian Liu et al. arXiv.</em> [<a href="https://arxiv.org/abs/2304.08485">paper</a>]</li><br>
+<li>[2023/04] <strong>MiniGPT-4: Enhancing Vision-Language Understanding with Advanced Large Language Models.</strong> <em>Deyao Zhu. arXiv.</em> [<a href="https://arxiv.org/abs/2304.10592">paper</a>]</li><br>
+<li>[2023/01] <strong>BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models.</strong> <em>Junnan Li et al. arXiv.</em> [<a href="https://arxiv.org/abs/2301.12597">paper</a>]</li><br>
+<li>[2022/04] <strong>Flamingo: a Visual Language Model for Few-Shot Learning.</strong> <em>Jean-Baptiste Alayrac et al. arXiv.</em> [<a href="https://arxiv.org/abs/2204.14198">paper</a>]</li><br>
+<li>[2021/10] <strong>MobileViT: Light-weight, General-purpose, and Mobile-friendly Vision Transformer.</strong> <em>Sachin Mehta et al.arXiv.</em> [<a href="https://arxiv.org/abs/2110.02178">paper</a>]</li><br>
+<li>[2021/05] <strong>MLP-Mixer: An all-MLP Architecture for Vision.</strong> <em>Ilya Tolstikhin et al.arXiv.</em> [<a href="https://arxiv.org/abs/2105.01601">paper</a>]</li><br>
+<li>[2020/10] <strong>An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.</strong> <em>Alexey Dosovitskiy et al. arXiv.</em> [<a href="https://arxiv.org/abs/2010.11929">paper</a>]</li><br>
+<li><p>[2017/11] <strong>Neural Discrete Representation Learning.</strong> <em>Aaron van den Oord et al. arXiv.</em> [<a href="https://arxiv.org/abs/1711.00937">paper</a>]</p><br>
+<h4 id="1-2-2-audio">1.2.2 Audio</h4><br>
+</li><br>
+<li><p>[2023/06] <strong>Video-LLaMA: An Instruction-tuned Audio-Visual Language Model for Video Understanding.</strong> <em>Hang Zhang et al. arXiv.</em> [<a href="https://arxiv.org/abs/2306.02858">paper</a>]</p>
+</li><br>
+<li>[2023/05] <strong>X-LLM: Bootstrapping Advanced Large Language Models by Treating Multi-Modalities as Foreign Languages.</strong> <em>Feilong Chen et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.04160">paper</a>]</li><br>
+<li>[2023/05] <strong>InternGPT: Solving Vision-Centric Tasks by Interacting with ChatGPT Beyond Language.</strong> <em>Zhaoyang Liu et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.05662">paper</a>]</li><br>
+<li>[2023/04] <strong>AudioGPT: Understanding and Generating Speech, Music, Sound, and Talking Head.</strong> <em>Rongjie Huang et al. arXiv.</em> [<a href="https://arxiv.org/abs/2304.12995">paper</a>]</li><br>
+<li>[2023/03] <strong>HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face.</strong> <em>Yongliang Shen et al. arXiv.</em> [<a href="https://arxiv.org/abs/2303.17580">paper</a>]</li><br>
+<li>[2021/06] <strong>HuBERT: Self-Supervised Speech Representation Learning by Masked Prediction of Hidden Units.</strong> <em>Wei-Ning Hsu et al. arXiv.</em> [<a href="https://arxiv.org/abs/2106.07447">paper</a>]</li><br>
+<li>[2021/04] <strong>AST: Audio Spectrogram Transformer.</strong> <em>Yuan Gong et al. arXiv.</em> [<a href="https://arxiv.org/abs/2104.01778">paper</a>]</li><br>
+</ul>
+<h3 id="1-3-action-expand-action-space-of-llm-based-agents">1.3 Action: Expand Action Space of LLM-based Agents</h3>
+<h4 id="1-3-1-tool-using">1.3.1 Tool Using</h4>
+<ul>
+<li><ul>
+<li>[2023/10] <strong>OpenAgents: An Open Platform for Language Agents in the Wild.</strong> <em>XLang Lab (The University of Hong Kong) arXiv.</em> [<a href="https://arxiv.org/abs/2310.10634">paper</a>] [<a href="https://docs.xlang.ai">project page</a>] [<a href="https://github.com/xlang-ai/OpenAgents">code</a>] [<a href="https://chat.xlang.ai">demo</a>]</li><br>
+</ul>
+</li><br>
+<li>[2023/10] <strong>Lemur: Harmonizing Natural Language and Code for Language Agents</strong> <em>Yiheng Xu (University of Hong Kong) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2310.06830">paper</a>] [<a href="https://github.com/OpenLemur/Lemur">code</a>]</li><br>
+<li>[2023/10] <strong>Towards End-to-End Embodied Decision Making via Multi-modal Large Language Model: Explorations with GPT4-Vision and Beyond</strong> <em>Liang Chen (Peking University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2310.02071">paper</a>] [<a href="https://github.com/PKUnlp-icler/PCA-EVAL">code</a>]<ul>
+<li>HOLMES is a multi-agent cooperation framework that allows LLMs to leverage MLLMs and APIs to gather multimodal information for informed decision-making. </li><br>
+</ul>
+</li><br>
+<li>[2023/07] <strong>ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs.</strong> <em>Yujia Qin (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2307.16789">paper</a>] [<a href="https://github.com/openbmb/toolbench">code</a>] [<a href="https://paperswithcode.com/dataset/toolbench">dataset</a>]<ul>
+<li>ToolLLM is a general tool-use framework encompassing data construction, model training and evaluation.</li><br>
+</ul>
+</li><br>
+<li>[2023/05] <strong>Large Language Models as Tool Makers.</strong> <em>Tianle Cai (Princeton University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.17126">paper</a>] [<a href="https://github.com/ctlllll/llm-toolmaker">code</a>]<ul>
+<li>LATM is a closed-loop framework that takes an initial step towards removing the dependency on the availability of existing tools.</li><br>
+</ul>
+</li><br>
+<li>[2023/05] <strong>CREATOR: Disentangling Abstract and Concrete Reasonings of Large Language Models through Tool Creation.</strong> <em>Cheng Qian (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.14318">paper</a>]<ul>
+<li>CREATOR is a novel framework that empowers LLMs to create their own tools through documentation and code realization.</li><br>
+</ul>
+</li><br>
+<li>[2023/04] <strong>Tool Learning with Foundation Models.</strong> <em>Yujia Qin (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2304.08354">paper</a>] [<a href="https://github.com/openbmb/bmtools">code</a>]<ul>
+<li>This survey primarily introduces a new paradigm called &quot;tool learning based on foundational models&quot;, which combines the advantages of specialized tools and foundational models, achieving higher precision, efficiency, and automation in problem-solving.</li><br>
+</ul>
+</li><br>
+<li>[2023/04] <strong>ChemCrow: Augmenting large-language models with chemistry tools.</strong> <em>Andres M Bran (Laboratory of Artificial Chemical Intelligence, ISIC, EPFL) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2304.05376">paper</a>] [<a href="https://github.com/ur-whitelab/chemcrow-public">code</a>]<ul>
+<li>ChemCrow is an LLM chemistry agent that integrates 13 expert-designed tools and augments the LLM performance in chemistry and emerge new capabilities.</li><br>
+</ul>
+</li><br>
+<li>[2023/04] <strong>GeneGPT: Augmenting Large Language Models with Domain Tools for Improved Access to Biomedical Information.</strong> <em>Qiao Jin (National Institutes of Health), Yifan Yang, Qingyu Chen, Zhiyong Lu. arXiv.</em> [<a href="https://arxiv.org/abs/2304.09667">paper</a>] [<a href="https://github.com/ncbi/GeneGPT">code</a>]<ul>
+<li>GeneGPT is a model that answer genomics questions. It introduces a novel method for handling challenges with hallucinations by teaching LLMs to use the Web APIs.</li><br>
+</ul>
+</li><br>
+<li>[2023/04] <strong>OpenAGI: When LLM Meets Domain Experts.</strong> <em>Yingqiang Ge (Rutgers University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2304.04370">paper</a>] [<a href="https://github.com/agiresearch/openagi">code</a>]<ul>
+<li>OpenAGI is an open-source AGI research platform. It introduces a paradigm of LLMs operating various expert models for complex task-solving and proposes an RLTF mechanism to improve the LLM&#39;s task-solving ability.</li><br>
+</ul>
+</li><br>
+<li>[2023/03] <strong>HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face.</strong> <em>Yongliang Shen (Zhejiang University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2303.17580">paper</a>] [<a href="https://github.com/microsoft/JARVIS">code</a>]<ul>
+<li>HuggingGPT is a system that leverages LLMs to connect various and multimodal AI models in machine learning communities to solve AI tasks.</li><br>
+</ul>
+</li><br>
+<li>[2023/03] <strong>Visual ChatGPT: Talking, Drawing and Editing with Visual Foundation Models.</strong> <em>Chenfei Wu (Microsoft Research Asia) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2303.04671">paper</a>] [<a href="https://github.com/microsoft/visual-chatgpt">code</a>]<ul>
+<li>Visual ChatGPT is a system that opens the door to investigating the visual roles of ChatGPT with the help of Visual Foundation Models.</li><br>
+</ul>
+</li><br>
+<li>[2023/02] <strong>Augmented Language Models: a Survey.</strong> <em>Grégoire Mialon (Meta AI) et al. TMLR.</em> [<a href="https://openreview.net/forum?id=jh7wH2AzKK">paper</a>]<ul>
+<li>This survey reviews works in which LMs are augmented with the ability to use tools. Augmented LMs can use external modules to expand their context processing ability.</li><br>
+</ul>
+</li><br>
+<li>[2023/02] <strong>Toolformer: Language Models Can Teach Themselves to Use Tools.</strong> <em>Timo Schick (Meta AI) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2302.04761">paper</a>]<ul>
+<li>Toolformer shows that LLMs can teach themselves to use external tools with a handful of demonstrations for each API.</li><br>
+</ul>
+</li><br>
+<li>[2022/05] <strong>TALM: Tool Augmented Language Models.</strong> <em>Aaron Parisi (Google) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2205.12255">paper</a>]<ul>
+<li>TALM introduces a method that combines non-differentiable tools with LMs, enabling the model to access real-time or private data.</li><br>
+</ul>
+</li><br>
+<li>[2022/05] <strong>MRKL Systems: A modular, neuro-symbolic architecture that combines large language models, external knowledge sources and discrete reasoning.</strong> <em>Ehud Karpas (AI21 Labs) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2205.00445">paper</a>]<ul>
+<li>MRKL Systems augments LLMs with an easily extensible set of external knowledge and reasoning modules.</li><br>
+</ul>
+</li><br>
+<li>[2022/04] <strong>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances.</strong> <em>Michael Ahn (Google) et al. CoRL.</em> [<a href="https://proceedings.mlr.press/v205/ichter23a.html">paper</a>]<ul>
+<li>SayCan applies LMs in real-world robotic tasks by combining advanced semantic knowledge from LLMs with the value function of pre-trained skills.</li><br>
+</ul>
+</li><br>
+<li>[2021/12] <strong>WebGPT: Browser-assisted question-answering with human feedback.</strong> <em>Reiichiro Nakano (OpenAI) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2112.09332">paper</a>]<ul>
+<li>WebGPT answer questions using a webbrowsing environment. It uses imitation learning during training and then optimizes answer quality through human feedback.</li><br>
+</ul>
+</li><br>
+<li>[2021/07] <strong>Evaluating Large Language Models Trained on Code.</strong> <em>Mark Chen (OpenAI) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2107.03374">paper</a>] [<a href="https://github.com/openai/human-eval">code</a>]<ul>
+<li>Codex can synthesize programs from docstrings, that is, creating tools based on documentation.</li><br>
+</ul>
+</li><br>
+</ul>
+<h4 id="1-3-2-embodied-action">1.3.2 Embodied Action</h4><br>
+<ul>
+<li>[2023/12] <strong>Towards Learning a Generalist Model for Embodied Navigation.</strong> <em>Duo Zheng (The Chinese University of Hong Kong) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2312.02010">paper</a>] [<a href="https://github.com/zd11024/NaviLLM">code</a>]</li><br>
+<li>[2023/11] <strong>An Embodied Generalist Agent in 3D World.</strong> <em>Jiangyong Huang (BIGAI &amp; Peking University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2311.12871">paper</a>] [<a href="https://embodied-generalist.github.io/">project page</a>]</li><br>
+<li>[2023/11] <strong>JARVIS-1: Open-world Multi-task Agents with Memory-Augmented Multimodal Language Models.</strong> <em>ZiHao Wang (Peking University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2311.05997">paper</a>] [<a href="https://github.com/CraftJarvis/JARVIS-1">code</a>]</li><br>
+<li>[2023/10] <strong>Lemur: Harmonizing Natural Language and Code for Language Agents</strong> <em>Yiheng Xu (University of Hong Kong) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2310.06830">paper</a>] [<a href="https://github.com/OpenLemur/Lemur">code</a>]</li><br>
+<li>[2023/10] <strong>Towards End-to-End Embodied Decision Making via Multi-modal Large Language Model: Explorations with GPT4-Vision and Beyond</strong> <em>Liang Chen et al. arXiv.</em> [<a href="https://arxiv.org/abs/2310.02071">paper</a>] [<a href="https://github.com/PKUnlp-icler/PCA-EVAL">code</a>]</li><br>
+<li>[2023/07] <strong>Interactive language: Talking to robots in real time.</strong> <em>Corey Lynch et al. IEEE (RAL)</em> [<a href="https://arxiv.org/pdf/2210.06407.pdf">paper</a>]</li><br>
+<li>[2023/05] <strong>Voyager: An Open-Ended Embodied Agent with Large Language Models.</strong> <em>Guanzhi Wang (NVIDIA) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.16291">paper</a>] [<a href="https://voyager.minedojo.org/">project page</a>] [<a href="https://github.com/MineDojo/Voyager">code</a>]</li><br>
+<li>[2023/05] <strong>AVLEN: Audio-Visual-Language Embodied Navigation in 3D Environments.</strong> <em>Sudipta Paul et al. NeurIPS.</em> [<a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/28f699175783a2c828ae74d53dd3da20-Paper-Conference.pdf">paper</a>]</li><br>
+<li>[2023/05] <strong>EmbodiedGPT: Vision-Language Pre-Training via Embodied Chain of Thought.</strong> <em>Yao Mu et al. Arxiv</em> [<a href="https://arxiv.org/pdf/2305.15021.pdf">paper</a>] [<a href="https://github.com/EmbodiedGPT/EmbodiedGPT_Pytorch">code</a>]</li><br>
+<li>[2023/05] <strong>NavGPT: Explicit Reasoning in Vision-and-Language Navigation with Large Language Models.</strong> <em>Gengze Zhou et al. Arxiv</em> [<a href="https://arxiv.org/pdf/2305.16986.pdf">paper</a>]</li><br>
+<li>[2023/05] <strong>AlphaBlock: Embodied Finetuning for Vision-Language Reasoning in Robot Manipulation.</strong> <em>Chuhao Jin et al. Arxiv</em> [<a href="https://arxiv.org/pdf/2305.18898.pdf">paper</a>]</li><br>
+<li>[2023/03] <strong>PaLM-E: An Embodied Multimodal Language Model.</strong> <em>Danny Driess et al. Arxiv.</em> [<a href="https://arxiv.org/pdf/2303.03378.pdf">paper</a>]</li><br>
+<li>[2023/03] <strong>Reflexion: Language Agents with Verbal Reinforcement Learning.</strong> <em>Noah Shinn et al. Arxiv</em> [<a href="https://arxiv.org/pdf/2303.11366.pdf">paper</a>] [<a href="https://github.com/noahshinn024/reflexion">code</a>]</li><br>
+<li>[2023/02] <strong>Collaborating with language models for embodied reasoning.</strong> <em>Ishita Dasgupta et al. Arxiv.</em> [<a href="https://arxiv.org/pdf/2302.00763.pdf">paper</a>]</li><br>
+<li>[2023/02] <strong>Code as Policies: Language Model Programs for Embodied Control.</strong> <em>Jacky Liang et al. IEEE (ICRA).</em> [<a href="https://arxiv.org/pdf/2209.07753.pdf">paper</a>]</li><br>
+<li>[2022/10] <strong>ReAct: Synergizing Reasoning and Acting in Language Models.</strong> <em>Shunyu Yao et al. Arxiv</em> [<a href="https://arxiv.org/pdf/2210.03629.pdf">paper</a>] [<a href="https://github.com/ysymyth/ReAct">code</a>]</li><br>
+<li>[2022/10] <strong>Instruction-Following Agents with Multimodal Transformer.</strong> <em>Hao Liu et al. CVPR</em> [<a href="https://arxiv.org/pdf/2210.13431.pdf">paper</a>] [<a href="https://github.com/lhao499/instructrl">code</a>]</li><br>
+<li>[2022/07] <strong>Inner Monologue: Embodied Reasoning through Planning with Language Models.</strong> <em>Wenlong Huang et al. Arxiv.</em> [<a href="https://arxiv.org/pdf/2207.05608.pdf">paper</a>]</li><br>
+<li>[2022/07] <strong>LM-Nav: Robotic Navigation with Large Pre-Trained Models of Language, Vision, and Action.</strong> <em>Dhruv Shahet al. CoRL</em> [<a href="https://proceedings.mlr.press/v205/shah23b/shah23b.pdf">paper</a>] [<a href="https://github.com/blazejosinski/lm_nav">code</a>]</li><br>
+<li>[2022/04] <strong>Do As I Can, Not As I Say: Grounding Language in Robotic Affordances.</strong> <em>Michael Ahn et al. Arxiv.</em> [<a href="https://arxiv.org/pdf/2204.01691.pdf">paper</a>]</li><br>
+<li>[2022/01] <strong>A Survey of Embodied AI: From Simulators to Research Tasks.</strong> <em>Jiafei Duan et al. IEEE (TETCI).</em> [<a href="https://arxiv.org/pdf/2103.04918.pdf">paper</a>]</li><br>
+<li>[2022/01] <strong>Language Models as Zero-Shot Planners: Extracting Actionable Knowledge for Embodied Agents.</strong> <em>Wenlong Huang et al. Arxiv.</em> [<a href="https://arxiv.org/pdf/2201.07207v2.pdf">paper</a>] [<a href="https://github.com/huangwl18/language-planner">code</a>]</li><br>
+<li>[2020/04] <strong>Experience Grounds Language.</strong> <em>Yonatan Bisk et al. EMNLP</em> [<a href="https://arxiv.org/pdf/2004.10151.pdf">paper</a>]</li><br>
+<li>[2019/03] <strong>Review of Deep Reinforcement Learning for Robot Manipulation.</strong> <em>Hai Nguyen et al. IEEE (IRC).</em> [<a href="https://www.researchgate.net/profile/Hai-Nguyen-128/publication/355980729_Review_of_Deep_Reinforcement_Learning_for_Robot_Manipulation/links/6187ef153068c54fa5bb977e/Review-of-Deep-Reinforcement-Learning-for-Robot-Manipulation.pdf">paper</a>]</li><br>
+<li>[2005/01] <strong>The Development of Embodied Cognition: Six Lessons from Babies.</strong> <em>Linda Smith et al. Artificial Life.</em> [<a href="https://cogdev.sitehost.iu.edu/labwork/6_lessons.pdf">paper</a>]</li><br>
+</ul>
+<h2 id="2-agents-in-practice-applications-of-llm-based-agents">2. Agents in Practice: Applications of LLM-based Agents</h2>
+<div align=center><img src="./assets/figure7.jpg" width="60%" /></div>
+
+<h3 id="2-1-general-ability-of-single-agent">2.1 General Ability of Single Agent</h3>
+<div align=center><img src="./assets/figure8.jpg" width="60%" /></div>
+
+<h4 id="2-1-1-task-oriented-deployment">2.1.1 Task-oriented Deployment</h4>
+<p><strong>In web scenarios</strong></p>
+<ul>
+<li>[2023/10] <strong>OpenAgents: An Open Platform for Language Agents in the Wild.</strong> <em>XLang Lab (The University of Hong Kong) arXiv.</em> [<a href="https://arxiv.org/abs/2310.10634">paper</a>] [<a href="https://docs.xlang.ai">project page</a>] [<a href="https://github.com/xlang-ai/OpenAgents">code</a>] [<a href="https://chat.xlang.ai">demo</a>]</li><br>
+<li>[2023/07] <strong>WebArena: A Realistic Web Environment for Building Autonomous Agents.</strong> <em>Shuyan Zhou (CMU) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2307.13854">paper</a>] [<a href="https://webarena.dev/">code</a>]</li><br>
+<li>[2023/07] <strong>A Real-World WebAgent with Planning, Long Context Understanding, and Program Synthesis.</strong> <em>Izzeddin Gur (DeepMind) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2307.12856">paper</a>]</li><br>
+<li>[2023/06] <strong>SYNAPSE: Leveraging Few-Shot Exemplars for
+Human-Level Computer Control.</strong> <em>Longtao Zheng (Nanyang Technological University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2306.07863">paper</a>] [<a href="https://github.com/ltzheng/synapse">code</a>]</li><br>
+<li>[2023/06] <strong>Mind2Web: Towards a Generalist Agent for the Web.</strong> <em>Xiang Deng (The Ohio State University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2306.06070">paper</a>] [<a href="https://osu-nlp-group.github.io/Mind2Web/">code</a>]</li><br>
+<li>[2023/05] <strong>Multimodal Web Navigation with Instruction-Finetuned Foundation Models.</strong> <em>Hiroki Furuta (The University of Tokyo) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.11854">paper</a>]</li><br>
+<li>[2023/03] <strong>Language Models can Solve Computer Tasks.</strong> <em>Geunwoo Kim (University of California) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2303.17491">paper</a>] [<a href="https://github.com/posgnu/rci-agent">code</a>]</li><br>
+<li>[2022/07] <strong>WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents.</strong> <em>Shunyu Yao (Princeton University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2207.01206">paper</a>] [<a href="https://webshop-pnlp.github.io/">code</a>]</li><br>
+<li>[2021/12] <strong>WebGPT: Browser-assisted question-answering with human feedback.</strong> <em>Reiichiro Nakano (OpenAI) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2112.09332">paper</a>]</li><br>
+<li>[2023/05] <strong>Agents: An Open-source Framework for Autonomous Language Agents.</strong> <em>Wangchunshu Zhou (AIWaves) et al. arXiv.</em> [<a href="https://arxiv.org/pdf/2309.07870.pdf">paper</a>] [<a href="https://github.com/aiwaves-cn/agents">code</a>]</li><br>
+</ul>
+<p><strong>In life scenarios</strong></p><br>
+<ul>
+<li>[2023/10] <strong>OpenAgents: An Open Platform for Language Agents in the Wild.</strong> <em>XLang Lab (The University of Hong Kong) arXiv.</em> [<a href="https://arxiv.org/abs/2310.10634">paper</a>] [<a href="https://docs.xlang.ai">project page</a>] [<a href="https://github.com/xlang-ai/OpenAgents">code</a>] [<a href="https://chat.xlang.ai">demo</a>]</li><br>
+<li>[2023/08] <strong>InterAct: Exploring the Potentials of ChatGPT as a Cooperative Agent.</strong> <em>Po-Lin Chen et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.01552">paper</a>]</li><br>
+<li>[2023/05] <strong>Plan, Eliminate, and Track -- Language Models are Good Teachers for Embodied Agents.</strong> <em>Yue Wu (CMU) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.02412">paper</a>]</li><br>
+<li>[2023/05] <strong>Augmenting Autotelic Agents with Large Language Models.</strong> <em>Cédric Colas (MIT) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.12487">paper</a>]</li><br>
+<li>[2023/03] <strong>Planning with Large Language Models via Corrective Re-prompting.</strong> <em>Shreyas Sundara Raman (Brown University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2211.09935">paper</a>]</li><br>
+<li>[2022/10] <strong>Generating Executable Action Plans with Environmentally-Aware Language Models.</strong> <em>Maitrey Gramopadhye (University of North Carolina at Chapel Hill) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2210.04964">paper</a>] [<a href="https://github.com/hri-ironlab/scene_aware_language_planner">code</a>]</li><br>
+<li>[2022/01] <strong>Language Models as Zero-Shot Planners: Extracting Actionable Knowledge for Embodied Agents.</strong> <em>Wenlong Huang (UC Berkeley) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2201.07207">paper</a>] [<a href="https://wenlong.page/language-planner/">code</a>]</li><br>
+</ul>
+<h4 id="2-1-2-innovation-oriented-deployment">2.1.2 Innovation-oriented Deployment</h4><br>
+<ul>
+<li>[2023/10] <strong>OpenAgents: An Open Platform for Language Agents in the Wild.</strong> <em>XLang Lab (The University of Hong Kong) arXiv.</em> [<a href="https://arxiv.org/abs/2310.10634">paper</a>] [<a href="https://docs.xlang.ai">project page</a>] [<a href="https://github.com/xlang-ai/OpenAgents">code</a>] [<a href="https://chat.xlang.ai">demo</a>]</li><br>
+<li>[2023/08] <strong>The Hitchhiker&#39;s Guide to Program Analysis: A Journey with Large Language Models.</strong> <em>Haonan Li (UC Riverside) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.00245">paper</a>]</li><br>
+<li>[2023/08] <strong>ChatMOF: An Autonomous AI System for Predicting and Generating Metal-Organic Frameworks.</strong> <em>Yeonghun Kang (Korea Advanced Institute of Science
+and Technology) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.01423">paper</a>]</li><br>
+<li>[2023/07] <strong>Math Agents: Computational Infrastructure, Mathematical Embedding, and Genomics.</strong> <em>Melanie Swan (University College London) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2307.02502">paper</a>]</li><br>
+<li>[2023/06] <strong>Towards Autonomous Testing Agents via Conversational Large Language Models.</strong> <em>Robert Feldt (Chalmers University of Technology) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2306.05152">paper</a>]</li><br>
+<li>[2023/04] <strong>Emergent autonomous scientific research capabilities of large language models.</strong> <em>Daniil A. Boiko (CMU) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2304.05332">paper</a>]</li><br>
+<li>[2023/04] <strong>ChemCrow: Augmenting large-language models with chemistry tools.</strong> <em>Andres M Bran (Laboratory of Artificial Chemical Intelligence, ISIC, EPFL) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2304.05376">paper</a>] [<a href="https://github.com/ur-whitelab/chemcrow-public">code</a>]</li><br>
+<li>[2022/03] <strong>ScienceWorld: Is your Agent Smarter than a 5th Grader?</strong> <em>Ruoyao Wang (University of Arizona) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2203.07540">paper</a>] [<a href="https://sciworld.apps.allenai.org/">code</a>]</li><br>
+</ul>
+<h4 id="2-1-3-lifecycle-oriented-deployment">2.1.3 Lifecycle-oriented Deployment</h4><br>
+<ul>
+<li>[2023/05] <strong>Voyager: An Open-Ended Embodied Agent with Large Language Models.</strong> <em>Guanzhi Wang (NVIDIA) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.16291">paper</a>] [<a href="https://voyager.minedojo.org/">project page</a>] [<a href="https://github.com/MineDojo/Voyager">code</a>]</li><br>
+<li>[2023/05] <strong>Ghost in the Minecraft: Generally Capable Agents for Open-World Environments via Large Language Models with Text-based Knowledge and Memory.</strong> <em>Xizhou Zhu (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.17144">paper</a>] [<a href="https://github.com/OpenGVLab/GITM">code</a>]</li><br>
+<li>[2023/03] <strong>Plan4MC: Skill Reinforcement Learning and Planning for Open-World Minecraft Tasks.</strong> <em>Haoqi Yuan (PKU) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2303.16563">paper</a>] [<a href="https://sites.google.com/view/plan4mc">project page</a>]</li><br>
+<li>[2023/02] <strong>Describe, Explain, Plan and Select: Interactive Planning with Large Language Models Enables Open-World Multi-Task Agents.</strong> <em>Zihao Wang (PKU) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2302.01560">paper</a>] [<a href="https://github.com/CraftJarvis/MC-Planner">code</a>]</li><br>
+<li>[2023/01] <strong>Do Embodied Agents Dream of Pixelated Sheep: Embodied Decision Making using Language Guided World Modelling.</strong> <em>Kolby Nottingham (University of California Irvine, Irvine) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2301.12050">paper</a>] [<a href="https://deckardagent.github.io/">code</a>]</li><br>
+</ul>
+<h3 id="2-2-coordinating-potential-of-multiple-agents">2.2 Coordinating Potential of Multiple Agents</h3>
+<div align=center><img src="./assets/figure9.jpg" width="60%" /></div>
+
+<h4 id="2-2-1-cooperative-interaction-for-complementarity">2.2.1 Cooperative Interaction for Complementarity</h4><br>
+<p><strong>Disordered cooperation</strong></p>
+<ul><br>
+<li>[2023/07] <strong>Unleashing Cognitive Synergy in Large Language Models: A Task-Solving Agent through Multi-Persona Self-Collaboration.</strong> <em>Zhenhailong Wang (University of Illinois Urbana-Champaign) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2307.05300">paper</a>] [<a href="https://github.com/MikeWangWZHL/Solo-Performance-Prompting">code</a>]</li><br>
+<li>[2023/07] <strong>RoCo: Dialectic Multi-Robot Collaboration with Large Language Models.</strong> <em>Zhao Mandi, Shreeya Jain, Shuran Song (Columbia University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2307.04738">paper</a>] [<a href="https://project-roco.github.io/">code</a>]</li><br>
+<li>[2023/04] <strong>ChatLLM Network: More brains, More intelligence.</strong> <em>Rui Hao (Beijing University of Posts and Telecommunications) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2304.12998">paper</a>]</li><br>
+<li>[2023/01] <strong>Blind Judgement: Agent-Based Supreme Court Modelling With GPT.</strong> <em>Sil Hamilton (McGill University). arXiv.</em> [<a href="https://arxiv.org/abs/2301.05327">paper</a>]</li><br>
+<li>[2023/05] <strong>Agents: An Open-source Framework for Autonomous Language Agents.</strong> <em>Wangchunshu Zhou (AIWaves) et al. arXiv.</em> [<a href="https://arxiv.org/pdf/2309.07870.pdf">paper</a>] [<a href="https://github.com/aiwaves-cn/agents">code</a>]</li><br>
+</ul>
+<p><strong>Ordered cooperation</strong></p><br>
+<ul>
+<li>[2023/10] <strong>AutoAgents: A Framework for Automatic Agent Generation.</strong> <em>Guangyao Chen (Peking University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2309.17288">paper</a>] [<a href="https://github.com/Link-AGI/AutoAgents">code</a>]</li><br>
+<li>[2023/09] <strong>MindAgent: Emerging Gaming Interaction.</strong> <em>Ran Gong (UCLA) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2309.09971">paper</a>] [<a href="https://mindagent.github.io/">code</a>]</li><br>
+<li>[2023/08] <strong>CGMI: Configurable General Multi-Agent Interaction Framework.</strong> <em>Shi Jinxin (East China Normal University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.12503">paper</a>]</li><br>
+<li>[2023/08] <strong>ProAgent: Building Proactive Cooperative AI with Large Language Models.</strong> <em>Ceyao Zhang (The Chinese University of Hong Kong, Shenzhen) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.11339">paper</a>] [<a href="https://pku-proagent.github.io/">code</a>]</li><br>
+<li>[2023/08] <strong>AgentVerse: Facilitating Multi-Agent Collaboration and Exploring Emergent Behaviors in Agents.</strong> <em>Weize Chen (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.10848">paper</a>] [<a href="https://github.com/OpenBMB/AgentVerse">code</a>]</li><br>
+<li>[2023/08] <strong>AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation Framework.</strong> <em>Qingyun Wu (Pennsylvania State University
+) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.08155">paper</a>] [<a href="https://microsoft.github.io/FLAML/docs/Use-Cases/Autogen/">code</a>]</li><br>
+<li>[2023/08] <strong>MetaGPT: Meta Programming for Multi-Agent Collaborative Framework.</strong> <em>Sirui Hong (DeepWisdom) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.00352">paper</a>] [<a href="https://github.com/geekan/MetaGPT">code</a>]</li><br>
+<li>[2023/07] <strong>Communicative Agents for Software Development.</strong> <em>Chen Qian (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2307.07924">paper</a>] [<a href="https://github.com/openbmb/chatdev">code</a>]</li><br>
+<li>[2023/06] <strong>Multi-Agent Collaboration: Harnessing the Power of Intelligent LLM Agents.</strong> <em>Yashar Talebira (University of Alberta) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2306.03314">paper</a>]</li><br>
+<li>[2023/05] <strong>Training Socially Aligned Language Models in Simulated Human Society.</strong> <em>Ruibo Liu (Dartmouth College) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.16960">paper</a>] [<a href="https://github.com/agi-templar/Stable-Alignment">code</a>]</li><br>
+<li>[2023/05] <strong>SwiftSage: A Generative Agent with Fast and Slow Thinking for Complex Interactive Tasks.</strong> <em>Bill Yuchen Lin (Allen Institute for Artificial Intelligence) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.17390">paper</a>] [<a href="https://yuchenlin.xyz/swiftsage/">code</a>]</li><br>
+<li>[2023/05] <strong>ChatGPT as your Personal Data Scientist.</strong> <em>Md Mahadi Hassan (Auburn University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.13657">paper</a>]</li><br>
+<li>[2023/03] <strong>CAMEL: Communicative Agents for &quot;Mind&quot; Exploration of Large Scale Language Model Society.</strong> <em>Guohao Li (King Abdullah University of Science and Technology) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2303.17760">paper</a>] [<a href="https://github.com/lightaime/camel">code</a>]</li><br>
+<li>[2023/03] <strong>DERA: Enhancing Large Language Model Completions with Dialog-Enabled Resolving Agents.</strong> <em>Varun Nair (Curai Health) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2303.17071">paper</a>] [<a href="https://github.com/curai/curai-research/tree/main/DERA">code</a>]</li><br>
+<li>[2023/04] <strong>Self-collaboration Code Generation via ChatGPT.</strong> <em>Yihong Dong (Peking University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2304.07590">paper</a>]</li><br>
+</ul>
+<h4 id="2-2-2-adversarial-interaction-for-advancement">2.2.2 Adversarial Interaction for Advancement</h4>
+<ul>
+<li>[2023/08] <strong>ChatEval: Towards Better LLM-based Evaluators through Multi-Agent Debate.</strong> <em>Chi-Min Chan (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.07201">paper</a>] [<a href="https://github.com/thunlp/ChatEval">code</a>]</li><br>
+<li>[2023/05] <strong>Improving Factuality and Reasoning in Language Models through Multiagent Debate.</strong> <em>Yilun Du (MIT CSAIL) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.14325">paper</a>] [<a href="https://composable-models.github.io/llm_debate/">code</a>]</li><br>
+<li>[2023/05] <strong>Improving Language Model Negotiation with Self-Play and In-Context Learning from AI Feedback.</strong> <em>Yao Fu (University of Edinburgh) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.10142">paper</a>] [<a href="https://github.com/FranxYao/GPT-Bargaining">code</a>]</li><br>
+<li>[2023/05] <strong>Examining the Inter-Consistency of Large Language Models: An In-depth Analysis via Debate.</strong> <em>Kai Xiong (Harbin Institute of Technology) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.11595">paper</a>]</li><br>
+<li>[2023/05] <strong>Encouraging Divergent Thinking in Large Language Models through Multi-Agent Debate.</strong> <em>Tian Liang (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.19118">paper</a>] [<a href="https://github.com/Skytliang/Multi-Agents-Debate">code</a>]</li><br>
+</ul>
+<h3 id="2-3-interactive-engagement-between-human-and-agent">2.3 Interactive Engagement between Human and Agent</h3><br>
+<div align=center><img src="./assets/figure10.jpg" width="60%" /></div>
+
+<h4 id="2-3-1-instructor-executor-paradigm">2.3.1 Instructor-Executor Paradigm</h4>
+<h4 id="education">Education</h4>
+<ul>
+<li>[2023/07] <strong>Math Agents: Computational Infrastructure, Mathematical Embedding, and Genomics.</strong> <em>Melanie Swan (UCL) et al. arXiv.</em> [<a href="https://doi.org/10.48550/arXiv.2307.02502">paper</a>]<ul>
+<li>Communicate with humans to help them understand and use mathematics.</li><br>
+</ul>
+</li><br>
+<li>[2023/03] <strong>Hey Dona! Can you help me with student course registration?</strong> <em>Vishesh Kalvakurthi (MSU) et al. arXiv.</em> [<a href="https://doi.org/10.48550/arXiv.2303.13548">paper</a>]<ul>
+<li>This is a developed application called Dona that offers virtual voice assistance in student course registration, where humans provide instructions.</li><br>
+</ul>
+</li><br>
+</ul>
+<h4 id="health">Health</h4>
+<ul>
+<li>[2023/08] <strong>Zhongjing: Enhancing the Chinese Medical Capabilities of Large Language Model through Expert Feedback and Real-world Multi-turn Dialogue.</strong> <em>Songhua Yang (ZZU) et al. arXiv.</em> [<a href="https://doi.org/10.48550/arXiv.2308.03549">paper</a>] [<a href="https://github.com/SupritYoung/Zhongjing">code</a>]</li><br>
+<li>[2023/05] <strong>HuatuoGPT, towards Taming Language Model to Be a Doctor.</strong> <em>Hongbo Zhang (CUHK-SZ) et al. arXiv.</em> [<a href="https://doi.org/10.48550/arXiv.2305.15075">paper</a>] [<a href="https://github.com/FreedomIntelligence/HuatuoGPT">code</a>] [<a href="https://www.huatuogpt.cn/">demo</a>]</li><br>
+<li>[2023/05] <strong>Helping the Helper: Supporting Peer Counselors via AI-Empowered Practice and Feedback.</strong> <em>Shang-Ling Hsu (Gatech) et al. arXiv.</em> [<a href="https://doi.org/10.48550/arXiv.2305.08982">paper</a>]</li><br>
+<li>[2020/10] <strong>A Virtual Conversational Agent for Teens with Autism Spectrum Disorder: Experimental Results and Design Lessons.</strong> <em>Mohammad Rafayet Ali (U of R) et al. IVA &#39;20.</em> [<a href="https://doi.org/10.1145/3383652.3423900">paper</a>]</li><br>
+</ul>
+<h4 id="other-application">Other Application</h4>
+<ul>
+<li>[2023/08] <strong>RecMind: Large Language Model Powered Agent For Recommendation.</strong> <em>Yancheng Wang (ASU, Amazon) et al. arXiv.</em> [<a href="https://doi.org/10.48550/arXiv.2308.14296">paper</a>]</li><br>
+<li>[2023/08] <strong>Multi-Turn Dialogue Agent as Sales&#39; Assistant in Telemarketing.</strong> <em>Wanting Gao (JNU) et al. IEEE.</em> [<a href="https://doi.org/10.1109/IJCNN54540.2023.10192042">paper</a>]</li><br>
+<li>[2023/07] <strong>PEER: A Collaborative Language Model.</strong> <em>Timo Schick (Meta AI) et al. arXiv.</em> [<a href="https://openreview.net/pdf?id=KbYevcLjnc">paper</a>]</li><br>
+<li>[2023/07] <strong>DIALGEN: Collaborative Human-LM Generated Dialogues for Improved Understanding of Human-Human Conversations.</strong> <em>Bo-Ru Lu (UW) et al. arXiv.</em> [<a href="https://doi.org/10.48550/arXiv.2307.07047">paper</a>]</li><br>
+<li>[2023/08] <strong>LLM As DBA [vision].</strong> <em>Xuanhe Zhou (Tsinghua) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.05481">paper</a>]</li><br>
+<li>[2023/06] <strong>AssistGPT: A General Multi-modal Assistant that can Plan, Execute, Inspect, and Learn.</strong> <em>Difei Gao (NUS) et al. arXiv.</em> [<a href="https://doi.org/10.48550/arXiv.2306.08640">paper</a>]</li><br>
+<li>[2023/05] <strong>Agents: An Open-source Framework for Autonomous Language Agents.</strong> <em>Wangchunshu Zhou (AIWaves) et al. arXiv.</em> [<a href="https://arxiv.org/pdf/2309.07870.pdf">paper</a>] [<a href="https://github.com/aiwaves-cn/agents">code</a>]</li><br>
+<li>[2023/12] <strong>D-Bot: Database Diagnosis System using Large Language Models.</strong> <em>Xuanhe Zhou (Tsinghua) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2312.01454">paper</a>] [<a href="https://github.com/TsinghuaDatabaseGroup/DB-GPT">code</a>]</li><br>
+</ul>
+<h4 id="2-3-2-equal-partnership-paradigm">2.3.2 Equal Partnership Paradigm</h4>
+<h4 id="empathetic-communicator">Empathetic Communicator</h4>
+<ul>
+<li>[2023/08] <strong>SAPIEN: Affective Virtual Agents Powered by Large Language Models.</strong> <em>Masum Hasan et al. arXiv.</em> [<a href="https://doi.org/10.48550/arXiv.2308.03022">paper</a>] [<a href="https://sapien.coach/">project page</a>]</li><br>
+<li>[2023/05] <strong>Helping the Helper: Supporting Peer Counselors via AI-Empowered Practice and Feedback.</strong> <em>Shang-Ling Hsu (Gatech) et al. arXiv.</em> [<a href="https://doi.org/10.48550/arXiv.2305.08982">paper</a>]</li><br>
+<li>[2022/07] <strong>Artificial empathy in marketing interactions: Bridging the human-AI gap in affective and social customer experience.</strong> <em>Yuping Liu‑Thompkins et al.</em> [<a href="https://link.springer.com/article/10.1007/s11747-022-00892-5">paper</a>]</li><br>
+</ul>
+<h4 id="human-level-participant">Human-Level Participant</h4>
+<ul>
+<li>[2023/08] <strong>Quantifying the Impact of Large Language Models on Collective Opinion Dynamics.</strong> <em>Chao Li et al. CoRR.</em> [<a href="https://doi.org/10.48550/arXiv.2308.03313">paper</a>]</li><br>
+<li>[2023/06] <strong>Mastering the Game of No-Press Diplomacy via Human-Regularized Reinforcement Learning and Planning.</strong> <em>Anton Bakhtin et al. ICLR.</em> [<a href="https://openreview.net/pdf?id=F61FwJTZhb">paper</a>]</li><br>
+<li>[2023/06] <strong>Decision-Oriented Dialogue for Human-AI Collaboration.</strong> <em>Jessy Lin et al. CoRR.</em> [<a href="https://doi.org/10.48550/arXiv.2305.20076">paper</a>]</li><br>
+<li>[2022/11] <strong>Human-level play in the game of Diplomacy by combining language models with strategic reasoning.</strong> <em>FAIR et al. Science.</em> [<a href="https://www.science.org/doi/10.1126/science.ade9097">paper</a>]</li><br>
+</ul>
+<h2 id="3-agent-society-from-individuality-to-sociality">3. Agent Society: From Individuality to Sociality</h2>
+<div align=center><img src="./assets/figure12.jpg" width="60%" /></div>
+
+<h3 id="3-1-behavior-and-personality-of-llm-based-agents">3.1 Behavior and Personality of LLM-based Agents</h3>
+<h4 id="3-1-1-social-behavior">3.1.1 Social Behavior</h4>
+<h4 id="individual-behaviors">Individual behaviors</h4>
+<ul>
+<li>[2023/10] <strong>Lyfe Agents: Generative agents for low-cost real-time social interactions.</strong> <em>Zhao Kaiya (MIT) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2310.02172">paper</a>]</li><br>
+<li>[2023/05] <strong>Voyager: An Open-Ended Embodied Agent with Large Language Models.</strong> <em>Guanzhi Wang (NVIDIA) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.16291">paper</a>] [<a href="https://github.com/MineDojo/Voyager">code</a>] [<a href="https://voyager.minedojo.org/">project page</a>]</li><br>
+<li>[2023/04] <strong>LLM+P: Empowering Large Language Models with Optimal Planning Proficiency.</strong> <em>Bo Liu (University of Texas) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2304.11477">paper</a>] [<a href="https://github.com/Cranial-XIX/llm-pddl">code</a>]</li><br>
+<li>[2023/03] <strong>Reflexion: Language Agents with Verbal Reinforcement Learning.</strong> <em>Noah Shinn (Northeastern University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2303.11366">paper</a>] [<a href="https://github.com/noahshinn024/reflexion">code</a>]</li><br>
+<li>[2023/03] <strong>PaLM-E: An Embodied Multimodal Language Model.</strong> <em>Danny Driess (Google) et al. ICML.</em> [<a href="http://proceedings.mlr.press/v202/driess23a/driess23a.pdf">paper</a>] [<a href="https://palm-e.github.io/">project page</a>]</li><br>
+<li>[2023/03] <strong>ReAct: Synergizing Reasoning and Acting in Language Models.</strong> <em>Shunyu Yao (Princeton University) et al. ICLR.</em> [<a href="https://openreview.net/pdf?id=WE_vluYUL-X">paper</a>] [<a href="https://react-lm.github.io/">project page</a>]</li><br>
+<li>[2022/01] <strong>Chain-of-thought prompting elicits reasoning in large language models.</strong> <em>Jason Wei (Google) et al. NeurIPS.</em> [<a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/9d5609613524ecf4f15af0f7b31abca4-Paper-Conference.pdf">paper</a>]</li><br>
+</ul>
+<h4 id="group-behaviors">Group behaviors</h4>
+<ul>
+<li>[2023/10] <strong>Exploring Collaboration Mechanisms for LLM Agents: A Social Psychology View.</strong> <em>Jintian Zhang (Zhejiang University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2310.02124">paper</a>] [<a href="https://github.com/zjunlp/MachineSoM">code</a>]</li><br>
+<li>[2023/09] <strong>MindAgent: Emerging Gaming Interaction.</strong> <em>Ran Gong (UCLA) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2309.09971">paper</a>] [<a href="https://mindagent.github.io/">code</a>]</li><br>
+<li>[2023/09] <strong>Exploring Large Language Models for Communication Games: An Empirical Study on Werewolf.</strong> <em>Yuzhuang Xu (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2309.04658">paper</a>]</li><br>
+<li><p>[2023/09] <strong>Suspicion Agent: Playing Imperfect Information Games with Theory of Mind Aware GPT-4</strong> <em>Jiaxian Gu oet al. arXiv.</em> [<a href="http://arxiv.org/abs/2309.17277">paper</a>]</p>
+</li><br>
+<li><p>[2023/08] <strong>AgentVerse: Facilitating Multi-Agent Collaboration and Exploring Emergent Behaviors in Agents.</strong> <em>Weize Chen (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.10848">paper</a>] [<a href="https://github.com/OpenBMB/AgentVerse">code</a>]</p>
+</li><br>
+<li>[2023/08] <strong>AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation Framework.</strong> <em>Qingyun Wu (Pennsylvania State University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.08155">paper</a>] [<a href="https://microsoft.github.io/FLAML/docs/Use-Cases/Autogen/">code</a>]</li><br>
+<li><p>[2023/08] <strong>ChatEval: Towards Better LLM-based Evaluators through Multi-Agent Debate.</strong> <em>Chi-Min Chan (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.07201">paper</a>] [<a href="https://github.com/thunlp/ChatEval">code</a>]</p>
+</li><br>
+<li><p>[2023/07] <strong>Communicative Agents for Software Development.</strong> <em>Chen Qian (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2307.07924">paper</a>] [<a href="https://github.com/openbmb/chatdev">code</a>]</p>
+</li><br>
+<li>[2023/07] <strong>RoCo: Dialectic Multi-Robot Collaboration with Large Language Models.</strong> <em>Zhao Mandi, Shreeya Jain, Shuran Song (Columbia University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2307.04738">paper</a>] [<a href="https://project-roco.github.io/">code</a>]</li><br>
+<li><p>[2023/08] <strong>ProAgent: Building Proactive Cooperative AI with Large Language Models.</strong> <em>Ceyao Zhang (The Chinese University of Hong Kong, Shenzhen) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.11339">paper</a>] [<a href="https://pku-proagent.github.io/">code</a>]</p>
+</li><br>
+<li><p>[2023/06] <strong>Homophily in An Artificial Social Network of Agents Powered By Large Language Models.</strong> <em>James K. He (University of Cambridge) et al. PsyArXiv.</em> [<a href="https://doi.org/10.21203/rs.3.rs-3096289/v1">paper</a>]</p>
+</li><br>
+</ul>
+<h4 id="3-1-2-personality">3.1.2 Personality</h4>
+<h4 id="cognition">Cognition</h4>
+<ul>
+<li>[2023/09] <strong>Suspicion Agent: Playing Imperfect Information Games with Theory of Mind Aware GPT-4</strong> <em>Jiaxian Gu oet al. arXiv.</em> [<a href="http://arxiv.org/abs/2309.17277">paper</a>]</li><br>
+<li>[2023/03] <strong>Machine Psychology: Investigating Emergent Capabilities and Behavior in Large Language Models Using Psychological Methods.</strong> <em>Thilo Hagendorff (University of Stuttgart) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2303.13988">paper</a>]</li><br>
+<li>[2023/03] <strong>Mind meets machine: Unravelling GPT-4&#39;s cognitive psychology.</strong> <em>Sifatkaur Dhingra (Nowrosjee Wadia College) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2303.11436">paper</a>]</li><br>
+<li>[2022/07] <strong>Language models show human-like content effects on reasoning.</strong> <em>Ishita Dasgupta (DeepMind) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2207.07051">paper</a>]</li><br>
+<li>[2022/06] <strong>Using cognitive psychology to understand GPT-3.</strong> <em>Marcel Binz et al. arXiv.</em> [<a href="https://arxiv.org/abs/2206.14576">paper</a>]</li><br>
+</ul>
+<h4 id="emotion">Emotion</h4>
+<ul>
+<li>[2023/07] <strong>Emotional Intelligence of Large Language Models.</strong> <em>Xuena Wang (Tsinghua  University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2307.09042">paper</a>]</li><br>
+<li>[2023/05] <strong>ChatGPT outperforms humans in emotional awareness evaluations.</strong> <em>Zohar Elyoseph et al. Frontiers in Psychology.</em> [<a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2023.1199058/full">paper</a>]</li><br>
+<li>[2023/02] <strong>Empathetic AI for Empowering Resilience in Games.</strong> <em>Reza Habibi (University of California) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2302.09070">paper</a>]</li><br>
+<li>[2022/12] <strong>Computer says “No”: The Case Against Empathetic Conversational AI.</strong> <em>Alba Curry (University of Leeds) et al. ACL.</em> [<a href="https://aclanthology.org/2023.findings-acl.515.pdf">paper</a>]</li><br>
+</ul>
+<h4 id="character">Character</h4>
+<ul>
+<li>[2023/10] <strong>Character-LLM: A Trainable Agent for Role-Playing.</strong> <em>Yunfan Shao (Fudan University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2310.10158">paper</a>] [<a href="https://github.com/choosewhatulike/trainable-agents/">code</a>]</li><br>
+<li>[2023/07] <strong>Do LLMs Possess a Personality? Making the MBTI Test an Amazing Evaluation for Large Language Models.</strong> <em>Keyu Pan (ByteDance) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2307.16180">paper</a>] [<a href="https://github.com/HarderThenHarder/transformers_tasks">code</a>]</li><br>
+<li>[2023/07] <strong>Personality Traits in Large Language Models.</strong> <em>Mustafa Safdari (DeepMind) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2307.00184">paper</a>] [<a href="https://github.com/HarderThenHarder/transformers_tasks">code</a>]</li><br>
+<li>[2022/12] <strong>Does GPT-3 Demonstrate Psychopathy? Evaluating Large Language Models from a Psychological Perspective.</strong> <em>Xingxuan Li (Alibaba) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2212.10529">paper</a>]</li><br>
+<li>[2022/12] <strong>Identifying and Manipulating the Personality Traits of Language Models.</strong> <em>Graham Caron et al. arXiv.</em> [<a href="https://arxiv.org/abs/2212.10276">paper</a>]</li><br>
+</ul>
+<h3 id="3-2-environment-for-agent-society">3.2 Environment for Agent Society</h3>
+<h4 id="3-2-1-text-based-environment">3.2.1 Text-based Environment</h4>
+<ul>
+<li>[2023/08] <strong>Hoodwinked: Deception and Cooperation in a Text-Based Game for Language Models.</strong> <em>Aidan O’Gara (University of Southern California) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.01404">paper</a>] [<a href="https://github.com/aogara-ds/hoodwinked">code</a>]</li><br>
+<li>[2023/03] <strong>CAMEL: Communicative Agents for &quot;Mind&quot; Exploration of Large Scale Language Model Society.</strong> <em>Guohao Li (King Abdullah University of Science and Technology) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2303.17760">paper</a>] [<a href="https://github.com/lightaime/camel">code</a>]</li><br>
+<li>[2020/12] <strong>Playing Text-Based Games with Common Sense.</strong> <em>Sahith Dambekodi (Georgia Institute of Technology) et al. arXiv.</em> [<a href="https://arxiv.org/pdf/2012.02757.pdf">paper</a>]</li><br>
+<li>[2019/09] <strong>Interactive Fiction Games: A Colossal Adventure.</strong> <em>Matthew Hausknecht (Microsoft Research) et al. AAAI.</em> [<a href="https://cdn.aaai.org/ojs/6297/6297-13-9522-1-10-20200516.pdf">paper</a>] [<a href="https://github.com/microsoft/jericho">code</a>]</li><br>
+<li>[2019/03] <strong>Learning to Speak and Act in a Fantasy Text Adventure Game.</strong> <em>Jack Urbanek (Facebook) et al. ACL.</em> [<a href="https://aclanthology.org/D19-1062.pdf">paper</a>] [<a href="https://parl.ai/projects/light/">code</a>]</li><br>
+<li>[2018/06] <strong>TextWorld: A Learning Environment for Text-based Games.</strong> <em>Marc-Alexandre Côté (Microsoft Research) et al. IJCAI.</em> [<a href="https://link.springer.com/chapter/10.1007/978-3-030-24337-1_3">paper</a>] [<a href="https://github.com/Microsoft/TextWorld">code</a>]</li><br>
+</ul>
+<h4 id="3-2-2-virtual-sandbox-environment">3.2.2 Virtual Sandbox Environment</h4>
+<ul>
+<li>[2023/11] <strong>JARVIS-1: Open-world Multi-task Agents with Memory-Augmented Multimodal Language Models.</strong> <em>ZiHao Wang (Peking University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2311.05997">paper</a>] [<a href="https://github.com/CraftJarvis/JARVIS-1">code</a>]</li><br>
+<li>[2023/10] <strong>Humanoid Agents: Platform for Simulating Human-like Generative Agents.</strong> <em>Zhilin Wang (University of Washington and NVIDIA) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2310.05418">paper</a>] [<a href="https://github.com/HumanoidAgents/HumanoidAgents">code</a>] [<a href="https://www.humanoidagents.com/">demo</a>]</li><br>
+<li>[2023/08] <strong>AgentSims: An Open-Source Sandbox for Large Language Model Evaluation.</strong> <em>Jiaju Lin (PTA Studio) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.04026">paper</a>] [<a href="https://www.agentsims.com/">project page</a>] [<a href="https://github.com/py499372727/AgentSims/">code</a>]</li><br>
+<li>[2023/05] <strong>Training Socially Aligned Language Models in Simulated Human Society.</strong> <em>Ruibo Liu (Dartmouth College) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.16960">paper</a>] [<a href="https://github.com/agi-templar/Stable-Alignment">code</a>]</li><br>
+<li>[2023/05] <strong>Voyager: An Open-Ended Embodied Agent with Large Language Models.</strong> <em>Guanzhi Wang (NVIDIA) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.16291">paper</a>] [<a href="https://voyager.minedojo.org/">project page</a>] [<a href="https://github.com/MineDojo/Voyager">code</a>]</li><br>
+<li>[2023/04] <strong>Generative Agents: Interactive Simulacra of Human Behavior.</strong> <em>Joon Sung Park (Stanford University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2304.03442">paper</a>] [<a href="https://github.com/joonspk-research/generative_agents">code</a>]</li><br>
+<li>[2023/03] <strong>Plan4MC: Skill Reinforcement Learning and Planning for Open-World Minecraft Tasks.</strong> <em>Haoqi Yuan (PKU) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2303.16563">paper</a>] [<a href="https://sites.google.com/view/plan4mc">project page</a>]</li><br>
+<li>[2022/06] <strong>MineDojo: Building Open-Ended Embodied Agents with Internet-Scale Knowledge.</strong> <em>Linxi Fan (NVIDIA) et al. NeurIPS.</em> [<a href="https://papers.nips.cc/paper_files/paper/2022/file/74a67268c5cc5910f64938cac4526a90-Paper-Datasets_and_Benchmarks.pdf">paper</a>] [<a href="https://minedojo.org/">project page</a>]</li><br>
+</ul>
+<h4 id="3-2-3-physical-environment">3.2.3 Physical Environment</h4>
+<ul>
+<li>[2023/11] <strong>An Embodied Generalist Agent in 3D World.</strong> <em>Jiangyong Huang (BIGAI &amp; Peking University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2311.12871">paper</a>] [<a href="https://embodied-generalist.github.io/">project page</a>]</li><br>
+<li>[2023/09] <strong>RoboAgent: Generalization and Efficiency in Robot Manipulation via Semantic Augmentations and Action Chunking.</strong> <em>Homanga Bharadhwaj (Carnegie Mellon University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2309.01918">paper</a>] [<a href="https://robopen.github.io/">project page</a>]</li><br>
+<li>[2023/05] <strong>AVLEN: Audio-Visual-Language Embodied Navigation in 3D Environments.</strong> <em>Sudipta Paul et al. NeurIPS.</em> [<a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/28f699175783a2c828ae74d53dd3da20-Paper-Conference.pdf">paper</a>]</li><br>
+<li>[2023/03] <strong>PaLM-E: An Embodied Multimodal Language Model.</strong> <em>Danny Driess (Google) et al. ICML.</em> [<a href="http://proceedings.mlr.press/v202/driess23a/driess23a.pdf">paper</a>] [<a href="https://palm-e.github.io/">project page</a>]</li><br>
+<li>[2022/10] <strong>Interactive Language: Talking to Robots in Real Time.</strong> <em>Corey Lynch (Google) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2210.06407">paper</a>] [<a href="https://github.com/google-research/language-table">code</a>]</li><br>
+</ul>
+<h3 id="3-3-society-simulation-with-llm-based-agents">3.3 Society Simulation with LLM-based Agents</h3>
+<ul>
+<li>[2023/08] <strong>AgentSims: An Open-Source Sandbox for Large Language Model Evaluation.</strong> <em>Jiaju Lin (PTA Studio) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2308.04026">paper</a>] [<a href="https://www.agentsims.com/">project page</a>] [<a href="https://github.com/py499372727/AgentSims/">code</a>]</li><br>
+<li>[2023/07] <strong>S<sup>3</sup>: Social-network Simulation System with Large Language Model-Empowered Agents.</strong> <em>Chen Gao (Tsinghua University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2307.14984">paper</a>]</li><br>
+<li>[2023/07] <strong>Epidemic Modeling with Generative Agents.</strong> <em>Ross Williams (Virginia Tech) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2307.04986">paper</a>] [<a href="https://github.com/bear96/GABM-Epidemic">code</a>] </li><br>
+<li>[2023/06] <strong>RecAgent: A Novel Simulation Paradigm for Recommender Systems.</strong> <em>Lei Wang (Renmin University of China) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2306.02552">paper</a>]</li><br>
+<li>[2023/05] <strong>Training Socially Aligned Language Models in Simulated Human Society.</strong> <em>Ruibo Liu (Dartmouth College) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2305.16960">paper</a>] [<a href="https://github.com/agi-templar/Stable-Alignment">code</a>]</li><br>
+<li>[2023/04] <strong>Generative Agents: Interactive Simulacra of Human Behavior.</strong> <em>Joon Sung Park (Stanford University) et al. arXiv.</em> [<a href="https://arxiv.org/abs/2304.03442">paper</a>] [<a href="https://github.com/joonspk-research/generative_agents">code</a>]</li><br>
+<li>[2022/08] <strong>Social Simulacra: Creating Populated Prototypes for Social Computing Systems.</strong> <em>Joon Sung Park (Stanford University) et al. UIST.</em> [<a href="https://dl.acm.org/doi/10.1145/3526113.3545616">paper</a>]</li><br>
+</ul>
+<h2 id="4-other-topics">4. Other Topics</h2>
+<h3 id="4-1-benchmarks-for-llm-based-agents">4.1 Benchmarks for LLM-based Agents</h3>
+<ul>
+<li>[2023/11] <strong>&quot;MAgIC: Investigation of Large Language Model Powered Multi-Agent in Cognition, Adaptability, Rationality and Collaboration.&quot;</strong> <em>Lin Xu et al.</em> (NUS, ByteDance, Stanford &amp; UC Berkeley) arXiv. [<a href="https://arxiv.org/abs/2311.08562">paper</a>] [<a href="https://zhiyuanhubj.github.io/MAgIC/">Project Page</a>] [<a href="https://github.com/cathyxl/MAgIC">Code</a>]<ul>
+<li>The work presents a benchmarking framework for evaluating LLMs in multi-agent settings, showing a 50% average improvement using Probabilistic Graphical Modeling.</li><br>
+</ul>
+</li><br>
+<li>[2023/10] <strong>&quot;Benchmarking Large Language Models As AI Research Agents.&quot;</strong> <em>Qian Huang (Stanford) et al.</em> arXiv. [<a href="https://arxiv.org/abs/2310.03302">paper</a>] [<a href="https://github.com/snap-stanford/MLAgentBench">code</a>]</li><br>
+<li>[2023/08] <strong>&quot;AgentBench: Evaluating LLMs as Agents.&quot;</strong> <em>Xiao Liu (THU) et al.</em> arXiv. [<a href="https://arxiv.org/abs/2308.03688">paper</a>] [<a href="https://github.com/THUDM/AgentBench">code</a>] [<a href="https://llmbench.ai/">project page</a>]<ul>
+<li>AGENTBENCH, a benchmark for assessing LLMs as agents, shows a performance gap between top commercial and open-source models.</li><br>
+</ul>
+</li><br>
+<li>[2023/10] <strong>&quot;SmartPlay : A Benchmark for LLMs as Intelligent Agents.&quot;</strong> <em>Yue Wu (CMU &amp; Microsoft) et al.</em> arXiv. [<a href="https://arxiv.org/abs/2310.01557">paper</a>] [<a href="https://github.com/microsoft/SmartPlay">code</a>]<ul>
+<li>SmartPlay is a benchmark and methodology for evaluating LLMs as intelligent agents, featuring six diverse games to assess key capabilities, providing a roadmap for identifying gaps in current methodologie</li><br>
+</ul>
+</li><br>
+</ul>
+<ul>
+<li><p>Survey</p>
+<ul>
+<li><p>[2024/02/28] <strong>Large Language Models and Games: A Survey and Roadmap</strong> | <a href="https://arxiv.org/abs/2402.18659">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/02] <strong>Reasoning Capacity in Multi-Agent Systems: Limitations, Challenges and Human-Centered Solutions</strong> | <a href="https://arxiv.org/abs/2402.01108">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/01/01] <strong>If LLM Is the Wizard, Then Code Is the Wand: A Survey on How Code Empowers Large Language Models to Serve as Intelligent Agents</strong> | <a href="https://arxiv.org/abs/2401.00812">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/12/31] <strong>A Survey of Personality, Persona, and Profile in Conversational Agents and Chatbots</strong> | <a href="https://arxiv.org/abs/2401.00609">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/12/19] <strong>Large Language Models Empowered Agent-based Modeling and Simulation: A Survey and Perspectives</strong> | <a href="https://arxiv.org/abs/2312.11970">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/09/14] <strong>The Rise and Potential of Large Language Model Based Agents: A Survey</strong> | <a href="https://arxiv.org/abs/2309.07864">[paper]</a> | <a href="https://github.com/woooodyy/llm-agent-paper-list">[code]</a></p>
+</li><br>
+<li><p>[2023/08/22] <strong>A Survey on Large Language Model based Autonomous Agents</strong> | <a href="https://arxiv.org/abs/2308.11432">[paper]</a> | <a href="https://github.com/Paitesanshi/LLM-Agent-Survey">[code]</a></p>
+</li><br>
+<li><p>[2023/06/27] <strong>Next Steps for Human-Centered Generative AI: A Technical Perspective</strong> | <a href="https://arxiv.org/abs/2306.15774">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/04/06] <strong>Can Large Language Models Play Text Games Well? Current State-of-the-Art and Open Questions</strong> | <a href="https://arxiv.org/abs/2304.02868">[paper]</a> | [code]</p>
+</li><br>
+</ul>
+</li><br>
+</ul>
+<ul>
+<li><p>Agent Fine-tuning</p>
+<ul>
+<li><p>[2024/02/23] <strong>AgentOhana: Design Unified Data and Training Pipeline for Effective Agent Learning</strong> | <a href="https://arxiv.org/abs/2402.15506">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/18] <strong>Learning From Failure: Integrating Negative Examples when Fine-tuning Large Language Models as Agents</strong> | <a href="https://arxiv.org/abs/2402.11651">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/01/10] <strong>Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training</strong> | <a href="https://arxiv.org/abs/2401.05566">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/01/10] <strong>Bootstrapping LLM-based Task-Oriented Dialogue Agents via Self-Talk</strong> | <a href="https://arxiv.org/abs/2401.05033">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/01/05] <strong>From LLM to Conversational Agent: A Memory Enhanced Architecture with Fine-Tuning of Large Language Models</strong> | <a href="https://arxiv.org/abs/2401.02777">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/12/20] <strong>Machine Mindset: An MBTI Exploration of Large Language Models</strong> | <a href="https://arxiv.org/abs/2312.12999">[paper]</a> | <a href="https://github.com/PKU-YuanGroup/Machine-Mindset">[code]</a></p>
+</li><br>
+<li><p>[2023/10/19] <strong>AgentTuning: Enabling Generalized Agent Abilities for LLMs</strong> | <a href="https://arxiv.org/abs/2310.12823">[paper]</a> | <a href="https://github.com/THUDM/AgentTuning">[code]</a></p>
+</li><br>
+<li><p>[2023/10/09] <strong>FireAct: Toward Language Agent Fine-tuning</strong> | <a href="https://arxiv.org/abs/2310.05915">[paper]</a> | <a href="https://github.com/anchen1011/FireAct">[code]</a></p>
+</li><br>
+<li><p>[2023/10/01] <strong>Adapting LLM Agents Through Communication</strong> | <a href="https://arxiv.org/abs/2310.01444v2">[paper]</a> | [code]</p>
+</li><br>
+</ul>
+</li><br>
+</ul>
+<ul>
+<li><p>Role Playing</p>
+<ul>
+<li><p>[2024/02/29] <strong>On the Decision-Making Abilities in Role-Playing using Large Language Models</strong> | <a href="https://arxiv.org/abs/2402.18807">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/27] <strong>BASES: Large-scale Web Search User Simulation with Large Language Model based Agents</strong> | <a href="https://arxiv.org/abs/2402.17505">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/26] <strong>Language Agents as Optimizable Graphs</strong> | <a href="https://arxiv.org/abs/2402.16823">[paper]</a> | <a href="https://github.com/metauto-ai/gptswarm">[code]</a></p>
+</li><br>
+<li><p>[2024/02/26] <strong>Unveiling the Truth and Facilitating Change: Towards Agent-based Large-scale Social Movement Simulation</strong> | <a href="https://arxiv.org/abs/2402.16333">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/18] <strong>Modelling Political Coalition Negotiations Using LLM-based Agents</strong> | <a href="https://arxiv.org/abs/2402.11712">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/15] <strong>Knowledge-Infused LLM-Powered Conversational Health Agent: A Case Study for Diabetes Patients</strong> | <a href="https://arxiv.org/abs/2402.10153">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/13] <strong>Agent Smith: A Single Image Can Jailbreak One Million Multimodal LLM Agents Exponentially Fast</strong> | <a href="https://arxiv.org/abs/2402.08567">[paper]</a> | <a href="https://github.com/sail-sg/agent-smith">[code]</a></p>
+</li><br>
+<li><p>[2024/02/06] <strong>Professional Agents -- Evolving Large Language Models into Autonomous Experts with Human-Level Competencies</strong> | <a href="https://arxiv.org/abs/2402.03628">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/05] <strong>LLM Agents in Interaction: Measuring Personality Consistency and Linguistic Alignment in Interacting Populations of Large Language Models</strong> | <a href="https://arxiv.org/abs/2402.02896">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/04] <strong>NavHint: Vision and Language Navigation Agent with a Hint Generator</strong> | <a href="https://arxiv.org/abs/2402.02559">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/02] <strong>TrustAgent: Towards Safe and Trustworthy LLM-based Agents through Agent Constitution</strong> | <a href="https://arxiv.org/abs/2402.01586">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/01] <strong>Executable Code Actions Elicit Better LLM Agents</strong> | <a href="https://arxiv.org/abs/2402.01030">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/01/31] <strong>LLMs Simulate Big Five Personality Traits: Further Evidence</strong> | <a href="https://arxiv.org/abs/2402.01765">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/01/29] <strong>Assistive Large Language Model Agents for Socially-Aware Negotiation Dialogues</strong> | <a href="https://arxiv.org/abs/2402.01737">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/01/09] <strong>Agent Alignment in Evolving Social Norms</strong> | <a href="https://arxiv.org/abs/2401.04620">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/12/28] <strong>Experiential Co-Learning of Software-Developing Agents</strong> | <a href="https://arxiv.org/abs/2312.17025">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/12/27] <strong>Automating Knowledge Acquisition for Content-Centric Cognitive Agents Using LLMs</strong> | <a href="https://arxiv.org/abs/2312.16378">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/12/21] <strong>ChatGPT as a commenter to the news: can LLMs generate human-like opinions?</strong> | <a href="https://arxiv.org/abs/2312.13961">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/12/19] <strong>Can ChatGPT be Your Personal Medical Assistant?</strong> | <a href="https://arxiv.org/abs/2312.12006">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/12/06] <strong>LLM as OS, Agents as Apps: Envisioning AIOS, Agents and the AIOS-Agent Ecosystem</strong> | <a href="https://arxiv.org/abs/2312.03815">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/11/28] <strong>War and Peace (WarAgent): Large Language Model-based Multi-Agent Simulation of World Wars</strong> | <a href="https://arxiv.org/abs/2311.17227">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/11/23] <strong>Controlling Large Language Model-based Agents for Large-Scale Decision-Making: An Actor-Critic Approach</strong> | <a href="https://arxiv.org/abs/2311.13884">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/11/10] <strong>Smart Agent-Based Modeling: On the Use of Large Language Models in Computer Simulations</strong> | <a href="https://arxiv.org/abs/2311.06330">[paper]</a> | <a href="https://github.com/Roihn/SABM">[code]</a></p>
+</li><br>
+<li><p>[2023/10/01] <strong>RoleLLM: Benchmarking, Eliciting, and Enhancing Role-Playing Abilities of Large Language Models</strong> | <a href="https://arxiv.org/abs/2310.00746">[paper]</a> | <a href="https://github.com/InteractiveNLP-Team/RoleLLM-public">[code]</a></p>
+</li><br>
+<li><p>[2023/09/08] <strong>Unleashing the Power of Graph Learning through LLM-based Autonomous Agents</strong> | <a href="https://arxiv.org/abs/2309.04565">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/09/05] <strong>Cognitive Architectures for Language Agents</strong> | <a href="https://arxiv.org/abs/2309.02427">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/08/22] <strong>Towards an On-device Agent for Text Rewriting</strong> | <a href="https://arxiv.org/abs/2308.11807">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/08/14] <strong>ChatEval: Towards Better LLM-based Evaluators through Multi-Agent Debate</strong> | <a href="https://arxiv.org/abs/2308.07201">[paper]</a> | <a href="https://github.com/thunlp/ChatEval">[code]</a></p>
+</li><br>
+<li><p>[2023/08/10] <strong>LLM As DBA</strong> | <a href="https://arxiv.org/abs/2308.05481">[paper]</a> | <a href="https://github.com/TsinghuaDatabaseGroup/DB-GPT">[code]</a></p>
+</li><br>
+<li><p>[2023/07/24] <strong>To Infinity and Beyond: SHOW-1 and Showrunner Agents in Multi-Agent Simulations</strong> | <a href="https://fablestudio.github.io/showrunner-agents/">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/06/28] <strong>Inferring the Goals of Communicating Agents from Actions and Instructions</strong> | <a href="https://arxiv.org/abs/2306.16207">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/30] <strong>Encouraging Divergent Thinking in Large Language Models through Multi-Agent Debate</strong> | <a href="https://arxiv.org/abs/2305.19118">[paper]</a> | <a href="https://github.com/Skytliang/Multi-Agents-Debate">[code]</a></p>
+</li><br>
+<li><p>[2023/05/27] <strong>SwiftSage: A Generative Agent with Fast and Slow Thinking for Complex Interactive Tasks</strong> | <a href="https://arxiv.org/abs/2305.17390">[paper]</a> | <a href="https://github.com/yuchenlin/swiftsage/">[code]</a></p>
+</li><br>
+<li><p>[2023/05/26] <strong>Training Socially Aligned Language Models in Simulated Human Society</strong> | <a href="https://arxiv.org/abs/2305.16960">[paper]</a> | <a href="https://github.com/agi-templar/Stable-Alignment">[code]</a></p>
+</li><br>
+<li><p>[2023/05/25] <strong>Role-Play with Large Language Models</strong> | <a href="https://arxiv.org/abs/2305.16367">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/17] <strong>Tree of Thoughts: Deliberate Problem Solving with Large Language Models</strong> | <a href="https://arxiv.org/abs/2305.10601">[paper]</a> | <a href="https://github.com/ysymyth/tree-of-thought-llm">[code]</a></p>
+</li><br>
+<li><p>[2023/05/09] <strong>TidyBot: Personalized Robot Assistance with Large Language Models</strong> | <a href="https://arxiv.org/abs/2305.05658">[paper]</a> | <a href="https://github.com/jimmyyhwu/tidybot">[code]</a></p>
+</li><br>
+<li><p>[2023/05/02] <strong>The Role of Summarization in Generative Agents: A Preliminary Perspective</strong> | <a href="https://arxiv.org/abs/2305.01253">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/04/26] <strong>Multi-Party Chat: Conversational Agents in Group Settings with Humans and Models</strong> | <a href="https://arxiv.org/abs/2304.13835">[paper]</a> | <a href="https://github.com/facebookresearch/LIGHT">[code]</a></p>
+</li><br>
+<li><p>[2023/04/24] <strong>ChatLLM Network: More brains, More intelligence</strong> | <a href="https://arxiv.org/abs/2304.12998">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/04/21] <strong>Improving Grounded Language Understanding in a Collaborative Environment by Interacting with Agents Through Help Feedback</strong> | <a href="https://arxiv.org/abs/2304.10750">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/04/19] <strong>Chameleon: Plug-and-Play Compositional Reasoning with Large Language Models</strong> | [paper] | [code]</p>
+</li><br>
+<li><p>[2023/04/15] <strong>Self-collaboration Code Generation via ChatGPT</strong> | <a href="https://arxiv.org/abs/2304.07590">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/04/07] <strong>Generative Agents: Interactive Simulacra of Human Behavior</strong> | <a href="https://arxiv.org/abs/2304.03442">[paper]</a> | <a href="https://github.com/joonspk-research/generative_agents">[code]</a></p>
+</li><br>
+<li><p>[2023/03/31] <strong>CAMEL: Communicative Agents for &#34;Mind&#34; Exploration of Large Scale Language Model Society</strong> | <a href="https://arxiv.org/abs/2303.17760">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2022/12/08] <strong>LLM-Planner: Few-Shot Grounded Planning for Embodied Agents with Large Language Models</strong> | <a href="https://arxiv.org/abs/2212.04088">[paper]</a> | <a href="https://dki-lab.github.io/LLM-Planner/">[code]</a></p>
+</li><br>
+</ul>
+</li><br>
+</ul>
+<ul>
+<li><p>Multi-Agent System</p>
+<ul>
+<li><p>[2024/02/18] <strong>Benchmark Self-Evolving: A Multi-Agent Framework for Dynamic LLM Evaluation</strong> | <a href="https://arxiv.org/abs/2402.11443">[paper]</a> | <a href="https://github.com/nanshineloong/self-evolving-benchmark">[code]</a></p>
+</li><br>
+<li><p>[2024/02/18] <strong>LongAgent: Scaling Language Models to 128k Context through Multi-Agent Collaboration</strong> | <a href="https://arxiv.org/abs/2402.11550">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/15] <strong>TDAG: A Multi-Agent Framework based on Dynamic Task Decomposition and Agent Generation</strong> | <a href="https://arxiv.org/abs/2402.10178">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/03] <strong>More Agents Is All You Need</strong> | <a href="https://arxiv.org/abs/2402.05120">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/01/11] <strong>Combating Adversarial Attacks with Multi-Agent Debate</strong> | <a href="https://arxiv.org/abs/2401.05998">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/01/08] <strong>MARG: Multi-Agent Review Generation for Scientific Papers</strong> | <a href="https://arxiv.org/abs/2401.04259">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/01/08] <strong>SpeechAgents: Human-Communication Simulation with Multi-Modal Multi-Agent Systems</strong> | <a href="https://arxiv.org/abs/2401.03945">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/01/08] <strong>Why Solving Multi-agent Path Finding with Large Language Model has not Succeeded Yet</strong> | <a href="https://arxiv.org/abs/2401.03630">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/12/20] <strong>AgentCoder: Multi-Agent-based Code Generation with Iterative Testing and Optimisation</strong> | <a href="https://arxiv.org/abs/2312.13010">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/12/01] <strong>Deciphering Digital Detectives: Understanding LLM Behaviors and Capabilities in Multi-Agent Mystery Games</strong> | <a href="https://arxiv.org/abs/2312.00746">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/10/31] <strong>Multi-Agent Consensus Seeking via Large Language Models</strong> | <a href="https://arxiv.org/abs/2310.20151">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/10/25] <strong>MultiPrompter: Cooperative Prompt Optimization with Multi-Agent Reinforcement Learning</strong> | <a href="https://arxiv.org/abs/2310.16730">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/10/10] <strong>MetaAgents: Simulating Interactions of Human Behaviors for LLM-based Task-oriented Coordination via Collaborative Generative Agents</strong> | <a href="https://arxiv.org/abs/2310.06500">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/10/03] <strong>Exploring Collaboration Mechanisms for LLM Agents: A Social Psychology View</strong> | <a href="https://arxiv.org/abs/2310.02124">[paper]</a> | <a href="https://github.com/zjunlp/MachineSoM">[code]</a></p>
+</li><br>
+<li><p>[2023/09/22] <strong>Learning to Coordinate with Anyone</strong> | <a href="https://arxiv.org/abs/2309.12633">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/09/18] <strong>MindAgent: Emergent Gaming Interaction</strong> | <a href="https://arxiv.org/abs/2309.09971">[paper]</a> | <a href="https://mindagent.github.io/">[code]</a></p>
+</li><br>
+<li><p>[2023/08/21] <strong>AgentVerse: Facilitating Multi-Agent Collaboration and Exploring Emergent Behaviors in Agents</strong> | <a href="https://arxiv.org/abs/2308.10848">[paper]</a> | <a href="https://github.com/OpenBMB/AgentVerse">[code]</a></p>
+</li><br>
+<li><p>[2023/08/03] <strong>InterAct: Exploring the Potentials of ChatGPT as a Cooperative Agent</strong> | <a href="https://arxiv.org/abs/2308.01552">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/08/01] <strong>MetaGPT: Meta Programming for Multi-Agent Collaborative Framework</strong> | <a href="https://arxiv.org/abs/2308.00352">[paper]</a> | <a href="https://github.com/geekan/MetaGPT">[code]</a></p>
+</li><br>
+<li><p>[2023/07/16] <strong>Communicative Agents for Software Development</strong> | <a href="https://arxiv.org/abs/2307.07924">[paper]</a> | <a href="https://github.com/openbmb/chatdev">[code]</a></p>
+</li><br>
+<li><p>[2023/07/11] <strong>Unleashing Cognitive Synergy in Large Language Models: A Task-Solving Agent through Multi-Persona Self-Collaboration</strong> | <a href="https://arxiv.org/abs/2307.05300">[paper]</a> | <a href="https://github.com/MikeWangWZHL/Solo-Performance-Prompting">[code]</a></p>
+</li><br>
+<li><p>[2023/07/05] <strong>Building Cooperative Embodied Agents Modularly with Large Language Models</strong> | <a href="https://arxiv.org/abs/2307.02485">[paper]</a> | <a href="https://github.com/UMass-Foundation-Model/Co-LLM-Agents">[code]</a></p>
+</li><br>
+<li><p>[2023/06/05] <strong>Multi-Agent Collaboration: Harnessing the Power of Intelligent LLM Agents</strong> | <a href="https://arxiv.org/abs/2306.03314">[paper]</a> | [code]</p>
+</li><br>
+</ul>
+</li><br>
+</ul>
+<ul>
+<li><p>Feedback&amp;Reflection</p>
+<ul>
+<li><p>[2024/02/06] <strong>AnyTool: Self-Reflective, Hierarchical Agents for Large-Scale API Calls</strong> | <a href="https://arxiv.org/abs/2402.04253">[paper]</a> | <a href="https://github.com/dyabel/anytool">[code]</a></p>
+</li><br>
+<li><p>[2024/02/01] <strong>Generation, Distillation and Evaluation of Motivational Interviewing-Style Reflections with a Foundational Language Model</strong> | <a href="https://arxiv.org/abs/2402.01051">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/12/18] <strong>CLOVA: A Closed-Loop Visual Assistant with Tool Usage and Update</strong> | <a href="https://arxiv.org/abs/2312.10908">[paper]</a> | <a href="https://clova-tool.github.io/">[code]</a></p>
+</li><br>
+<li><p>[2023/11/14] <strong>The ART of LLM Refinement: Ask, Refine, and Trust</strong> | <a href="https://arxiv.org/abs/2311.07961">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/10/31] <strong>Learning From Mistakes Makes LLM Better Reasoner</strong> | <a href="https://arxiv.org/abs/2310.20689">[paper]</a> | <a href="https://github.com/microsoft/LEMA">[code]</a></p>
+</li><br>
+<li><p>[2023/08/01] <strong>SelfCheck: Using LLMs to Zero-Shot Check Their Own Step-by-Step Reasoning</strong> | <a href="https://arxiv.org/abs/2308.00436">[paper]</a> | <a href="https://github.com/ningmiao/selfcheck">[code]</a></p>
+</li><br>
+<li><p>[2023/07/27] <strong>PanGu-Coder2: Boosting Large Language Models for Code with Ranking Feedback</strong> | <a href="https://arxiv.org/abs/2307.14936">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/26] <strong>AdaPlanner: Adaptive Planning from Feedback with Language Models</strong> | <a href="https://arxiv.org/abs/2305.16653">[paper]</a> | <a href="https://github.com/haotiansun14/adaplanner">[code]</a></p>
+</li><br>
+<li><p>[2023/05/22] <strong>Making Language Models Better Tool Learners with Execution Feedback</strong> | <a href="https://arxiv.org/abs/2305.13068">[paper]</a> | <a href="https://github.com/zjunlp/trice">[code]</a></p>
+</li><br>
+<li><p>[2023/04/11] <strong>Teaching Large Language Models to Self-Debug</strong> | <a href="https://arxiv.org/abs/2304.05128">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/03/30] <strong>Self-Refine: Iterative Refinement with Self-Feedback</strong> | <a href="https://arxiv.org/abs/2303.17651">[paper]</a> | <a href="https://github.com/madaan/self-refine">[code]</a></p>
+</li><br>
+<li><p>[2023/02/03] <strong>Describe, Explain, Plan and Select: Interactive Planning with Large Language Models Enables Open-World Multi-Task Agents</strong> | <a href="https://arxiv.org/abs/2302.01560">[paper]</a> | [code]</p>
+</li><br>
+</ul>
+</li><br>
+</ul>
+<ul>
+<li><p>Memory Mechanism</p>
+<ul>
+<li><p>[2024/02/27] <strong>Evaluating Very Long-Term Conversational Memory of LLM Agents</strong> | <a href="https://arxiv.org/abs/2402.17753">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/19] <strong>Compress to Impress: Unleashing the Potential of Compressive Memory in Real-World Long-Term Conversations</strong> | <a href="https://arxiv.org/abs/2402.11975">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/07] <strong>InfLLM: Unveiling the Intrinsic Capacity of LLMs for Understanding Extremely Long Sequences with Training-Free Memory</strong> | <a href="https://arxiv.org/abs/2402.04617">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/12/22] <strong>Empowering Working Memory for Large Language Model Agents</strong> | <a href="https://arxiv.org/abs/2312.17259">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/12/22] <strong>Evolving Large Language Model Assistant with Long-Term Conditional Memory</strong> | <a href="https://arxiv.org/abs/2312.17257">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/11/10] <strong>JARVIS-1: Open-World Multi-task Agents with Memory-Augmented Multimodal Language Models</strong> | <a href="https://arxiv.org/abs/2311.05997">[paper]</a> | <a href="https://github.com/CraftJarvis/JARVIS-1">[code]</a></p>
+</li><br>
+<li><p>[2023/10/16] <strong>CLIN: A Continually Learning Language Agent for Rapid Task Adaptation and Generalization</strong> | <a href="https://arxiv.org/abs/2310.10134">[paper]</a> | <a href="https://github.com/allenai/clin">[code]</a></p>
+</li><br>
+<li><p>[2023/06/06] <strong>ChatDB: Augmenting LLMs with Databases as Their Symbolic Memory</strong> | <a href="https://arxiv.org/abs/2306.03901">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/31] <strong>Monotonic Location Attention for Length Generalization</strong> | <a href="https://arxiv.org/abs/2305.20019">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/26] <strong>Randomized Positional Encodings Boost Length Generalization of Transformers</strong> | <a href="https://arxiv.org/abs/2305.16843">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/25] <strong>Landmark Attention: Random-Access Infinite Context Length for Transformers</strong> | <a href="https://arxiv.org/abs/2305.16300">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/24] <strong>Revisiting Parallel Context Windows: A Frustratingly Simple Alternative and Chain-of-Thought Deterioration</strong> | <a href="https://arxiv.org/abs/2305.15262">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/24] <strong>Adapting Language Models to Compress Contexts</strong> | <a href="https://arxiv.org/abs/2305.14788">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/23] <strong>RET-LLM: Towards a General Read-Write Memory for Large Language Models</strong> | <a href="https://arxiv.org/abs/2305.14322">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/22] <strong>RecurrentGPT: Interactive Generation of (Arbitrarily) Long Text</strong> | <a href="https://arxiv.org/abs/2305.13304">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/19] <strong>ToolkenGPT: Augmenting Frozen Language Models with Massive Tools via Tool Embeddings</strong> | <a href="https://arxiv.org/abs/2305.11554">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/17] <strong>MemoryBank: Enhancing Large Language Models with Long-Term Memory</strong> | <a href="https://arxiv.org/abs/2305.10250">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/15] <strong>Small Models are Valuable Plug-ins for Large Language Models</strong> | <a href="https://arxiv.org/abs/2305.08848">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/02] <strong>Unlimiformer: Long-Range Transformers with Unlimited Length Input</strong> | <a href="https://arxiv.org/abs/2305.01625">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/01] <strong>Learning to Reason and Memorize with Self-Notes</strong> | <a href="https://arxiv.org/abs/2305.00833">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/04/27] <strong>ChatLog: Recording and Analyzing ChatGPT Across Time</strong> | <a href="https://arxiv.org/abs/2304.14106">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/04/26] <strong>Unleashing Infinite-Length Input Capacity for Large-scale Language Models with Self-Controlled Memory System</strong> | <a href="https://arxiv.org/abs/2304.13343">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/04/21] <strong>Emergent and Predictable Memorization in Large Language Models</strong> | <a href="https://arxiv.org/abs/2304.11158">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/03/17] <strong>CoLT5: Faster Long-Range Transformers with Conditional Computation</strong> | <a href="https://arxiv.org/abs/2303.09752">[paper]</a> | [code]</p>
+</li><br>
+</ul>
+</li><br>
+</ul>
+<ul>
+<li><p>Planning</p>
+<pre><code>  - [<span class="hljs-string">2024/03/16</span>] <span class="hljs-strong">**AesopAgent: Agent-driven Evolutionary System on Story-to-Video Production**</span> | [<span class="hljs-string">[paper</span>]](https://arxiv.org/abs/2403.07952) | [code]
+</code></pre><ul>
+<li><p>[2024/02/29] <strong>PlanGPT: Enhancing Urban Planning with Tailored Language Model and Efficient Retrieval</strong> | <a href="https://arxiv.org/abs/2402.19273">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/18] <strong>What&#39;s the Plan? Evaluating and Developing Planning-Aware Techniques for LLMs</strong> | <a href="https://arxiv.org/abs/2402.11489">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/18] <strong>PreAct: Predicting Future in ReAct Enhances Agent&#39;s Planning Ability</strong> | <a href="https://arxiv.org/abs/2402.11534">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/16] <strong>When is Tree Search Useful for LLM Planning? It Depends on the Discriminator</strong> | <a href="https://arxiv.org/abs/2402.10890">[paper]</a> | <a href="https://github.com/osu-nlp-group/llm-planning-eval">[code]</a></p>
+</li><br>
+<li><p>[2024/02/02] <strong>TravelPlanner: A Benchmark for Real-World Planning with Language Agents</strong> | <a href="https://arxiv.org/abs/2402.01622">[paper]</a> | <a href="https://github.com/OSU-NLP-Group/TravelPlanner">[code]</a></p>
+</li><br>
+<li><p>[2024/01/10] <strong>AUTOACT: Automatic Agent Learning from Scratch via Self-Planning</strong> | <a href="https://arxiv.org/abs/2401.05268">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/11/19] <strong>TPTU-v2: Boosting Task Planning and Tool Usage of Large Language Model-based Agents in Real-world Systems</strong> | <a href="https://arxiv.org/abs/2311.11315">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/10/09] <strong>Put Your Money Where Your Mouth Is: Evaluating Strategic Planning and Execution of LLM Agents in an Auction Arena</strong> | <a href="https://arxiv.org/abs/2310.05746">[paper]</a> | <a href="https://github.com/jiangjiechen/auction-arena">[code]</a></p>
+</li><br>
+<li><p>[2023/08/07] <strong>TPTU: Task Planning and Tool Usage of Large Language Model-based AI Agents</strong> | <a href="https://arxiv.org/abs/2308.03427">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/26] <strong>AdaPlanner: Adaptive Planning from Feedback with Language Models</strong> | <a href="https://arxiv.org/abs/2305.16653">[paper]</a> | <a href="https://github.com/haotiansun14/adaplanner">[code]</a></p>
+</li><br>
+<li><p>[2023/05/24] <strong>Reasoning with Language Model is Planning with World Model</strong> | <a href="https://arxiv.org/abs/2305.14992">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/24] <strong>Leveraging Pre-trained Large Language Models to Construct and Utilize World Models for Model-based Task Planning</strong> | <a href="https://arxiv.org/abs/2305.14909">[paper]</a> | <a href="https://github.com/GuanSuns/LLMs-World-Models-for-Planning">[code]</a></p>
+</li><br>
+<li><p>[2023/03/29] <strong>Plan4MC: Skill Reinforcement Learning and Planning for Open-World Minecraft Tasks</strong> | <a href="https://arxiv.org/abs/2303.16563">[paper]</a> | <a href="https://sites.google.com/view/plan4mc">[code]</a></p>
+</li><br>
+<li><p>[2023/02/03] <strong>Describe, Explain, Plan and Select: Interactive Planning with Large Language Models Enables Open-World Multi-Task Agents</strong> | <a href="https://arxiv.org/abs/2302.01560">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2022/12/08] <strong>LLM-Planner: Few-Shot Grounded Planning for Embodied Agents with Large Language Models</strong> | <a href="https://arxiv.org/abs/2212.04088">[paper]</a> | <a href="https://dki-lab.github.io/LLM-Planner/">[code]</a></p>
+</li><br>
+</ul>
+</li><br>
+</ul>
+<ul>
+<li><p>Game Playing</p>
+<ul>
+<li><p>[2024/02/13] <strong>Large Language Models as Minecraft Agents</strong> | <a href="https://arxiv.org/abs/2402.08392">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/12] <strong>Large Language Models as Agents in Two-Player Games</strong> | <a href="https://arxiv.org/abs/2402.08078">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/12/29] <strong>Cooperation on the Fly: Exploring Language Agents for Ad Hoc Teamwork in the Avalon Game</strong> | <a href="https://arxiv.org/abs/2312.17515">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/11/10] <strong>JARVIS-1: Open-World Multi-task Agents with Memory-Augmented Multimodal Language Models</strong> | <a href="https://arxiv.org/abs/2311.05997">[paper]</a> | <a href="https://github.com/CraftJarvis/JARVIS-1">[code]</a></p>
+</li><br>
+<li><p>[2023/10/31] <strong>Leveraging Word Guessing Games to Assess the Intelligence of Large Language Models</strong> | <a href="https://arxiv.org/abs/2310.20499">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/09/29] <strong>Suspicion-Agent: Playing Imperfect Information Games with Theory of Mind Aware GPT-4</strong> | <a href="https://arxiv.org/abs/2309.17277">[paper]</a> | <a href="https://github.com/CR-Gjx/Suspicion-Agent">[code]</a></p>
+</li><br>
+<li><p>[2023/09/18] <strong>MindAgent: Emergent Gaming Interaction</strong> | <a href="https://arxiv.org/abs/2309.09971">[paper]</a> | <a href="https://mindagent.github.io/">[code]</a></p>
+</li><br>
+<li><p>[2023/09/10] <strong>An Appraisal-Based Chain-Of-Emotion Architecture for Affective Language Model Game Agents</strong> | <a href="https://arxiv.org/abs/2309.05076">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/09/09] <strong>Exploring Large Language Models for Communication Games: An Empirical Study on Werewolf</strong> | <a href="https://arxiv.org/abs/2309.04658">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/08/23] <strong>Are ChatGPT and GPT-4 Good Poker Players? -- A Pre-Flop Analysis</strong> | <a href="https://arxiv.org/abs/2308.12466">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/31] <strong>Recursive Metropolis-Hastings Naming Game: Symbol Emergence in a Multi-agent System based on Probabilistic Generative Models</strong> | <a href="https://arxiv.org/abs/2305.19761">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/26] <strong>Playing repeated games with Large Language Models</strong> | <a href="https://arxiv.org/abs/2305.16867">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/05/25] <strong>Voyager: An Open-Ended Embodied Agent with Large Language Models</strong> | <a href="https://arxiv.org/abs/2305.16291">[paper]</a> | <a href="https://github.com/MineDojo/Voyager">[code]</a></p>
+</li><br>
+<li><p>[2023/05/25] <strong>Ghost in the Minecraft: Generally Capable Agents for Open-World Environments via Large Language Models with Text-based Knowledge and Memory</strong> | <a href="https://arxiv.org/abs/2305.17144">[paper]</a> | <a href="https://github.com/OpenGVLab/GITM">[code]</a></p>
+</li><br>
+<li><p>[2023/05/19] <strong>Examining the Inter-Consistency of Large Language Models: An In-depth Analysis via Debate</strong> | [paper] | [code]</p>
+</li><br>
+<li><p>[2023/05/17] <strong>Improving Language Model Negotiation with Self-Play and In-Context Learning from AI Feedback</strong> | <a href="https://arxiv.org/abs/2305.10142">[paper]</a> | <a href="https://github.com/FranxYao/GPT-Bargaining">[code]</a></p>
+</li><br>
+<li><p>[2023/05/08] <strong>Knowledge-enhanced Agents for Interactive Text Games</strong> | <a href="https://arxiv.org/abs/2305.05091">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/03/29] <strong>Plan4MC: Skill Reinforcement Learning and Planning for Open-World Minecraft Tasks</strong> | <a href="https://arxiv.org/abs/2303.16563">[paper]</a> | <a href="https://sites.google.com/view/plan4mc">[code]</a></p>
+</li><br>
+<li><p>[2023/02/03] <strong>Describe, Explain, Plan and Select: Interactive Planning with Large Language Models Enables Open-World Multi-Task Agents</strong> | <a href="https://arxiv.org/abs/2302.01560">[paper]</a> | [code]</p>
+</li><br>
+</ul>
+</li><br>
+</ul>
+<ul>
+<li>Game Platform<ul>
+<li>[2023/03/14] <strong>CB2: Collaborative Natural Language Interaction Research Platform</strong> | <a href="https://arxiv.org/abs/2303.08127">[paper]</a> | <a href="https://github.com/lil-lab/cb2">[code]</a></li><br>
+</ul>
+</li><br>
+</ul>
+<ul>
+<li><p>Benchmark&amp;Evaluation&amp;Framework</p>
+<ul>
+<li><p>[2024/02/27] <strong>Benchmarking Data Science Agents</strong> | <a href="https://arxiv.org/abs/2402.17168">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/26] <strong>RepoAgent: An LLM-Powered Open-Source Framework for Repository-level Code Documentation Generation</strong> | <a href="https://arxiv.org/abs/2402.16667">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/18] <strong>Benchmark Self-Evolving: A Multi-Agent Framework for Dynamic LLM Evaluation</strong> | <a href="https://arxiv.org/abs/2402.11443">[paper]</a> | <a href="https://github.com/nanshineloong/self-evolving-benchmark">[code]</a></p>
+</li><br>
+<li><p>[2024/02/18] <strong>MatPlotAgent: Method and Evaluation for LLM-Based Agentic Scientific Data Visualization</strong> | <a href="https://arxiv.org/abs/2402.11453">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/17] <strong>KG-Agent: An Efficient Autonomous Agent Framework for Complex Reasoning over Knowledge Graph</strong> | <a href="https://arxiv.org/abs/2402.11163">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/01/05] <strong>AFSPP: Agent Framework for Shaping Preference and Personality with Large Language Models</strong> | <a href="https://arxiv.org/abs/2401.02870">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/01/02] <strong>CharacterEval: A Chinese Benchmark for Role-Playing Conversational Agent Evaluation</strong> | <a href="https://arxiv.org/abs/2401.01275">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/12/28] <strong>How Far Are We from Believable AI Agents? A Framework for Evaluating the Believability of Human Behavior Simulation</strong> | <a href="https://arxiv.org/abs/2312.17115">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/12/26] <strong>RoleEval: A Bilingual Role Evaluation Benchmark for Large Language Models</strong> | <a href="https://arxiv.org/abs/2312.16132">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/11/17] <strong>Testing Language Model Agents Safely in the Wild</strong> | <a href="https://arxiv.org/abs/2311.10538">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/11/16] <strong>ML-Bench: Large Language Models Leverage Open-source Libraries for Machine Learning Tasks</strong> | <a href="https://arxiv.org/abs/2311.09835">[paper]</a> | <a href="https://ml-bench.github.io/">[code]</a></p>
+</li><br>
+<li><p>[2023/11/15] <strong>ToolTalk: Evaluating Tool-Usage in a Conversational Setting</strong> | <a href="https://arxiv.org/abs/2311.10775">[paper]</a> | <a href="https://github.com/microsoft/ToolTalk">[code]</a></p>
+</li><br>
+<li><p>[2023/11/02] <strong>ProAgent: From Robotic Process Automation to Agentic Process Automation</strong> | <a href="https://arxiv.org/abs/2311.10751">[paper]</a> | <a href="https://github.com/OpenBMB/ProAgent">[code]</a></p>
+</li><br>
+<li><p>[2023/10/24] <strong>FANToM: A Benchmark for Stress-testing Machine Theory of Mind in Interactions</strong> | <a href="https://arxiv.org/abs/2310.15421">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/10/09] <strong>Put Your Money Where Your Mouth Is: Evaluating Strategic Planning and Execution of LLM Agents in an Auction Arena</strong> | <a href="https://arxiv.org/abs/2310.05746">[paper]</a> | <a href="https://github.com/jiangjiechen/auction-arena">[code]</a></p>
+</li><br>
+<li><p>[2023/10/02] <strong>SmartPlay : A Benchmark for LLMs as Intelligent Agents</strong> | <a href="https://arxiv.org/abs/2310.01557">[paper]</a> | <a href="https://github.com/microsoft/SmartPlay">[code]</a></p>
+</li><br>
+<li><p>[2023/09/29] <strong>Reason for Future, Act for Now: A Principled Framework for Autonomous LLM Agents with Provable Sample Efficiency</strong> | <a href="https://arxiv.org/abs/2309.17382">[paper]</a> | <a href="https://github.com/agentification/RAFA_code">[code]</a></p>
+</li><br>
+<li><p>[2023/09/18] <strong>MindAgent: Emergent Gaming Interaction</strong> | <a href="https://arxiv.org/abs/2309.09971">[paper]</a> | <a href="https://mindagent.github.io/">[code]</a></p>
+</li><br>
+<li><p>[2023/09/14] <strong>Agents: An Open-source Framework for Autonomous Language Agents</strong> | <a href="https://arxiv.org/abs/2309.07870">[paper]</a> | <a href="https://github.com/aiwaves-cn/agents">[code]</a></p>
+</li><br>
+<li><p>[2023/08/22] <strong>ProAgent: Building Proactive Cooperative AI with Large Language Models</strong> | <a href="https://arxiv.org/abs/2308.11339">[paper]</a> | <a href="https://github.com/PKU-Alignment/ProAgent">[code]</a></p>
+</li><br>
+<li><p>[2023/08/11] <strong>BOLAA: Benchmarking and Orchestrating LLM-augmented Autonomous Agents</strong> | <a href="https://arxiv.org/abs/2308.05960">[paper]</a> | <a href="https://github.com/salesforce/BOLAA">[code]</a></p>
+</li><br>
+<li><p>[2023/08/07] <strong>AgentBench: Evaluating LLMs as Agents</strong> | <a href="https://arxiv.org/abs/2308.03688">[paper]</a> | <a href="https://github.com/THUDM/AgentBench">[code]</a></p>
+</li><br>
+<li><p>[2023/07/31] <strong>HAGRID: A Human-LLM Collaborative Dataset for Generative Information-Seeking with Attribution</strong> | <a href="https://arxiv.org/abs/2307.16883">[paper]</a> | <a href="https://github.com/project-miracl/hagrid">[code]</a></p>
+</li><br>
+<li><p>[2023/06/09] <strong>Mind2Web: Towards a Generalist Agent for the Web</strong> | <a href="https://arxiv.org/abs/2306.06070">[paper]</a> | <a href="https://github.com/OSU-NLP-Group/Mind2Web">[code]</a></p>
+</li><br>
+</ul>
+</li><br>
+</ul>
+<ul>
+<li><p>Tool Usage&amp;Human-Agent Interaction</p>
+<ul>
+<li><p>[2024/02/27] <strong>BASES: Large-scale Web Search User Simulation with Large Language Model based Agents</strong> | <a href="https://arxiv.org/abs/2402.17505">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/18] <strong>SciAgent: Tool-augmented Language Models for Scientific Reasoning</strong> | <a href="https://arxiv.org/abs/2402.11451">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/17] <strong>Human-AI Interactions in the Communication Era: Autophagy Makes Large Models Achieving Local Optima</strong> | <a href="https://arxiv.org/abs/2402.11271">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/16] <strong>ToolSword: Unveiling Safety Issues of Large Language Models in Tool Learning Across Three Stages</strong> | <a href="https://arxiv.org/abs/2402.10753">[paper]</a> | <a href="https://github.com/junjie-ye/toolsword">[code]</a></p>
+</li><br>
+<li><p>[2024/02/14] <strong>Towards better Human-Agent Alignment: Assessing Task Utility in LLM-Powered Applications</strong> | <a href="https://arxiv.org/abs/2402.09015">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2024/02/06] <strong>AnyTool: Self-Reflective, Hierarchical Agents for Large-Scale API Calls</strong> | <a href="https://arxiv.org/abs/2402.04253">[paper]</a> | <a href="https://github.com/dyabel/anytool">[code]</a></p>
+</li><br>
+<li><p>[2024/01/03] <strong>GPT-4V(ision) is a Generalist Web Agent, if Grounded</strong> | <a href="https://arxiv.org/abs/2401.01614">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/12/21] <strong>Team Flow at DRC2023: Building Common Ground and Text-based Turn-taking in a Travel Agent Spoken Dialogue System</strong> | <a href="https://arxiv.org/abs/2312.13816">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/12/21] <strong>AppAgent: Multimodal Agents as Smartphone Users</strong> | <a href="https://arxiv.org/abs/2312.13771">[paper]</a> | <a href="https://github.com/mnotgod96/AppAgent">[code]</a></p>
+</li><br>
+<li><p>[2023/12/18] <strong>CLOVA: A Closed-Loop Visual Assistant with Tool Usage and Update</strong> | <a href="https://arxiv.org/abs/2312.10908">[paper]</a> | <a href="https://clova-tool.github.io/">[code]</a></p>
+</li><br>
+<li><p>[2023/12/14] <strong>CogAgent: A Visual Language Model for GUI Agents</strong> | <a href="https://arxiv.org/abs/2312.08914">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/11/19] <strong>TPTU-v2: Boosting Task Planning and Tool Usage of Large Language Model-based Agents in Real-world Systems</strong> | <a href="https://arxiv.org/abs/2311.11315">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/10/18] <strong>MusicAgent: An AI Agent for Music Understanding and Generation with Large Language Models</strong> | <a href="https://arxiv.org/abs/2310.11954">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/10/13] <strong>AgentCF: Collaborative Learning with Autonomous Language Agents for Recommender Systems</strong> | <a href="https://arxiv.org/abs/2310.09233">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/10/12] <strong>A Zero-Shot Language Agent for Computer Control with Structured Reflection</strong> | <a href="https://arxiv.org/abs/2310.08740">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/09/02] <strong>ModelScope-Agent: Building Your Customizable Agent System with Open-source Large Language Models</strong> | <a href="https://arxiv.org/abs/2309.00986">[paper]</a> | <a href="https://github.com/modelscope/modelscope-agent">[code]</a></p>
+</li><br>
+<li><p>[2023/08/07] <strong>TPTU: Task Planning and Tool Usage of Large Language Model-based AI Agents</strong> | <a href="https://arxiv.org/abs/2308.03427">[paper]</a> | [code]</p>
+</li><br>
+<li><p>[2023/06/05] <strong>When Large Language Model based Agent Meets User Behavior Analysis: A Novel User Simulation Paradigm</strong> | <a href="https://arxiv.org/abs/2306.02552">[paper]</a> | <a href="https://github.com/RUC-GSAI/YuLan-Rec">[code]</a></p>
+</li><br>
+</ul>
+</li><br>
+</ul>
+        </section>
+    </main>
+</body>
+</html>
+
+
+
+
