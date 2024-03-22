@@ -6,44 +6,135 @@
 <title>ZAIPS</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 <style>
-  body {
+
+    body {
     background-color: white;
-    font-family: 'Libre Baskerville', serif; /* Change to serif font */
+    font-family: 'Libre Baskerville', serif;
     margin: 0;
     padding: 0;
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    height: 100vh; /* Full height of viewport */
-  }
-  .container {
-    text-align: justify; /* Justify text */
-    width: 90%;
-    max-width: 375px; /* iPhone screen width */
-    position: relative; /* Added */
-  }
-  .main-text {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    }
+
+    .container {
+    text-align: justify;
+    width: 100%;
+    max-width: 375px;
+    position: relative;
+    }
+
+    .main-text {
     text-align: left;
-  }
-  a {
+    }
+
+    a {
     color: black;
     text-decoration: underline;
-  }
+    }
+
+    .swiper-container {
+    width: 100%;
+    height: 100%;
+    }
+
+    .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .swiper-slide img {
+        user-select: none;
+   /*     width: 100%;
+        height: auto; */
+    }
+
+    .rounded-image {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    }
+
+    .swiper-pagination-bullet-active {
+    background: #000000;
+    }
+
+    ::selection {
+    background: #000000;
+    color: #fff;
+    }
+
 </style>
 </head>
 <body>
     <div class="container">
         <div class="main-text">
-            <h1>Work</h1>
-            <p style="color: #afafaf; font-size: 11px;">*Client specific information has been omitted due to confidentiality agreements.</p>
+            <p style="color: #9b9b9b; font-size: 11px;">*Client specific information has been omitted due to ongoing confidentiality agreements.</p>
+            <p style="font-size: 30px;">Saving €500,000 per year on models</p>
+            
+            <p>Client "X" was, year on year, bearing the cost of an expensive modelling agency. Each product sent for shooting cost them €25,000 - not including post production carried out in-house.<i>The brief was clear. Reduce this enormous cost by half.</i> We took this a step further and dropped the cost to €1,000 a month.</p>
+            
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            
             <br>
             <br>
-            <h2>Saving €500,000 per year on models</h2>
-            <p>Client "X" was, year on year, bearing the cost of an expensive modelling agency. Each product sent for shooting cost them €25,000 - not including post production carried out in-house.</p>
-            <p><i>The brief was clear. Reduce this enormous cost by half.</i></p>
-            <p>We took this a step further and dropped the cost to €1,000 a month.</p>
+
+
+            <div class="swiper-container">
+             
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/img1.png" class="rounded-image" alt="Image 1"></div>
+                    <div class="swiper-slide"><img src="img/img2.png" class="rounded-image" alt="Image 2"></div>
+                    <div class="swiper-slide"><img src="img/img3.png" class="rounded-image" alt="Image 3"></div>
+                    <div class="swiper-slide"><img src="img/img4.png" class="rounded-image" alt="Image 4"></div>
+                    <div class="swiper-slide"><img src="img/img5.png" class="rounded-image" alt="Image 5"></div>
+                    <div class="swiper-slide"><img src="img/img6.png" class="rounded-image" alt="Image 6"></div>
+                   
+                </div>
+                
+            </div>
+
+                <!-- Link Swiper's JS -->
+                <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+                <!-- Initialize Swiper -->
+
+                <br>
+                <br>
+
+
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                
+            
         </div>
     </div>
+
+     <script>
+        window.addEventListener('load', function() {
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                initialSlide: 3,
+            });
+        });
+     </script>
 </body>
 </html>
+
+
