@@ -1,96 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Reset default browser styling */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body, html {
-            width: 100%;
-            height: 100%;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            background-color: black;
-            color: white;
-            text-transform:uppercase;
-        }
-
-        .header {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-        }
-
-        main {
-            display: flex;
-            justify-content: left;
-            align-items: center;
-            width: 100%; /* Ensures main takes up the full width */
-        }
-
-        .content {
-            max-width: 600px;
-            margin-top: 10px; /* Reduced margin-top to bring content closer to the header */
-            padding: 20px;
-            text-align: justify;
-            color: grey;
-        }
-
-        .menu {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding-left: 20px; /* Align menu items to the content */
-        }
-
-        .menu-item {
-            text-align: left;
-            border-bottom: 1px solid rgb(34, 34, 34);
-            padding: 10px 0;
-        }
-
-        .menu-item:last-child {
-            border-bottom: none; /* Remove line under the last list item */
-        }
-
-        /* Responsive design adjustments */
-        @media (max-width: 768px) {
-            .content {
-                max-width: 100%;
-            }
-        }
-
-        /* Load JetBrains Mono font from Google Fonts */
-        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Consultancy</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+<style>
+  body {
+    background-color: white;
+    font-family: 'Libre Baskerville', serif; /* Change to serif font */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Full height of viewport */
+  }
+  .container {
+    text-align: justify; /* Justify text */
+    width: 90%;
+    max-width: 375px; /* iPhone screen width */
+  }
+  .main-text {
+    text-align: left;
+  }
+</style>
 </head>
 <body>
-
-<div class="header">
-    <div class="logo">Zaips</div>
-    <div class="email">adam@zaips.com</div>
-</div>
-
-<main>
-    <div class="content">
-        AI consultancy currently operating on an invite-only basis. Our products serve as virtual brains, capable of generating content, understanding data, and making decisions in real-time. We work on a subscription basis, offering customized solutions tailored to each client's needs. We also offer advisory services to SMEs looking to deploy Gen AI.
+  <div class="container">
+    <div class="main-text">
+      <p>AI consultancy currently operating on an <i>invite-only</i> basis.<br><br>We offer <i>advisory</i> and <i>deployment</i> of GenAI for SMEs on a <i>subscription basis.</i><br><br>Our products serve as virtual brains, capable of <i>generating</i> content, <i>understanding</i> data, and making <i>decisions</i> in real-time.</p>
     </div>
-</main>
-
-<div class="menu">
-    <div class="menu-item">Read the thesis</div>
-    <div class="menu-item">Previous work</div>
-    <div class="menu-item">Research</div>
-    <div class="menu-item">Subscriptions</div>
-</div>
-
+  </div>
 </body>
 </html>
