@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Consultancy</title>
+<title>ZAIPS</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
 <style>
@@ -25,12 +25,37 @@
   .main-text {
     text-align: left;
   }
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+  .button {
+    padding: 6px 16px;
+    border: 0.5px solid rgb(104, 104, 104);
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: normal;
+    background-color: white; /* Set background color to white */
+  }
+  .button:hover {
+    background-color: rgb(45, 45, 45);
+    color: white;
+  }
 </style>
 </head>
 <body>
   <div class="container">
     <div class="main-text">
       <p>AI consultancy currently operating on an <i>invite-only</i> basis.<br><br>We offer <i>advisory</i> and <i>deployment</i> of GenAI for SMEs on a <i>subscription basis.</i><br><br>Our products serve as virtual brains, capable of <i>generating</i> content, <i>understanding</i> data, and making <i>decisions</i> in real-time.</p>
+    </div>
+    <div class="button-container">
+      <button class="button">Work</button>
+      <button class="button">Thesis</button>
+      <button class="button">Research</button>
     </div>
   </div>
 </body>
