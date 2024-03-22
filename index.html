@@ -26,41 +26,18 @@
   .main-text {
     text-align: left;
   }
-  .button-container {
-    position: absolute;
-    top: 15px;
-    width: 300px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .button {
-    padding: 7px 16px;
-    border: 0.5px solid rgb(104, 104, 104);
-    border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-family: 'Libre Baskerville', serif;
-    font-weight: normal;
-    background-color: white;
-  }
-  .button:hover {
-    background-color: rgb(45, 45, 45);
-    color: white;
+  a {
+    color: black;
+    text-decoration: underline;
   }
 </style>
 </head>
 <body>
-    <div class="button-container">
-        <button class="button">Work</button>
-        <button class="button">Thesis</button>
-        <button class="button">Research</button>
-      </div>
-  <div class="container">
-
-    <div class="main-text">
-      <p>AI consultancy currently operating on an <i>invite-only</i> basis.<br><br>We offer <i>advisory</i> and <i>deployment</i> of GenAI for SMEs on a <i>subscription basis.</i><br><br>Our products serve as virtual brains, capable of <i>generating</i> content, <i>understanding</i> data, and making <i>decisions</i> in real-time.</p>
+    <div class="container">
+        <div class="main-text">
+            <p>AI consultancy currently operating on an <i>invite-only</i> basis.<br><br>We offer <i>advisory</i> and <i>deployment</i> of GenAI for SMEs on a <i>subscription basis.</i><br><br>Our products serve as virtual brains, capable of <i>generating</i> content, <i>understanding</i> data, and making <i>decisions</i> in real-time.</p>
+            <p>Our previous work can be found <a href="#"><i>here</i></a>, you can also read about our <a href="#"><i>thesis</i></a>, or the <a href="#"><i>research</i></a> that influences our work.</p>
+        </div>
     </div>
-  </div>
 </body>
 </html>
