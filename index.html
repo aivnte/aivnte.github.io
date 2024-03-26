@@ -4,12 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZAIPS</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
 <style>
+
+  @font-face {
+  font-family: 'nhgt';
+  src: url('fonts/nhgt.ttf') format('truetype');
+  }
+
+  @font-face {
+  font-family: 'nhgm';
+  src: url('fonts/nhgm.ttf') format('truetype');
+  }
+
   body {
     background-color: white;
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'nhgt';
     margin: 0;
     padding: 0;
     display: flex; 
@@ -17,28 +26,32 @@
     align-items: center; 
     height: 100vh;
   }
+
   .container {
     text-align: justify;
     width: 90%;
     max-width: 375px; 
     position: relative;
   }
+
   .main-text {
     text-align: left;
   }
+  
   a {
     color: black;
     text-decoration: underline;
   }
+
 </style>
 </head>
 <body>
     <div class="container">
         <div class="main-text">
-            <p>AI consultancy currently operating on an <i>invite-only</i> basis.<br><br>We offer <i>advisory</i> and <i>deployment</i> of GenAI for SMEs on a <i>subscription basis.</i><br><br>Our products serve as virtual brains, capable of <i>generating</i> content, <i>understanding</i> data, and making <i>decisions</i> in real-time.</p>
-            <p>Our previous work can be found <a href="work.html"><i>here</i></a>, you can also read about our <a href="#"><i>thesis</i></a>, or the <a href="#"><i>research</i></a> that influences our work.</p>
+            <p>AI consultancy currently operating on an invite-only basis.<br><br>We offer advisory and deployment of GenAI for SMEs on a subscription basis.<br><br>Our products serve as virtual brains, capable of generating content, understanding data, and making decisions in real-time.</p>
+            <p>Our previous work can be found <a href="work.html">here</a>, you can also read about our <a href="#">thesis</a>, or the <a href="#">research</a> that influences our work.</p>
             <br>
-            <p style="color: #9b9b9b; font-size: 11px;"><i>adam@zaips.com</i></p>
+            <p style="font-family: nhgm;">adam@zaips.com</p>
         </div>
     </div>
 </body>
