@@ -39,9 +39,20 @@
     text-align: left;
   }
   
-  a {
+  .button {
     color: black;
-    text-decoration: underline;
+    text-decoration: none;
+    padding: 4px 9px;
+    border: 1px solid black; /* Minimalistic border */
+    border-radius: 20px;
+    font-family: 'nhgm';
+    font-size: 11px;
+    margin: 5px 0; /* Adjusted margin for spacing */
+    display: inline-block; /* Ensures proper spacing and alignment */
+  }
+
+  .button:hover {
+    background-color: #f2f2f2; /* Very light grey for hover effect */
   }
 
 </style>
@@ -50,9 +61,14 @@
     <div class="container">
         <div class="main-text">
             <p>AI consultancy currently operating on an invite-only basis.<br><br>We offer advisory and deployment of GenAI for SMEs on a subscription basis.<br><br>Our products serve as virtual brains, capable of generating content, understanding data, and making decisions in real-time.</p>
-            <p>Our previous work can be found <a href="#">here</a>, you can also read about our <a href="#">thesis</a>, or the <a href="#">research</a> that influences our work.</p>
-            <br>
-            <p style="font-family: nhgm;">adam@zaips.com</p>
+            
+
+            <a href="#" class="button">Work</a><br>
+            <a href="#" class="button">Thesis</a><br>
+            <a href="#" class="button">Contact</a><br>
+            <a href="#" class="button">Research</a><br>
+            <a href="#" class="button">Founders Note</a>
+            
         </div>
     </div>
 </body>
