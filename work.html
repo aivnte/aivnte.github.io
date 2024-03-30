@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZAIPS</title>
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-<style>
 
+<style>
     @font-face {
     font-family: 'nhgt';
     src: url('fonts/nhgt.ttf') format('truetype');
@@ -25,6 +26,7 @@
     display: flex; 
     justify-content: center;
     align-items: center;
+    font-size: 12px;
     }
 
     .container {
@@ -43,110 +45,79 @@
     text-decoration: underline;
     }
 
-    .swiper-container {
-    width: 100%;
-    height: 100%;
-    }
-
-    .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    }
-
-    .swiper-slide img {
-        user-select: none;
-   /*     width: 100%;
-        height: auto; */
-    }
-
-    .rounded-image {
-    border-radius: 10px;
-    max-width: 100%;
-    height: auto;
-    }
-
-    .swiper-pagination-bullet-active {
-    background: #000000;
-    }
-
     ::selection {
     background: #000000;
     color: #fff;
     }
-
+    
+    .row {
+        display: flex;
+    }
+    
+    .image {
+        flex: 50%; /* each image will take up 50% of the width of its parent (the row) */
+        padding: 5px; /* optional: adds some space around the images */
+    }
+    
+    img {
+        width: 100%; /* makes the image fill the container */
+        height: 100%; /* keeps the image aspect ratio intact */
+    }
 </style>
 </head>
+
 <body>
+
     <div class="container">
+
         <div class="main-text">
-            <p style="color: #9b9b9b; font-size: 11px;">*Client specific information has been omitted due to ongoing confidentiality agreements.</p>
-            <p style="font-size: 30px; font-family: nhgm;">Saving €500,000 per year on models...</p>
+            
+            <p style="color: #9b9b9b; font-size: 11px;"><i>*Client specific information has been omitted due to ongoing confidentiality agreements.</i></p>
+        
+            <p style="font-size: 20px; font-family: nhgm; ;">SAVING 500K A YEAR ON MODELS</p>
             
             <p>Client X was spending €500,000 a year on modelling agencies. Each product sent for shooting cost them an average of €25,000 - not including post production carried out in-house.<i> The brief was clear.</i> Reduce this enormous cost by half. We took this a step further and dropped the cost to €1,000 a month.</p>
             
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        
             <br>
             <br>
             
-
-            <div class="swiper-container">
-             
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="img/img1.png" class="rounded-image" alt="Image 1"></div>
-                    <div class="swiper-slide"><img src="img/img2.png" class="rounded-image" alt="Image 2"></div>
-                    <div class="swiper-slide"><img src="img/img3.png" class="rounded-image" alt="Image 3"></div>
-                    <div class="swiper-slide"><img src="img/img4.png" class="rounded-image" alt="Image 4"></div>
-                    <div class="swiper-slide"><img src="img/img5.png" class="rounded-image" alt="Image 5"></div>
-                    <div class="swiper-slide"><img src="img/img6.png" class="rounded-image" alt="Image 6"></div>
-                   
-                </div>
-                
+            <div class="row">
+                <div class="image"><img src="img/img1.png" alt="Image 1"></div>
+                <div class="image"><img src="img/img2.png" alt="Image 2"></div>
             </div>
+            <div class="row">
+                <div class="image"><img src="img/img3.png" alt="Image 3"></div>
+                <div class="image"><img src="img/img4.png" alt="Image 4"></div>
+            </div>
+            <div class="row">
+                <div class="image"><img src="img/img5.png" alt="Image 5"></div>
+                <div class="image"><img src="img/img6.png" alt="Image 6"></div>
+            </div>
+        
+            <br>
+            <br>
 
-                <!-- Link Swiper's JS -->
-                <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-                <!-- Initialize Swiper -->
-
-                <br>
-                <br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 
+            <p style="font-size: 20px; font-family: nhgm; ;">SAVING 10 HOURS A WEEK ON BLOGS</p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p style="color:rgb(136, 136, 136); font-size: 13px;"><i>adam@zaips.com</i></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-                <p style="font-size: 30px;">Saving 10 hours a week on blog posting...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p style="color:rgb(136, 136, 136); font-size: 13px;"><i>adam@zaips.com</i></p>
+            <p style="font-size: 20px; font-family: nhgm; ;">AUTOMATED NEWSLETTER</p>
 
-                <p style="font-size: 30px;">Automated newlsetter...</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p style="color:rgb(136, 136, 136); font-size: 13px;"><i>adam@zaips.com</i></p>
             
         </div>
+
     </div>
 
-     <script>
-        window.addEventListener('load', function() {
-            var swiper = new Swiper('.swiper-container', {
-                slidesPerView: 1,
-                spaceBetween: 30,
-                loop: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                },
-                initialSlide: 2,
-            });
-        });
-     </script>
 </body>
 </html>
 
