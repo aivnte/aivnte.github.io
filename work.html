@@ -1,124 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZAIPS</title>
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
 <style>
-    @font-face {
-    font-family: 'nhgt';
-    src: url('fonts/nhgt.ttf') format('truetype');
-    }
 
-    @font-face {
-    font-family: 'nhgm';
-    src: url('fonts/nhgm.ttf') format('truetype');
-    }
+  @font-face {
+  font-family: 'nhgt';
+  src: url('/fonts/nhgt.TTF') format('truetype');
+  }
 
-    body {
+  @font-face {
+  font-family: 'nhgm';
+  src: url('/fonts/nhgm.TTF') format('truetype');
+  }
+
+  body {
     background-color: white;
     font-family: 'nhgt';
     margin: 0;
     padding: 0;
     display: flex; 
     justify-content: center;
-    align-items: center;
+    align-items: center; 
+    height: 100vh;
     font-size: 12px;
-    }
+  }
 
-    .container {
+  .container {
     text-align: justify;
-    width: 100%;
-    max-width: 375px;
+    width: 90%;
+    max-width: 375px; 
     position: relative;
-    }
+  }
 
-    .main-text {
+  .main-text {
     text-align: left;
-    }
-
-    a {
+  }
+  
+  .button {
     color: black;
-    text-decoration: underline;
-    }
+    text-decoration: none;
+    padding: 4px 9px;
+    border: 1px solid black; /* Minimalistic border */
+    border-radius: 20px;
+    font-family: 'nhgm';
+    font-size: 11px;
+    margin: 5px 0; /* Adjusted margin for spacing */
+    display: inline-block; /* Ensures proper spacing and alignment */
+  }
 
-    ::selection {
-    background: #000000;
-    color: #fff;
-    }
-    
-    .row {
-        display: flex;
-    }
-    
-    .image {
-        flex: 50%; /* each image will take up 50% of the width of its parent (the row) */
-        padding: 5px; /* optional: adds some space around the images */
-    }
-    
-    img {
-        width: 100%; /* makes the image fill the container */
-        height: 100%; /* keeps the image aspect ratio intact */
-    }
+  .button:hover {
+    background-color: #f2f2f2; /* Very light grey for hover effect */
+  }
+
 </style>
 </head>
-
 <body>
-
     <div class="container">
-
         <div class="main-text">
             
-            <p style="color: #9b9b9b; font-size: 11px;"><i>*Client specific information has been omitted due to ongoing confidentiality agreements.</i></p>
-        
-            <p style="font-size: 20px; font-family: nhgm; ;">SAVING 500K A YEAR ON MODELS</p>
+            <p><i>All client specific information has been redacted due to ongoing confidentiality agreements. Clients usually opt for confidentiality agreements due to the competitive nature of the industries in which they operate.</i></p>
             
-            <p>Client X was spending €500,000 a year on modelling agencies. Each product sent for shooting cost them an average of €25,000 - not including post production carried out in-house.<i> The brief was clear.</i> Reduce this enormous cost by half. We took this a step further and dropped the cost to €1,000 a month.</p>
-            
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        
-            <br>
-            <br>
-            
-            <div class="row">
-                <div class="image"><img src="img/img1.png" alt="Image 1"></div>
-                <div class="image"><img src="img/img2.png" alt="Image 2"></div>
-            </div>
-            <div class="row">
-                <div class="image"><img src="img/img3.png" alt="Image 3"></div>
-                <div class="image"><img src="img/img4.png" alt="Image 4"></div>
-            </div>
-            <div class="row">
-                <div class="image"><img src="img/img5.png" alt="Image 5"></div>
-                <div class="image"><img src="img/img6.png" alt="Image 6"></div>
-            </div>
-        
-            <br>
-            <br>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p></p>
 
 
-            <p style="font-size: 20px; font-family: nhgm; ;">SAVING 10 HOURS A WEEK ON BLOGS</p>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-
-            <p style="font-size: 20px; font-family: nhgm; ;">AUTOMATED NEWSLETTER</p>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <i>eiusmod tempor incididunt ut</i> labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure <i>dolor in reprehenderit in voluptate velit esse cillum</i> dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="index.html" class="button">Home</a><br>
 
             
         </div>
-
     </div>
-
 </body>
 </html>
-
-
