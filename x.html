@@ -55,6 +55,21 @@
     background-color: #f2f2f2; /* Very light grey for hover effect */
   }
 
+  @keyframes dropdownFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  body * {
+    animation: dropdownFadeIn 1s ease-out forwards;
+  }
+  
 </style>
 </head>
 <body>
@@ -62,7 +77,7 @@
         <div class="main-text">
             
             <a href="index.html" class="button">Home</a><br>
-            
+
             <p style="font-family: nhgm;">Client "X" is in the E-commerce industry. Our ongoing partnership has been highly successful. Here is the story of how we increased productivity and made cost savings of over $1,000,000 saved every year.</p>
 
         </div>
