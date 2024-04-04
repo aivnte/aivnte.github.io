@@ -7,13 +7,13 @@
 <style>
 
   @font-face {
-  font-family: 'nhgt';
-  src: url('/fonts/nhgt.TTF') format('truetype');
+    font-family: 'nhgt';
+    src: url('/fonts/nhgt.TTF') format('truetype');
   }
 
   @font-face {
-  font-family: 'nhgm';
-  src: url('/fonts/nhgm.TTF') format('truetype');
+    font-family: 'nhgm';
+    src: url('/fonts/nhgm.TTF') format('truetype');
   }
 
   body {
@@ -28,12 +28,6 @@
     font-size: 12px;
   }
 
-  a {
-    text-decoration: none;
-    color: black;
-  } 
-
-
   .container {
     text-align: justify;
     width: 90%;
@@ -44,54 +38,50 @@
   .main-text {
     text-align: left;
   }
-  
+
   .button {
     color: black;
     text-decoration: none;
     padding: 4px 9px;
-    border: 1px solid black; /* Minimalistic border */
     border-radius: 20px;
     font-family: 'nhgm';
     font-size: 11px;
-    margin: 5px 0; /* Adjusted margin for spacing */
-    display: inline-block; /* Ensures proper spacing and alignment */
+    margin: 5px 0;
+    display: inline-block;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect */
   }
 
   .button:hover {
-    background-color: #f2f2f2; /* Very light grey for hover effect */
+    transform: translateY(-5px); /* Move button up slightly on hover */
   }
 
   .live-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right, #161a64, #8b1c8b); /* Simple gradient from black to blue */
-    color: #FFF; /* Light text color */
-    padding: 3px 12px; /* Adjust padding as needed */
-    font-size: 12px; /* Match with surrounding text size */
-    margin-left: 10px; /* Spacing after the text */
+    background: linear-gradient(to right, #a9bcff, #b9c9fe); 
+    color: #FFF;
+    padding: 3px 12px;
+    font-size: 12px;
+    margin-left: 10px;
     margin-top: 5px;
     cursor: pointer;
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 5px;
     position: relative;
     font-family: nhgt;
-}
+  }
 
-
-.pulse-circle {
+  .pulse-circle {
     display: inline-block;
-    width: 8px; /* Circle size */
-    height: 8px; /* Circle size */
-    background-color: #ffffff; /* Slightly lighter dark color */
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
     border-radius: 50%;
-    margin-right: 7px; /* Space between circle and text */
+    margin-right: 7px;
     animation: pulse-animation 1s infinite;
-}
+  }
 
-
-/* No changes in the @keyframes */
-
-@keyframes pulse-animation {
+  @keyframes pulse-animation {
     0% {
         transform: scale(0.90);
         opacity: 1;
@@ -104,9 +94,9 @@
         transform: scale(0.90);
         opacity: 1;
     }
-}
+  }
 
-@keyframes dropdownFadeIn {
+  @keyframes dropdownFadeIn {
     from {
       opacity: 0;
       transform: translateY(0);
@@ -118,7 +108,7 @@
   }
 
   body * {
-    animation: dropdownFadeIn 1s ease-out forwards;
+    animation: dropdownFadeIn 1s ease-out;
   }
 
 </style>
@@ -126,25 +116,17 @@
 <body>
     <div class="container">
         <div class="main-text">
-            
-            <a href="index.html" class="button">Home</a><br>
+            <a href="index.html" class="button" style="background-color: #a9bcff;">Home</a><br>
 
-            <br>
+            <p>All client specific information has been redacted due to ongoing confidentiality agreements. Clients usually opt for confidentiality agreements due to the competitive nature of the industries in which they operate.</p>
 
-
-            <p>All client specific information has been redacted due to ongoing confidentiality agreements. <br><br>Clients usually opt for confidentiality agreements due to the competitive nature of the industries in which they operate.</p>
-
-            <br>
-
-            <a style="font-family: nhgm;" href="x.html">Over $1,000,000/year saved for Client "X"<span class="live-button"><span class="pulse-circle"></span>LIVE</span></a>
+            <a href="x.html" class="button">Over $1,000,000/year saved for Client "X"<span class="live-button"><span class="pulse-circle"></span>LIVE</span></a>
 
             <p><i>→ $25,000 saved on modelling agencies</i></p>
             <p><i>→ Reducing customer service workload by 50%</i></p>
             <p><i>→ Instant blog uploads</i></p>
-            <p><i>→ Automated newsletter</i></p>        
-          
-          
-          </div>
+            <p><i>→ Automated newsletter</i></p>
+        </div>
     </div>
 </body>
 </html>

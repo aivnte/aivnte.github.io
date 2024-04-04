@@ -6,14 +6,14 @@
 <title>ZAIPS</title>
 <style>
 
-  @font-face {
-  font-family: 'nhgt';
-  src: url('/fonts/nhgt.TTF') format('truetype');
+@font-face {
+    font-family: 'nhgt';
+    src: url('/fonts/nhgt.TTF') format('truetype');
   }
 
   @font-face {
-  font-family: 'nhgm';
-  src: url('/fonts/nhgm.TTF') format('truetype');
+    font-family: 'nhgm';
+    src: url('/fonts/nhgm.TTF') format('truetype');
   }
 
   body {
@@ -38,21 +38,21 @@
   .main-text {
     text-align: left;
   }
-  
+
   .button {
     color: black;
     text-decoration: none;
     padding: 4px 9px;
-    border: 1px solid black; /* Minimalistic border */
     border-radius: 20px;
     font-family: 'nhgm';
     font-size: 11px;
-    margin: 5px 0; /* Adjusted margin for spacing */
-    display: inline-block; /* Ensures proper spacing and alignment */
+    margin: 5px 0;
+    display: inline-block;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect */
   }
 
   .button:hover {
-    background-color: #f2f2f2; /* Very light grey for hover effect */
+    transform: translateY(-5px); /* Move button up slightly on hover */
   }
 
   @keyframes dropdownFadeIn {
@@ -67,7 +67,7 @@
   }
 
   body * {
-    animation: dropdownFadeIn 1s ease-out forwards;
+    animation: dropdownFadeIn 1s ease-out;
   }
   
 </style>
@@ -76,9 +76,14 @@
     <div class="container">
         <div class="main-text">
             
-            <a href="index.html" class="button">Home</a><br>
+          <a href="index.html" class="button" style="background-color: #a9bcff;">Home</a><br>
+          <a href="work.html" class="button" style="background-color: #c9d5fe;">Back</a><br><br>
 
-            <p style="font-family: nhgm;">Client "X" is in the E-commerce industry. Our ongoing partnership has been highly successful. Here is the story of how we increased productivity and made cost savings of over $1,000,000 saved every year.</p>
+            <p style="font-family: nhgm;">Client "X" is in the E-commerce industry.</p> 
+              
+            <p style="font-family: nhgm;">Our ongoing partnership has been highly successful.</p> 
+            
+            <p style="font-family: nhgm;">This is the story of how we increased productivity and made cost savings of over $1,000,000 a year.</p>
 
         </div>
     </div>
