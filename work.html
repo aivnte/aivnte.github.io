@@ -1,136 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZAIPS</title>
-<style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAIPS</title>
+    <style>
+      @font-face {
+        font-family: 'nhgt';
+        src: url('/fonts/nhgt.TTF') format('truetype');
+      }
 
-  @font-face {
-    font-family: 'nhgt';
-    src: url('/fonts/nhgt.TTF') format('truetype');
-  }
+      @font-face {
+        font-family: 'nhgm';
+        src: url('/fonts/nhgm.TTF') format('truetype');
+      }
 
-  @font-face {
-    font-family: 'nhgm';
-    src: url('/fonts/nhgm.TTF') format('truetype');
-  }
+      body {
+        background-color: white;
+        font-family: 'nhgt';
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-size: 12px;
+      }
 
-  body {
-    background-color: white;
-    font-family: 'nhgt';
-    margin: 0;
-    padding: 0;
-    display: flex; 
-    justify-content: center;
-    align-items: center; 
-    height: 100vh;
-    font-size: 12px;
-  }
+      .container {
+        text-align: justify;
+        width: 90%;
+        max-width: 375px;
+        position: relative;
+      }
 
-  .container {
-    text-align: justify;
-    width: 90%;
-    max-width: 375px; 
-    position: relative;
-  }
+      .main-text {
+        text-align: left;
+      }
 
-  .main-text {
-    text-align: left;
-  }
+      .button {
+        color: black;
+        text-decoration: none;
+        padding: 4px 9px;
+        border-radius: 20px;
+        font-family: 'nhgm';
+        font-size: 11px;
+        margin: 5px 0;
+        display: inline-block;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        /* Smooth transition for hover effect */
+      }
 
-  .button {
-    color: black;
-    text-decoration: none;
-    padding: 4px 9px;
-    border-radius: 20px;
-    font-family: 'nhgm';
-    font-size: 11px;
-    margin: 5px 0;
-    display: inline-block;
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect */
-  }
+      .button:hover {
+        transform: translateY(-5px);
+        /* Move button up slightly on hover */
+      }
 
-  .button:hover {
-    transform: translateY(-5px); /* Move button up slightly on hover */
-  }
+      .live-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to right, #a4b7fc, #b1c2fb);
+        color: #FFF;
+        padding: 3px 12px;
+        font-size: 12px;
+        margin-left: 10px;
+        margin-top: 5px;
+        cursor: pointer;
+        border-radius: 5px;
+        position: relative;
+        font-family: nhgt;
+      }
 
-  .live-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to right, #a9bcff, #b9c9fe); 
-    color: #FFF;
-    padding: 3px 12px;
-    font-size: 12px;
-    margin-left: 10px;
-    margin-top: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    position: relative;
-    font-family: nhgt;
-  }
+      .pulse-circle {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        margin-right: 7px;
+        animation: pulse-animation 1s infinite;
+      }
 
-  .pulse-circle {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    margin-right: 7px;
-    animation: pulse-animation 1s infinite;
-  }
+      @keyframes pulse-animation {
+        0% {
+          transform: scale(0.90);
+          opacity: 1;
+        }
 
-  @keyframes pulse-animation {
-    0% {
-        transform: scale(0.90);
-        opacity: 1;
-    }
-    70% {
-        transform: scale(1.05);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(0.90);
-        opacity: 1;
-    }
-  }
+        70% {
+          transform: scale(1.05);
+          opacity: 1;
+        }
 
-  @keyframes dropdownFadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(0);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+        100% {
+          transform: scale(0.90);
+          opacity: 1;
+        }
+      }
 
-  body * {
-    animation: dropdownFadeIn 1s ease-out;
-  }
+      @keyframes dropdownFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(0);
+        }
 
-  ::selection {background-color: #000000; color: #ffffff;}
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-</style>
+      body * {
+        animation: dropdownFadeIn 1s ease-out;
+      }
 
-
-</head>
-<body>
+      ::selection {
+        background-color: #000000;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
     <div class="container">
-        <div class="main-text">
-            <a href="index.html" class="button" style="background-color: #a9bcff;">Home</a><br>
-
-            <p>All client specific information has been redacted due to ongoing confidentiality agreements. Clients usually opt for confidentiality agreements due to the competitive nature of the industries in which they operate.</p>
-
-            <a href="x.html" class="button">Over $1,000,000/year saved for Client "X"<span class="live-button"><span class="pulse-circle"></span>LIVE</span></a>
-
-            <p>→ $25,000 saved on modelling agencies</p>
-            <p>→ Reducing customer service workload by 50%</p>
-            <p>→ Instant blog uploads</p>
-            <p>→ Automated newsletter</p>
-        </div>
+      <div class="main-text">
+        <a href="index.html" class="button" style="background-color: #a9bcff;">Home</a>
+        <br>
+        <p>All client specific information has been redacted due to ongoing confidentiality agreements. Clients usually opt for confidentiality agreements due to the competitive nature of the industries in which they operate.</p>
+        <a href="x.html" class="button">Over $1,000,000/year saved for Client "X" <span class="live-button">
+            <span class="pulse-circle"></span>LIVE </span>
+        </a>
+        <p>→ $25,000 saved on modelling agencies</p>
+        <p>→ Reducing customer service workload by 50%</p>
+        <p>→ Instant blog uploads</p>
+        <p>→ Automated newsletter</p>
+      </div>
     </div>
-</body>
+  </body>
 </html>
