@@ -57,30 +57,31 @@
       }
 
       .live-button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(to right, #a4b7fc, #b1c2fb);
-        color: #FFF;
-        padding: 3px 12px;
-        font-size: 12px;
-        margin-left: 10px;
-        margin-top: 5px;
-        cursor: pointer;
-        border-radius: 5px;
-        position: relative;
-        font-family: nhgt;
-      }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent; /* Adjusted to transparent or you can set a specific color */
+  color: #000; /* Text color changed to black */
+  padding: 1px 8px;
+  font-size: 11px;
+  margin-left: 10px;
+  margin-top: 5px;
+  cursor: pointer;
+  border: 1.5px solid #000; /* Black outline */
+  border-radius: 25px; /* Maintains rounded edges */
+  position: relative;
+  font-family: nhgt;
+}
 
-      .pulse-circle {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        background-color: #ffffff;
-        border-radius: 50%;
-        margin-right: 7px;
-        animation: pulse-animation 1s infinite;
-      }
+.pulse-circle {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #000; /* Circle color changed to black */
+  border-radius: 50%;
+  margin-right: 7px;
+  animation: pulse-animation 1s infinite;
+}
 
       @keyframes pulse-animation {
         0% {
@@ -127,7 +128,7 @@
         <a href="index.html" class="button" style="background-color: #a9bcff;">Home</a>
         <br>
         <br>
-        <p>All client specific information has been redacted due to ongoing confidentiality agreements. Clients usually opt for confidentiality agreements due to the competitive nature of the industries in which they operate.</p>
+        <p>All client specific information has been redacted due to ongoing confidentiality agreements. Clients opt for confidentiality agreements due to the competitive nature of the industries in which they operate.</p>
         <a href="x.html" class="button">Over $1,000,000/year saved for Client "X" <span class="live-button">
             <span class="pulse-circle"></span>LIVE </span>
         </a>
