@@ -6,78 +6,116 @@
     <title>ZAIPS</title>
     <style>
       @font-face {
-        font-family: 'nhgt';
-        src: url('/fonts/nhgt.TTF') format('truetype');
+          font-family: 'nhgt';
+          src: url('/fonts/nhgt.TTF') format('truetype');
       }
 
       @font-face {
-        font-family: 'nhgm';
-        src: url('/fonts/nhgm.TTF') format('truetype');
+          font-family: 'nhgm';
+          src: url('/fonts/nhgm.TTF') format('truetype');
       }
 
       body {
-        background-color: white;
-        font-family: 'nhgt';
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        font-size: 12px;
+          background-color: white;
+          font-family: 'nhgt';
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          font-size: 12px;
       }
 
       .container {
-        text-align: justify;
-        width: 90%;
-        max-width: 375px;
-        position: relative;
+          text-align: justify;
+          width: 90%;
+          max-width: 375px;
+          position: relative;
       }
 
       .main-text {
-        text-align: left;
+          text-align: left;
       }
 
       .button {
-        color: black;
-        text-decoration: none;
-        padding: 4px 9px;
-        border-radius: 20px;
-        font-family: 'nhgm';
-        font-size: 11px;
-        margin: 5px 0;
-        display: inline-block;
-        transition: transform 0.3s ease, background-color 0.3s ease;
-        /* Smooth transition for hover effect */
+          color: black;
+          text-decoration: none;
+          padding: 4px 9px;
+          border-radius: 20px;
+          font-family: 'nhgm';
+          font-size: 11px;
+          margin: 5px 0;
+          display: inline-block;
+          transition: transform 0.3s ease, background-color 0.3s ease;
       }
 
       .button:hover {
-        background-color: #f2f2f2;
-        transform: translateY(-2px);
-        /* Move button up slightly on hover */
+          background-color: #f2f2f2;
+          transform: translateY(-2px);
       }
 
-      @keyframes dropdownFadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(0);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      .animated-paragraph {
+          visibility: hidden; /* Hidden by default */
+          animation: dropdown 0.5s ease-out forwards; /* Animation applied */
       }
 
-      body * {
-        animation: dropdownFadeIn 1s ease-out;
+      @keyframes dropdown {
+          from {
+              opacity: 0;
+              transform: translateY(-10px);
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0);
+              visibility: visible;
+          }
       }
 
-      ::selection {
-        background-color: #000000;
-        color: #ffffff;
+      .live-button {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+background: transparent; /* Adjusted to transparent or you can set a specific color */
+color: #000; /* Text color changed to black */
+padding: 1px 8px;
+font-size: 11px;
+margin-left: 10px;
+margin-top: 5px;
+cursor: pointer;
+border: 1.5px solid #000; /* Black outline */
+border-radius: 25px; /* Maintains rounded edges */
+position: relative;
+font-family: nhgt;
+}
+
+.pulse-circle {
+display: inline-block;
+width: 8px;
+height: 8px;
+background-color: #000; /* Circle color changed to black */
+border-radius: 50%;
+margin-right: 7px;
+animation: pulse-animation 1s infinite;
+}
+
+    @keyframes pulse-animation {
+      0% {
+        transform: scale(0.90);
+        opacity: 1;
       }
-    </style>
+
+      70% {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(0.90);
+        opacity: 1;
+      }
+    }
+  </style>
   </head>
   <body>
     <div class="container">
@@ -85,37 +123,39 @@
         <a href="index.html" class="button" style="background-color: #a9bcff;">Home</a>
         <br>
         <br>
-        <p style="font-family: nhgm;">Open positions:</p>
+        <p class="animated-paragraph" style="font-family: nhgm; animation-delay: 0.1s;">Open positions:</p>
         <br>
        
        
-        <p style="font-family: nhgm;">Development</p>
-        <p><i>Requirements: Python, RAG, Database, API, Web Apps</i></p>
+        <p class="animated-paragraph" style="font-family: nhgm; animation-delay: 0.2s;">Development</p>
+        <p class="animated-paragraph" style="animation-delay: 0.2s;"><i>Requirements: Python, RAG, Database, API, Web Apps</i></p>
         <br>
        
-        <p style="font-family: nhgm;">Design</p>
-        <p><i>Requirements: MidJourney, Upscaling, Photoshop, Retouching</i></p>
+        <p class="animated-paragraph" style="font-family: nhgm; animation-delay: 0.3s;">Design</p>
+        <p class="animated-paragraph" style="animation-delay: 0.3s;"><i>Requirements: MidJourney, Upscaling, Photoshop, Retouching</i></p>
         <br>
        
-        <p style="font-family: nhgm;">Sales</p>
-        <p><i>Requirements: Proven track record, Communication skills, German and English</i></p>
+        <p class="animated-paragraph"  style="font-family: nhgm; animation-delay: 0.4s;">Sales</p>
+        <p class="animated-paragraph" style="animation-delay: 0.4s;"><i>Requirements: Proven track record, Communication skills, German and English</i></p>
 
         <br>
        
-        <p style="font-family: nhgm;">Research</p>
-        <p><i>Requirements: Solid understanding of AI and global tech trends, highly focused</i></p>
+        <p class="animated-paragraph"  style="font-family: nhgm; animation-delay: 0.5s;">Research</p>
+        <p class="animated-paragraph" style="animation-delay: 0.5s;"><i>Requirements: Solid understanding of AI and global tech trends, highly focused</i></p>
        
-       
+        
         <br>
        
        
-        <p>All positions start at $3,000/m (after tax) + Bonus structure</p>
-        <p>No degree requirements</p>
+        <p class="animated-paragraph" style="font-family: nhgm; animation-delay: 0.6s;">All positions start at $3,000/m (after tax) + Bonus structure</p>
+        <p class="animated-paragraph" style="font-family: nhgm; animation-delay: 0.6s;">No degree requirements</p>
         <br>
-        <p style="font-family: nhgm;">Send all applications to → adam@zaips.com</p>
+        <p class="animated-paragraph" style="font-family: nhgm; animation-delay: 0.7s;">Send all applications to → adam@zaips.com</p>
       </div>
     </div>
 
     
   </body>
 </html>
+
+
