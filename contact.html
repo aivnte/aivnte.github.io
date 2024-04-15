@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -51,10 +52,27 @@
         /* Smooth transition for hover effect */
       }
 
-      .button:hover {
+      .button:hover{
         background-color: #f2f2f2;
         transform: translateY(-2px);
         /* Move button up slightly on hover */
+      }
+
+      .live-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        color: #000;
+        padding: 1px 8px;
+        font-size: 11px;
+        margin-left: 10px;
+        margin-top: 5px;
+        cursor: pointer;
+        border: 1.5px solid #000;
+        border-radius: 25px;
+        position: relative;
+        font-family: nhgt;
       }
 
       @keyframes dropdownFadeIn {
@@ -85,28 +103,10 @@
         <a href="index.html" class="button" style="background-color: #a9bcff;">Home</a>
         <br>
         <br>
-        <p style="font-family: nhgm;">For all enquiries → adam@zaips.com or <a class="button" style="background-color: #a9bcff; cursor: pointer;" data-cal-link="zaips/30min" data-cal-namespace="" data-cal-config='{"layout":"month_view"}'>Book a Call</a></p>
-
-        
-<!-- Cal element-click embed code begins -->
-<script type="text/javascript">
-    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-  Cal("init",  {origin:"https://cal.com"});
-  
-    
-    // Important: Please add the following attributes to the element that should trigger the calendar to open upon clicking.
-    // `data-cal-link="zaips/30min"`
-    // data-cal-namespace=""
-    // `data-cal-config='{"layout":"month_view"}'`
-  
-    Cal("ui", {"theme":"light","styles":{"branding":{"brandColor":"#000000"}},"hideEventTypeDetails":false,"layout":"month_view"});
-    </script>
-    <!-- Cal element-click embed code ends -->
-
+        <p style="font-family: nhgt;">For all enquiries → adam@zaips.com</p>
 
       </div>
     </div>
 
-    
   </body>
 </html>
