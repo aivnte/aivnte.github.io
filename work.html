@@ -3,119 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
     <title>ZAIPS</title>
-    <style>
-        @font-face {
-            font-family: 'nhgt';
-            src: url('/fonts/nhgt.TTF') format('truetype');
-        }
-
-        @font-face {
-            font-family: 'nhgm';
-            src: url('/fonts/nhgm.TTF') format('truetype');
-        }
-
-        body {
-            background-color: white;
-            font-family: 'nhgt';
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-size: 12px;
-        }
-
-        .container {
-            text-align: justify;
-            width: 90%;
-            max-width: 375px;
-            position: relative;
-        }
-
-        .main-text {
-            text-align: left;
-        }
-
-        .button {
-            color: black;
-            text-decoration: none;
-            padding: 4px 9px;
-            border-radius: 20px;
-            font-family: 'nhgm';
-            font-size: 11px;
-            margin: 5px 0;
-            display: inline-block;
-
-        }
-
-        .button:hover {
-            transform: translateY(-2px);
-        }
-
-        .animated-paragraph {
-            visibility: hidden; /* Hidden by default */
-            animation: dropdown 0.5s ease-out forwards; /* Animation applied */
-        }
-
-        @keyframes dropdown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-                visibility: visible;
-            }
-        }
-
-        .live-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent; /* Adjusted to transparent or you can set a specific color */
-  color: #000; /* Text color changed to black */
-  padding: 1px 8px;
-  font-size: 11px;
-  margin-left: 10px;
-  margin-top: 5px;
-  cursor: pointer;
-  border: 1.5px solid #000; /* Black outline */
-  border-radius: 25px; /* Maintains rounded edges */
-  position: relative;
-  font-family: nhgt;
-}
-
-.pulse-circle {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background-color: #000; /* Circle color changed to black */
-  border-radius: 50%;
-  margin-right: 7px;
-  animation: pulse-animation 1s infinite;
-}
-
-      @keyframes pulse-animation {
-        0% {
-          transform: scale(0.90);
-          opacity: 1;
-        }
-
-        70% {
-          transform: scale(1.05);
-          opacity: 1;
-        }
-
-        100% {
-          transform: scale(0.90);
-          opacity: 1;
-        }
-      }
-    </style>
 </head>
+
 <body>
 <div class="container">
     <div class="main-text">
@@ -125,11 +16,13 @@
         <a href="x.html" class="button">Over $1,000,000/year saved for Client "X" <span class="live-button">
             <span class="pulse-circle"></span>LIVE </span>
         </a>
-        <p class="animated-paragraph" style="animation-delay: 0.1s;">→ $25,000 saved on modelling agencies</p>
-        <p class="animated-paragraph" style="animation-delay: 0.2s;">→ Reducing customer service workload by 50%</p>
-        <p class="animated-paragraph" style="animation-delay: 0.3s;">→ Instant blog uploads</p>
-        <p class="animated-paragraph" style="animation-delay: 0.4s;">→ Automated newsletter</p>
+        <p class="animated-paragraph" style="animation-delay: 0.3s;">→ $25,000 saved on modelling agencies</p>
+        <p class="animated-paragraph" style="animation-delay: 0.4s;">→ Reducing customer service workload by 50%</p>
+        <p class="animated-paragraph" style="animation-delay: 0.5s;">→ Instant blog uploads</p>
+        <p class="animated-paragraph" style="animation-delay: 0.6s;">→ Automated newsletter</p>
+        
     </div>
 </div>
 </body>
+
 </html>
