@@ -1,14 +1,17 @@
-@font-face {
+@font-face 
+{
     font-family: 'nhgt';
     src: url('/fonts/nhgt.TTF') format('truetype');
 }
 
-@font-face {
+@font-face 
+{
     font-family: 'nhgm';
     src: url('/fonts/nhgm.TTF') format('truetype');
 }
 
-html, body {
+html, body 
+{
     height: 100%;
     margin: 0;
     padding: 0;
@@ -19,7 +22,8 @@ html, body {
     font-family: 'nhgt';
 }
 
-body {
+body 
+{
     flex: 1;
     min-height: 100vh;
     display: flex;
@@ -30,18 +34,21 @@ body {
     padding-bottom: 30px;
 }
 
-.container {
+.container 
+{
     text-align: justify;
     width: 90%;
     max-width: 375px;
     position: relative;
 }
 
-.main-text {
+.main-text 
+{
     text-align: left;
 }
 
-.button {
+.button 
+{
     color: black;
     text-decoration: none;
     padding: 4px 9px;
@@ -55,12 +62,14 @@ body {
     animation: dropdownFadeIn 0.5s ease-out forwards;
 }
 
-.button:hover {
+.button:hover 
+{
     background-color: #f2f2f2;
     transform: translateY(-2px) !important;
 }
 
-@keyframes dropdownFadeIn {
+@keyframes dropdownFadeIn 
+{
     from {
         opacity: 0;
         transform: translateY(-10px);
@@ -73,17 +82,20 @@ body {
     }
 }
 
-::selection {
+::selection 
+{
     background-color: #000000;
     color: #ffffff;
 }
 
-.animated-paragraph {
+.animated-paragraph 
+{
     visibility: hidden; /* Start hidden */
     animation: dropdownFadeIn 0.5s ease-out forwards; /* Ensures visibility remains as set in the final keyframe */
 }
 
-@keyframes fadeInUp {
+@keyframes fadeInUp 
+{
     from {
         opacity: 0;
         transform: translateY(10px);
@@ -96,9 +108,8 @@ body {
     }
 }
 
-
-
-.live-button {
+.live-button 
+{
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -115,7 +126,8 @@ body {
     font-family: 'nhgt';
 }
 
-.pulse-circle {
+.pulse-circle 
+{
     display: inline-block;
     width: 8px;
     height: 8px;
@@ -125,7 +137,8 @@ body {
     animation: pulse-animation 1s infinite;
 }
 
-@keyframes pulse-animation {
+@keyframes pulse-animation 
+{
     0% {
         transform: scale(0.90);
         opacity: 1;
