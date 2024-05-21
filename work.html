@@ -5,13 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
     <title>ZAIPS</title>
+    <style>
+        .more-text {
+            display: none;
+        }
+        .read-more {
+            color: black;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
     <div class="main-text">
         <a href="index.html" class="button" style="background-color: #a9bcff;">Home</a>
         <br><br>
-        <p>*All client-specific information has been redacted due to ongoing confidentiality agreements. Clients opt for confidentiality agreements due to the competitive nature of the industries in which they operate.</p>
+        <p>
+            *All client-specific information has been redacted due to ongoing confidentiality agreements. 
+            <span id="dots" class="read-more" onclick="toggleText()">Read more</span>
+            <span id="more" class="more-text"> Clients opt for confidentiality agreements due to the competitive nature of the industries in which they operate. <span class="read-more" onclick="toggleText()">Read less</span></span>
+        </p>
         <br><br>
         <div class="content-frame">
             <a href="x.html" class="button-grey" style="background-color: #d7d7d7;">Over $1,000,000/year saved for Client "X"</a>
@@ -23,17 +37,20 @@
         </div>
     </div>
 </div>
-<div class="carousel-container">
-    <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
-    <div class="carousel">
-        <div class="carousel-item"><img src="your-image1.jpg" alt="Image 1"></div>
-        <div class="carousel-item"><img src="your-image2.jpg" alt="Image 2"></div>
-        <div class="carousel-item"><img src="your-image3.jpg" alt="Image 3"></div>
-        <div class="carousel-item"><img src="your-image4.jpg" alt="Image 4"></div>
-    </div>
-    <button class="next" onclick="moveCarousel(1)">&#10095;</button>
-</div>
-<script src="script.js"></script>
+
+<script>
+  function toggleText() {
+    var dots = document.getElementById("dots");
+    var moreText = document.getElementById("more");
+
+    if (dots.style.display === "none") {
+      dots.style.display = "inline";
+      moreText.style.display = "none";
+    } else {
+      dots.style.display = "none";
+      moreText.style.display = "inline";
+    }
+  }
+</script>
 </body>
 </html>
-
