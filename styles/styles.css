@@ -56,7 +56,7 @@ body {
 }
 
 .button:hover {
-    background-color: #f2f2f2;
+    background-color: #000000;
     transform: translateY(-2px) !important;
 }
 
@@ -97,8 +97,8 @@ body {
 }
 
 .new-button {
-    color: black;
-    background-color: #d7d7d7;
+    color: white;
+    background-color: #000000;
     text-decoration: none;
     padding: 4px 9px;
     border-radius: 7px;
@@ -111,8 +111,8 @@ body {
   }
 
   .button-grey {
-    color: black;
-    background-color: #d7d7d7;
+    color: white;
+    background-color: #000000;
     text-decoration: none;
     padding: 4px 9px;
     border-radius: 7px;
@@ -131,7 +131,7 @@ body {
     top: -12px;
     right: -10px;
     color: rgb(255, 255, 255);
-    background-color: #212121;
+    background-color: #000000;
     font-size: 8px;
     padding: 3px 6px;
     border-radius: 5px;
