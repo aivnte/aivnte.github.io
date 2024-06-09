@@ -1,119 +1,57 @@
-/* Fonts */
-@font-face {
-  font-family: 'nhgt';
-  src: url('/fonts/nhgt.TTF') format('truetype');
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+
 
 @font-face {
-  font-family: 'nhgm';
-  src: url('/fonts/nhgm.TTF') format('truetype');
+  font-family: 'dot';
+  src: url('/fonts/dot.otf') format('openType');
 }
 
-/* Main Page */
-html, body {
-  height: 100%;
+body, html {
   margin: 0;
   padding: 0;
-  display: flex;
-  align-content: center;
-  align-items: center;
-  font-size: 13px;
-  font-family: 'nhgt';
-}
-
-/* Main Body */
-body {
-  flex: 1;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-/* Main Container - Creates the narrow container*/
-.container {
-  text-align: left;
   width: 100%;
-  max-width: 375px;
-  position: relative;
+  height: 100%;
 }
 
-/* Main Button */
-.button {
-  color: black;
-  text-decoration: none;
-  padding: 4px 9px;
-  border-radius: 9px;
-  font-family: 'nhgt';
-  font-size: 12px;
-  margin: 5px 0;
-  display: inline-block;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  visibility: hidden;
-  animation: dropdownFadeIn 0.5s ease-out forwards;
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* Main Button Hover */
-.button:hover {
-  background-color: #000000;
-  transform: translateY(-2px) !important;
+.content {
+  width: 50%;
+  max-width: 500px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* Main Button Animation */
-@keyframes dropdownFadeIn {
-  from {
-      opacity: 0;
-      transform: translateY(-10px);
-      visibility: hidden;
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-      visibility: visible;
-  }
+h1 {
+  text-align: center;
+  font-family: 'dot';
 }
 
-/* Highlight Color */
-::selection {
-  background-color: #e0e0e0;
-  color: black;
+p {
+  text-align: justify;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
 }
 
-/* Read More Button */
-.more-text {
-  display: none;
-}
-
-/* Read More Button */
-.read-more {
-  color: #afaeae;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-/* Fade-In Text */
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
+@media (max-width: 768px) {
+  .content {
+      width: 70%;
   }
 }
 
-/* Fade-In Text */
-.fade-in {
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-.more-text {
-  display: none;
-}
-
-.show {
-  display: inline;
-  animation: fadeIn 2s ease-in-out;
+@media (max-width: 480px) {
+  .content {
+      width: 90%;
+  }
 }
