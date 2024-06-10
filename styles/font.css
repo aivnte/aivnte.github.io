@@ -10,11 +10,11 @@ src: url('/fonts/light.woff2') format('woff2');
 }
 
 @font-face {
-    font-family: 'book';
-    src: url('/fonts/book.woff2') format('woff2');
-    }
+font-family: 'book';
+src: url('/fonts/book.woff2') format('woff2');
+}
 
-.rounded-button{
+.main-button{
 font-family: "dot";
 }
 
@@ -39,33 +39,33 @@ transition: blur;
 }
 
 @keyframes blurEffect {
-    0% {
-      filter: blur(0);
-    }
-    50% {
-      filter: blur(5px);
-    }
-    100% {
-      filter: blur(0);
-    }
-  }
-  
-  h2 {
-    font-family: "book";
-    font-weight: 400;
-    font-size: 22px;
-    text-align: left;
-    opacity: 0.9;
-    animation: blurEffect 1s;
-    color: #f4a625;
-  }
+0% {
+filter: blur(0);
+}
+50% {
+filter: blur(5px);
+}
+100% {
+filter: blur(0);
+}
+}
 
-  h3 {
-    font-family: "book";
-    font-weight: 400;
-    font-size: 22px;
-    text-align: left;
-    opacity: 0.9;
-    animation: blurEffect 1s;
-    color: #ffffff;
-  }
+h2 {
+font-family: "book";
+font-weight: 400;
+font-size: 22px;
+text-align: left;
+opacity: 0.9;
+animation: blurEffect 1s;
+color: #f4a625;
+}
+
+h3 {
+font-family: "book";
+font-weight: 400;
+font-size: 22px;
+text-align: left;
+opacity: 0.9;
+animation: blurEffect 1s;
+color: #ffffff;
+}
