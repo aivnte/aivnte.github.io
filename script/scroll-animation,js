@@ -1,0 +1,29 @@
+// Function to check if an element is in viewport
+function isInViewport(element) {
+    var rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+  
+  // Function to handle scroll event
+  function handleScroll() {
+    var elements = document.querySelectorAll('.general-text');
+    elements.forEach(function(element) {
+      if (isInViewport(element)) {
+        element.classList.remove('blur');
+      } else {
+        element.classList.add('blur');
+      }
+    });
+  }
+  
+  // Add scroll event listener
+  window.addEventListener('scroll', handleScroll);
+  
+  // Initially trigger handleScroll to check elements in viewport on page load
+  handleScroll();
+  

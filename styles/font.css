@@ -35,13 +35,37 @@ color: #ffffff;
 letter-spacing: -0.05px;
 line-height: 16.8px;
 opacity: 0.5;
+transition: blur;
 }
 
-h2 {
-font-family: "book";
-font-weight: 400;
-font-size: 22px;
-text-align: left;
-opacity: 0.9;
-}
+@keyframes blurEffect {
+    0% {
+      filter: blur(0);
+    }
+    50% {
+      filter: blur(5px);
+    }
+    100% {
+      filter: blur(0);
+    }
+  }
+  
+  h2 {
+    font-family: "book";
+    font-weight: 400;
+    font-size: 22px;
+    text-align: left;
+    opacity: 0.9;
+    animation: blurEffect 1s;
+    color: #f4a625;
+  }
 
+  h3 {
+    font-family: "book";
+    font-weight: 400;
+    font-size: 22px;
+    text-align: left;
+    opacity: 0.9;
+    animation: blurEffect 1s;
+    color: #ffffff;
+  }

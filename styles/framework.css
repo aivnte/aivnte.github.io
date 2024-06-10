@@ -3,23 +3,40 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-}
-
-body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Added to ensure all elements adhere to the box-sizing model */
+  }
+  
+  body, html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
     color: white;
     background-color: #000000;
+    overflow: hidden; /* Changed from scroll to hidden to avoid double scrollbars */
+  }
+  
+  body {
+    overflow-y: scroll; /* Ensures smooth scrolling without overflow issues */
+  }
+  
+  /* Hide the scrollbar */
+  body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
   }
   
   .container {
     display: flex;
-    justify-content: left;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    height: 100vh;
     padding: 20px;
     box-sizing: border-box;
+    position: relative;
   }
   
   .content {
@@ -27,17 +44,26 @@ body, html {
     max-width: 450px;
     padding: 20px;
     box-sizing: border-box;
-  }
-  
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.5s ease, filter 0.7s ease;
+    filter: blur(0);
+}
+
+.fade-out {
+    opacity: 0;
+    filter: blur(5px); /* Adjust the blur value as needed */
+}
+
   @media (max-width: 768px) {
     .content {
-        width: 70%;
+      width: 70%;
     }
   }
   
   @media (max-width: 480px) {
     .content {
-        width: 90%;
+      width: 90%;
     }
   }
-
+  

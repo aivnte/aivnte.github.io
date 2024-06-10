@@ -1,0 +1,40 @@
+.scroll-indicator {
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  text-align: center;
+  transition: opacity 0.5s;
+}
+.scroll-icon {
+  width: 30px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 25px;
+  position: relative;
+  opacity: 0.8;
+}
+.scroll-icon::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: #f4a625;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll 2s infinite;
+  opacity: 0.95;
+}
+@keyframes scroll {
+  0% {
+    top: 10px;
+    opacity: 1;
+  }
+  100% {
+    top: 40px;
+    opacity: 0;
+  }
+}
