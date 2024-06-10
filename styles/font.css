@@ -5,9 +5,14 @@ src: url('/fonts/dot.otf') format('openType');
 }
 
 @font-face {
-font-family: 'text';
-src: url('/fonts/text.woff2') format('woff2');
+font-family: 'light';
+src: url('/fonts/light.woff2') format('woff2');
 }
+
+@font-face {
+    font-family: 'book';
+    src: url('/fonts/book.woff2') format('woff2');
+    }
 
 .rounded-button{
 font-family: "dot";
@@ -17,26 +22,26 @@ h1 {
 text-align: left;
 font-family: 'dot';
 font-size: 30px;
-padding-top: 50%;
-}
-
-.subheading {
-font-family: "text";
-font-weight: 350;
-font-size: 20px;
-text-align: left;
+padding-top: 5%;
+font-weight: 200;
 }
 
 .general-text {
-font-family: "text";
+font-family: "book";
 font-weight: 350;
-font-size: 15px;
+font-size: 16px;
 text-align: left;
+color: #ffffff;
+letter-spacing: -0.05px;
+line-height: 16.8px;
+opacity: 0.5;
 }
 
 h2 {
-font-family: "dot";
-font-size: 20px;
+font-family: "book";
+font-weight: 400;
+font-size: 22px;
 text-align: left;
+opacity: 0.9;
 }
 
