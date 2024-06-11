@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'dot';
+    src: url('/fonts/dot.otf') format('openType');
+  }
+
+  h1 {
+    font-family: 'dot';
+
+  }

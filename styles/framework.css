@@ -11,8 +11,6 @@ html {
 }
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
   background: black;
   color: white;
   display: flex;
@@ -25,8 +23,7 @@ body {
 .site-header {
   width: 100%;
   text-align: center;
-  /* position: fixed; */ /* Remove this line */
-  position: absolute; /* Add this line */
+  position: absolute;
   bottom: 5px;
   left: 0;
   right: 0;
@@ -37,23 +34,6 @@ body {
   margin: 0 5px;
   white-space: nowrap;
   overflow: hidden;
-}
-
-/* Main Content */
-.site-main {
-  padding: 20px;
-  margin-top: calc(100vh + 20px); /* To ensure the main content starts below the viewport */
-}
-
-.site-main .content {
-  text-align: justify;
-}
-
-.site-main .content p {
-  font-size: 1rem;
-  margin: 20px 0;
-  margin-left: 10%;
-  margin-right: 10%;
 }
 
 /* Responsive Design */
