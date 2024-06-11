@@ -1,74 +1,86 @@
+/* Basic Reset */
 * {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Added to ensure all elements adhere to the box-sizing model */
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* Responsive Typography */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Header */
+.site-header {
+  width: 100%;
+  text-align: center;
+  /* position: fixed; */ /* Remove this line */
+  position: absolute; /* Add this line */
+  bottom: 5px;
+  left: 0;
+  right: 0;
+}
+
+.site-header h1 {
+  font-size: calc(100vw / 10);
+  margin: 0 5px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Main Content */
+.site-main {
+  padding: 20px;
+  margin-top: calc(100vh + 20px); /* To ensure the main content starts below the viewport */
+}
+
+.site-main .content {
+  text-align: justify;
+}
+
+.site-main .content p {
+  font-size: 1rem;
+  margin: 20px 0;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   html {
-    scroll-behavior: auto;
+      font-size: 14px;
   }
-  
-  
-  body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    color: white;
-    background-color: #000000;
-    overflow: hidden; /* Changed from scroll to hidden to avoid double scrollbars */
+
+  .site-header h1 {
+      font-size: calc(100vw / 8);
   }
-  
-  body {
-    overflow-y: scroll; /* Ensures smooth scrolling without overflow issues */
+
+  .site-main .content p {
+      font-size: 0.875rem;
   }
-  
-  /* Hide the scrollbar */
-  body::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-  }
-  
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-    position: relative;
-  }
-  
-  .content {
-    width: 50%;
-    max-width: 450px;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-    opacity: 1;
-    transition: opacity 0.5s ease, filter 0.7s ease;
-    filter: blur(0);
 }
 
-.fade-out {
-    opacity: 0;
-    filter: blur(5px); /* Adjust the blur value as needed */
-}
+@media (max-width: 480px) {
+  html {
+      font-size: 12px;
+  }
 
-  @media (max-width: 768px) {
-    .content {
-      width: 70%;
-    }
+  .site-header h1 {
+      font-size: calc(100vw / 6);
   }
-  
-  @media (max-width: 480px) {
-    .content {
-      width: 90%;
-    }
+
+  .site-main .content p {
+      font-size: 0.75rem;
   }
-  
+}
