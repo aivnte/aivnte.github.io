@@ -8,6 +8,8 @@
   src: url('/fonts/book.woff2') format('woff2');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap');
+
 h1 {
   -webkit-font-smoothing: antialiased;
   font-family: 'dot';
@@ -20,10 +22,32 @@ p {
   letter-spacing: -0.32px;
   line-height: 20.8px;
   font-weight: 350px;
-  text-align: justify;
+  text-align: center;
 }
 
 .button {
   -webkit-font-smoothing: antialiased;
   font-family: 'dot';
+}
+
+.superscript {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 200  ;
+  color: rgb(0, 0, 0);
+  padding: 0px 8px;
+  border-radius: 20px;
+  margin-bottom: -0.4rem;
+  text-align: center;
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  border-width: 1px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  height: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }

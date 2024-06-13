@@ -47,6 +47,10 @@ p {
   font-size: 1rem; /* Relative to the root font-size */
 }
 
+.superscript {
+  font-size: .6rem;
+}
+
 .tag-line-container {
   display: flex;
   justify-content: center;
