@@ -3,7 +3,38 @@
     src: url('/fonts/dot.otf') format('openType');
   }
 
-  h1 {
-    font-family: 'dot';
+@font-face {
+  font-family: 'book';
+  src: url('/fonts/book.woff2') format('woff2');
+}
 
-  }
+@font-face {
+  font-family: 'lite';
+  src: url('/fonts/lite.woff2') format('woff2');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+h1 {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'dot';
+}
+
+h2 {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+p {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'book';
+  letter-spacing: -0.32px;
+  line-height: 20.8px;
+  font-weight: 350px;
+}
+
+.button {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'dot';
+}

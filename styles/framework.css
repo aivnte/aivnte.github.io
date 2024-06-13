@@ -1,66 +1,74 @@
-/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Responsive Typography */
+/* Base styles for consistent look */
 html {
-  font-size: 16px;
+  font-size: 16px; /* This will be used to calculate rem units */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 body {
-  background: black;
-  color: white;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height to center vertically */
 }
 
-/* Header */
-.site-header {
-  width: 100%;
+/* Container setup to ensure content scales with viewport */
+header, footer {
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%; /* Ensure it takes full width of the viewport */
+}
+
+header {
   text-align: center;
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  right: 0;
+  justify-content: center;
+  max-width: 50%;
 }
 
-.site-header h1 {
-  font-size: calc(100vw / 10);
-  margin: 0 5px;
-  white-space: nowrap;
-  overflow: hidden;
+main {
+  text-align: left;
+  justify-content: left;
+  max-width: 50%;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Typography scaling */
+h1 {
+  font-size: 2rem; /* Relative to the root font-size */
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.3rem; /* Relative to the root font-size */
+}
+
+p {
+  font-size: 1rem; /* Relative to the root font-size */
+}
+
+.tag-line-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Full width to ensure center alignment */
+  height: 100vh; /* Full height to center vertically */
+}
+
+.tag-line {
+  text-align: center;
+  max-width: 10rem;
+}
+
+/* Responsive layout */
+@media (min-width: 600px) {
   html {
-      font-size: 14px;
-  }
-
-  .site-header h1 {
-      font-size: calc(100vw / 8);
-  }
-
-  .site-main .content p {
-      font-size: 0.875rem;
+      font-size: 18px;
   }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 900px) {
   html {
-      font-size: 12px;
-  }
-
-  .site-header h1 {
-      font-size: calc(100vw / 6);
-  }
-
-  .site-main .content p {
-      font-size: 0.75rem;
+      font-size: 20px;
   }
 }
