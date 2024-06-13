@@ -1,0 +1,50 @@
+/* buttons.css */
+
+/* Main Button */
+.button {
+    color: rgb(0, 113, 227);
+    text-decoration: none;
+    padding: 4px 9px;
+    border-radius: 20px;
+    margin: 5px 0;
+    display: inline-block;
+    cursor: pointer;
+    border-color: rgb(0, 113, 227);
+    border-style: solid;
+    border-width: 1px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s;
+  }
+  
+  .button span {
+    display: inline-block;
+    transition: all 0.5s;
+  }
+  
+  /* Hover Effect */
+  .button:hover span {
+    animation: blurText 0.5s;
+  }
+  
+  @keyframes blurText {
+    0% {
+      filter: blur(0);
+    }
+    50% {
+      filter: blur(2px);
+    }
+    100% {
+      filter: blur(0);
+    }
+  }
+  
+  .button-row {
+    text-align: center;
+    margin-top: -3rem;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    gap: 1rem; /* Optional: space between buttons */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  }

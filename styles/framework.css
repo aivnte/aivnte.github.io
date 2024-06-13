@@ -1,0 +1,78 @@
+/* framework.css */
+
+/* Base styles for consistent look */
+html {
+  font-size: 16px; /* This will be used to calculate rem units */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh; /* Full height to center vertically */
+}
+
+/* Container setup to ensure content scales with viewport */
+header, footer {
+  padding: 2rem 0; /* Adjust padding to only top and bottom */
+  width: 100%; /* Ensure it takes full width of the viewport */
+  text-align: center; /* Center content */
+}
+
+header {
+  max-width: 50%;
+}
+
+main {
+  text-align: left;
+  justify-content: left;
+  max-width: 50%;
+}
+
+/* Typography scaling */
+h1 {
+  font-size: 2rem; /* Relative to the root font-size */
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.3rem; /* Relative to the root font-size */
+}
+
+p {
+  font-size: 1rem; /* Relative to the root font-size */
+}
+
+.superscript {
+  font-size: .6rem;
+}
+
+.tag-line-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Full width to ensure center alignment */
+  height: 100vh; /* Full height to center vertically */
+}
+
+.tag-line {
+  text-align: center;
+  max-width: 10rem;
+}
+
+/* Responsive layout */
+@media (min-width: 600px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 900px) {
+  html {
+    font-size: 20px;
+  }
+}
