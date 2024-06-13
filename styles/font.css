@@ -27,7 +27,7 @@ p {
   letter-spacing: -0.32px;
   line-height: 32px;
   font-weight: 400; /* Removed px unit from font-weight */
-  text-align: justify;
+  text-align: center;
   font-size: 1.1rem;
   display: block;
   max-width: 450px;
@@ -37,8 +37,7 @@ p {
 
 .button {
   -webkit-font-smoothing: antialiased;
-  font-family: 'dot';
-  font-weight: 1000;
+  font-family: 'text';
 }
 
 a {
