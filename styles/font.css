@@ -8,22 +8,10 @@
   src: url('/fonts/book.woff2') format('woff2');
 }
 
-@font-face {
-  font-family: 'lite';
-  src: url('/fonts/lite.woff2') format('woff2');
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
 h1 {
   -webkit-font-smoothing: antialiased;
   font-family: 'dot';
-}
-
-h2 {
-  -webkit-font-smoothing: antialiased;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
+  letter-spacing: -2.5px;
 }
 
 p {
@@ -32,6 +20,7 @@ p {
   letter-spacing: -0.32px;
   line-height: 20.8px;
   font-weight: 350px;
+  text-align: justify;
 }
 
 .button {
