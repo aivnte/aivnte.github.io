@@ -4,8 +4,13 @@
   }
 
 @font-face {
-  font-family: 'book';
-  src: url('/fonts/book.woff2') format('woff2');
+  font-family: 'text';
+  src: url('/fonts/text.otf') format('openType');
+}
+
+@font-face {
+  font-family: 'dot';
+  src: url('/fonts/dot.otf') format('openType');
 }
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap');
@@ -18,33 +23,22 @@ h1 {
 
 p {
   -webkit-font-smoothing: antialiased;
-  font-family: 'book';
+  font-family: 'text';
   letter-spacing: -0.32px;
-  line-height: 20.8px;
-  font-weight: 350px;
-  text-align: center;
+  line-height: 32px;
+  font-weight: 400; /* Removed px unit from font-weight */
+  text-align: justify;
+  font-size: 1.1rem;
+  display: block;
+  max-width: 450px;
+  margin: 0 auto; /* Centering the paragraph */
 }
+
 
 .button {
   -webkit-font-smoothing: antialiased;
   font-family: 'dot';
-}
-
-.superscript {
-  font-family: "JetBrains Mono", monospace;
-  font-weight: 200  ;
-  color: rgb(0, 0, 0);
-  padding: 0px 8px;
-  border-radius: 20px;
-  margin-bottom: -0.4rem;
-  text-align: center;
-  border-color: rgb(0, 0, 0);
-  border-style: solid;
-  border-width: 1px;
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-  height: 20px;
+  font-weight: 1000;
 }
 
 a {
