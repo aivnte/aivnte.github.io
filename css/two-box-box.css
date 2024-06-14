@@ -1,0 +1,30 @@
+.two-box-box {
+    background-color: lightblue;
+    border-radius: 15px;
+    height: 500px;
+    padding: 10px;
+    flex: 300px;
+    max-width: 50%;
+    box-sizing: border-box;
+    margin-left: .9rem; /* Adding margin between the boxes */
+    margin-right: .9rem; /* Adding margin between the boxes */
+}
+
+@media (max-width: 600px) {
+    .two-box-box {
+        max-width: 100%;
+        margin-left: .9rem; /* Resetting margin for smaller screens */
+        margin-right: .9rem; /* Resetting margin for smaller screens */
+        margin-top: 5rem;
+
+    }
+}
+
+/* Adding specific classes to apply outer margins */
+.first-box {
+    margin-left: .9rem; /* Adding left margin to the first box */
+}
+
+.second-box {
+    margin-right: .9rem; /* Adding right margin to the second box */
+}
