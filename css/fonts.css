@@ -9,3 +9,10 @@
     font-family: 'text';
     src: url('/fonts/text.otf') format('openType');
 }
+
+
+
+@font-face {
+    font-family: 'mono';
+    src: url('/fonts/mono.woff2') format('woff2');
+}

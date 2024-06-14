@@ -1,8 +1,0 @@
-.two-box-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Adjusting this to space the boxes properly */
-    margin-top: 25rem;
-    margin-left: .9rem; /* Adding left margin to the container */
-    margin-right: .9rem; /* Adding right margin to the container */
-}

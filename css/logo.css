@@ -5,6 +5,7 @@
     width: 100%;
     text-align: left;
     padding-left: .9rem;
+    z-index: 1000;
 }
 
 
