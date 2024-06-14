@@ -1,3 +1,4 @@
+/* Container for the two boxes */
 .two-box-container {
     display: flex;
     flex-wrap: wrap;
@@ -6,8 +7,15 @@
     margin-left: .9rem; 
     margin-right: .9rem;
     position: relative;
+    transition: filter 0.5s ease, opacity 0.5s ease;
 }
 
+.two-box-container.blur {
+    filter: blur(50px);
+    opacity: 0;
+}
+
+/* Styles for individual boxes */
 .two-box-box {
     background-color: lightgray;
     border-radius: 15px;
@@ -25,6 +33,7 @@
     align-items: center; /* Center the content horizontally */
 }
 
+/* Media queries for responsive design */
 @media (max-width: 800px) {
     .two-box-box {
         max-width: 100%;
@@ -52,6 +61,7 @@
     }
 }
 
+/* Styles for the first box */
 .first-box {
     position: relative;
     margin-left: .9rem;
@@ -69,7 +79,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../img/grad1.png');
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../img/grad1.png');
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -77,9 +87,16 @@
 }
 
 .first-box:hover::before {
-    filter: blur(100px);
+    filter: blur(50px);
 }
 
+/* Apply hover effect to the button inside the first box */
+.first-box:hover .box-button1 {
+    background-color: black;
+    color: white;
+}
+
+/* Styles for the second box */
 .second-box {
     position: relative;
     margin-left: .9rem;
@@ -97,7 +114,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../img/grad1.png');
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../img/grad1.png');
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -105,9 +122,16 @@
 }
 
 .second-box:hover::before {
-    filter: blur(100px);
+    filter: blur(50px);
 }
 
+/* Apply hover effect to the button inside the second box */
+.second-box:hover .box-button2 {
+    background-color: black;
+    color: white;
+}
+
+/* Content wrapper inside the boxes */
 .box-content-wrapper {
     display: flex;
     align-items: center;
@@ -117,21 +141,22 @@
     width: 100%;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    box-sizing: border-box; /* Add this line to ensure padding is included in the width */
+    box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
+/* Content inside the boxes */
 .box-content {
     font-family: 'text';
-    color: white;
-    mix-blend-mode: difference;
+    color: black;
     font-size: 2.5rem;
     text-align: center;
     margin: 0; /* Remove default margin */
     width: 100%; /* Ensure the text spans the full width of the content wrapper */
 }
 
-.box-button {
-    font-family: 'text';
+/* Styles for the buttons */
+.box-button1, .box-button2 {
+    font-family: 'mono';
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     background-color: rgba(255, 255, 255, 0.241);
@@ -140,5 +165,7 @@
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     position: absolute;
-    top: 300px;
+    top: 320px;
+    color: initial; /* Initial color */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition for smooth effect */
 }
