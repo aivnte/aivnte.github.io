@@ -1,26 +1,14 @@
-/* Logo */
-
-
-/* Import */
-@font-face {
-    font-family: 'dot';
-    src: url('/fonts/dot.otf') format('openType');
-}
-
-
-/* Element */
 .logo {
     position: fixed;
+    box-sizing: border-box;
     top: 0;
-    left: 0;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    text-align: left;
+    padding-left: .9rem;
 }
 
 
-/* Font */
+
 .logo {
     font-family: 'dot';
     letter-spacing: -2px;
@@ -30,12 +18,14 @@
 }
 
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .logo {
         font-size: 1.5rem;
     }
 }
+
+
 
 @media (max-width: 480px) {
     .logo {

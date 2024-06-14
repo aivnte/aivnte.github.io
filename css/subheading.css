@@ -1,0 +1,20 @@
+.subheading {
+    position: fixed;
+    top: 6rem;
+    padding-right: 3.5rem;
+    padding-left: .9rem;
+    width: 100%;
+    display: flex;
+    text-align: left;
+    box-sizing: border-box;
+    max-width: 1000px;
+}
+
+
+
+.subheading {
+    font-family: 'text';
+    font-size: 2rem;
+    line-height: 32px;
+    font-weight: 400;
+}

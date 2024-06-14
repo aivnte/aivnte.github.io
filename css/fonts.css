@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'dot';
+    src: url('/fonts/dot.otf') format('openType');
+}
+
+
+
+@font-face {
+    font-family: 'text';
+    src: url('/fonts/text.otf') format('openType');
+}
