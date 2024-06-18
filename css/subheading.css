@@ -1,23 +1,21 @@
 .subheading {
-    position: absolute;
-    top: 7rem;
-    padding-right: 3.5rem;
-    padding-left: .9rem;
-    width: 100%;
-    display: flex;
-    text-align: left;
-    box-sizing: border-box;
-    max-width: 1000px;
-    font-family: 'text';
-    font-size: 2rem;
-    line-height: 32px;
-    font-weight: 400;
-    transition: filter 0.5s ease, opacity 0.5s ease;
+  position: absolute;
+  top: 7rem;
+  padding-right: 3.5rem;
+  padding-left: 0.9rem;
+  width: 100%;
+  display: flex;
+  text-align: left;
+  box-sizing: border-box;
+  max-width: 1000px;
+  font-family: "text";
+  font-size: 2rem;
+  line-height: 32px;
+  font-weight: 400;
+  transition: filter 0.5s ease, opacity 0.5s ease;
 }
 
-
-
 .subheading.blur {
-    filter: blur(50px);
-    opacity: 0;
+  filter: blur(50px);
+  opacity: 0;
 }
