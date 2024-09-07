@@ -1,0 +1,40 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set base styles */
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #000000;
+    color: #BBBBBB;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Main content container */
+.container {
+    text-align: left;
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 8px;
+    max-width: 50%; /* Set the container width to 1/3 of the screen */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+/* Title styling */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Paragraph styling */
+p {
+    font-size: 1.1em;
+}
