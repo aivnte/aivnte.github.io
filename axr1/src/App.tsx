@@ -10,7 +10,7 @@ function App() {
         {/* Header Section */}
         <header className="w-full p-4 bg-gray-200">
           <div className="container mx-auto flex justify-between items-center">
-            <h1 className="text-2xl font-bold">My Website</h1>
+            <h1 className="text-2xl font-bold">axr1</h1>
             <ModeToggle />
           </div>
         </header>
