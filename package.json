@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "tailwindcss -i ./src/styles/styles.css -o ./src/dist/output.css --minify",
-    "watch": "tailwindcss -i ./src/styles/styles.css -o ./src/dist/output.css --watch"
+    "build": "tailwindcss -i ./docs/styles/styles.css -o ./docs/dist/output.css --minify",
+    "watch": "tailwindcss -i ./docs/styles/styles.css -o ./docs/dist/output.css --watch"
   },
   "keywords": [],
   "author": "",
