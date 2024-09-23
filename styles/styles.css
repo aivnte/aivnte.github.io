@@ -12,6 +12,6 @@ body {
 
 #logo {
     white-space: pre;
-    font-size: clamp(5px, 1.5vw, 10px); /* Adjusts between 6px and 10px fluidly */
-    margin-top: clamp(20px, 5vh, 50px); /* Adjusts between 20px and 50px fluidly */
+    font-size: clamp(5px, 1.5vw, 10px);
+    margin-top: clamp(20px, 5vh, 50px);
 }
