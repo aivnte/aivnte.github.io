@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    background: black;
+    color: grey;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#logo {
+    white-space: pre;
+    font-size: 10px;
+    margin-top: 50px; /* Adjust this value to position vertically */
+}
