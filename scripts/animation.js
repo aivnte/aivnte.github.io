@@ -8,11 +8,35 @@ document.addEventListener('DOMContentLoaded', () => {
     background.appendChild(canvas);
     const ctx = canvas.getContext('2d');
 
+    let stars = [];
+    const starCount = 500; // Adjust the number of stars as needed
+    const clearCenterRadius = 50; // Define how big the clear center should be
+
+    const initializeStars = () => {
+        stars = Array.from({ length: starCount }, () => createStar());
+    };
+
+    const createStar = () => {
+        let angle = Math.random() * 2 * Math.PI; // Random direction for the star
+
+        // Ensure star starts outside the clear center radius
+        let distanceFromCenter = (Math.random() * (canvas.width / 2 - clearCenterRadius) + clearCenterRadius);
+        
+        // Convert polar coordinates to x and y
+        const x = Math.cos(angle) * distanceFromCenter;
+        const y = Math.sin(angle) * distanceFromCenter;
+
+        const speed = 1 + Math.random() * 0.5; // Initial speed
+        const length = 0; // Start with no length, will grow as it moves outward
+
+        return { x, y, speed, angle, distanceFromCenter, length };
+    };
+
     const updateBackgroundSize = () => {
         const logoRect = logo.getBoundingClientRect();
 
         // Adjust position and size to compensate for the overhang
-        const adjustment = 20; // Adjust by 10px or fine-tune if needed
+        const adjustment = 20; // Adjust by 20px buffer
 
         background.style.position = 'absolute';
         background.style.top = `${logoRect.top + window.scrollY}px`;
@@ -25,31 +49,50 @@ document.addEventListener('DOMContentLoaded', () => {
         canvas.width = logoRect.width + adjustment;
         canvas.height = logoRect.height;
 
-        // Reinitialize the drops array based on the new width
-        drops = Array(Math.floor(canvas.width / 20)).fill(0);
+        initializeStars(); // Reinitialize stars with the updated canvas size
     };
 
-    const createMatrixRain = () => {
-        // Clear the canvas with a semi-transparent overlay to create the trailing effect
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+    const createStarTunnelEffect = () => {
+        // Clear the canvas for each frame
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        ctx.fillStyle = '#0F0'; // Green color for the matrix effect
-        ctx.font = '20px monospace';
+        ctx.strokeStyle = '#474747'; // Set star trail color to grey
 
-        drops.forEach((y, index) => {
-            const text = String.fromCharCode(0x30A0 + Math.random() * 96);
-            const x = index * 20;
-            ctx.fillText(text, x, y);
-            drops[index] = y > canvas.height || Math.random() > 0.975 ? 0 : y + 20;
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+
+        stars.forEach(star => {
+            // Move the star outward based on its speed
+            star.x += Math.cos(star.angle) * star.speed;
+            star.y += Math.sin(star.angle) * star.speed;
+            star.distanceFromCenter += star.speed;
+
+            // Increase the star's speed slightly as it moves outward
+            star.speed += 0.05;
+
+            // Increase the trail length based on distance from center
+            star.length += star.speed * 0.5;
+
+            // Draw the star's trail as a line from its previous position to the current position
+            ctx.beginPath();
+            ctx.moveTo(centerX + star.x, centerY + star.y); // Current position
+            ctx.lineTo(centerX + star.x - Math.cos(star.angle) * star.length, 
+                       centerY + star.y - Math.sin(star.angle) * star.length); // Previous position
+            ctx.stroke();
+
+            // If the star moves out of bounds, reset its position to the center
+            if (centerX + star.x > canvas.width || centerX + star.x < 0 ||
+                centerY + star.y > canvas.height || centerY + star.y < 0) {
+                Object.assign(star, createStar());
+            }
         });
     };
 
     // Initial call to set the size correctly
     updateBackgroundSize();
 
-    // Ensure the matrix rain effect runs at a set interval
-    setInterval(createMatrixRain, 50);
+    // Run the star tunnel effect at a set interval
+    setInterval(createStarTunnelEffect, 30);
 
     // Adjust canvas size when the window is resized
     window.addEventListener('resize', updateBackgroundSize);
