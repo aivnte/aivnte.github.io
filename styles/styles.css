@@ -8,10 +8,26 @@ body {
     align-items: flex-start;
     height: 100vh;
     overflow: hidden;
+    position: relative;
+}
+
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Behind the ASCII art */
+    overflow: hidden;
 }
 
 #logo {
     white-space: pre;
     font-size: clamp(5px, 1.5vw, 10px);
     margin-top: clamp(20px, 5vh, 50px);
+    position: relative;
+    z-index: 1; /* Above the background */
+    pointer-events: none; /* Makes sure the animation won't affect the ASCII art interaction */
+}
+
+div {
+    position: relative;
 }
