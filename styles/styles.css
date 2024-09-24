@@ -1,7 +1,7 @@
 body {
     margin: 0;
-    background: black;
-    color: grey;
+    background: #f3f3f3;
+    color: #000000;
     font-family: monospace;
     display: flex;
     flex-direction: column; /* Arrange logo and content vertically */

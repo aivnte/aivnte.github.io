@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctx = canvas.getContext('2d');
 
     let stars = [];
-    const starCount = 500; // Adjust the number of stars as needed
+    const starCount = 200; // Adjust the number of stars as needed
     const clearCenterRadius = 50; // Define how big the clear center should be
 
     // Parameters for biased angle distribution
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clear the canvas for each frame
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        ctx.strokeStyle = '#474747'; // Set star trail color to grey
+        ctx.strokeStyle = '#a3a4a6'; // Set star trail color to grey
         ctx.lineWidth = 1; // Adjust line width as needed
 
         const centerX = canvas.width / 2;

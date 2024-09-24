@@ -1,0 +1,9 @@
+make the logo smaller and in an invisible bar at the top
+make the bar have a blur effect beneath it
+make the bar stickey
+have the buttons below the logo in the bar
+-> logo goes to home
+-> work (coming soon for now)
+-> manifesto (coming soon for now) 
+-> contact (coming soon for now)
+roboto mono font
