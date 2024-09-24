@@ -12,16 +12,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const starCount = 500; // Adjust the number of stars as needed
     const clearCenterRadius = 50; // Define how big the clear center should be
 
+    // Parameters for biased angle distribution
+    const biasRatio = 0.6; // 60% of stars biased towards top and bottom
+    const spread = Math.PI / 6; // 30 degrees spread around top and bottom
+
+    // New Parameters for Container Height Adjustment
+    const heightAdjustment = 30; // Total pixels to add to the height
+    const heightAdjustmentHalf = heightAdjustment / 2; // Half for top, half for bottom
+
     const initializeStars = () => {
         stars = Array.from({ length: starCount }, () => createStar());
     };
 
     const createStar = () => {
-        let angle = Math.random() * 2 * Math.PI; // Random direction for the star
+        let angle;
+
+        // Decide whether to bias the star towards top/bottom or distribute uniformly
+        if (Math.random() < biasRatio) {
+            // Bias towards top or bottom
+            const isTop = Math.random() < 0.5; // 50% top, 50% bottom
+            const baseAngle = isTop ? Math.PI / 2 : (3 * Math.PI) / 2;
+            angle = baseAngle + (Math.random() - 0.5) * 2 * spread; // Spread around the base angle
+        } else {
+            // Uniform distribution
+            angle = Math.random() * 2 * Math.PI;
+        }
 
         // Ensure star starts outside the clear center radius
-        let distanceFromCenter = (Math.random() * (canvas.width / 2 - clearCenterRadius) + clearCenterRadius);
-        
+        // Adjusted to consider both width and height
+        const maxDistance = Math.min(canvas.width, canvas.height) / 2 - clearCenterRadius;
+        let distanceFromCenter = Math.random() * maxDistance + clearCenterRadius;
+
         // Convert polar coordinates to x and y
         const x = Math.cos(angle) * distanceFromCenter;
         const y = Math.sin(angle) * distanceFromCenter;
@@ -36,18 +57,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const logoRect = logo.getBoundingClientRect();
 
         // Adjust position and size to compensate for the overhang
-        const adjustment = 20; // Adjust by 20px buffer
+        const widthAdjustment = 20; // Adjust by 20px buffer for width
 
         background.style.position = 'absolute';
-        background.style.top = `${logoRect.top + window.scrollY}px`;
+        // Move the background up by half of the heightAdjustment to center the logo vertically
+        background.style.top = `${logoRect.top + window.scrollY - heightAdjustmentHalf}px`;
         background.style.left = `${logoRect.left + window.scrollX}px`;
-        background.style.width = `${logoRect.width + adjustment}px`;
-        background.style.height = `${logoRect.height}px`;
+        background.style.width = `${logoRect.width + widthAdjustment}px`;
+        background.style.height = `${logoRect.height + heightAdjustment}px`; // Increased height
         background.style.pointerEvents = 'none'; // Prevent interaction with background div
 
         // Adjust the canvas to fill the background div
-        canvas.width = logoRect.width + adjustment;
-        canvas.height = logoRect.height;
+        canvas.width = logoRect.width + widthAdjustment;
+        canvas.height = logoRect.height + heightAdjustment; // Increased canvas height
 
         initializeStars(); // Reinitialize stars with the updated canvas size
     };
@@ -57,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         ctx.strokeStyle = '#474747'; // Set star trail color to grey
+        ctx.lineWidth = 1; // Adjust line width as needed
 
         const centerX = canvas.width / 2;
         const centerY = canvas.height / 2;
@@ -76,13 +99,19 @@ document.addEventListener('DOMContentLoaded', () => {
             // Draw the star's trail as a line from its previous position to the current position
             ctx.beginPath();
             ctx.moveTo(centerX + star.x, centerY + star.y); // Current position
-            ctx.lineTo(centerX + star.x - Math.cos(star.angle) * star.length, 
-                       centerY + star.y - Math.sin(star.angle) * star.length); // Previous position
+            ctx.lineTo(
+                centerX + star.x - Math.cos(star.angle) * star.length,
+                centerY + star.y - Math.sin(star.angle) * star.length
+            ); // Previous position
             ctx.stroke();
 
-            // If the star moves out of bounds, reset its position to the center
-            if (centerX + star.x > canvas.width || centerX + star.x < 0 ||
-                centerY + star.y > canvas.height || centerY + star.y < 0) {
+            // If the star moves out of bounds, reset its position
+            if (
+                centerX + star.x > canvas.width ||
+                centerX + star.x < 0 ||
+                centerY + star.y > canvas.height ||
+                centerY + star.y < 0
+            ) {
                 Object.assign(star, createStar());
             }
         });
@@ -91,8 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial call to set the size correctly
     updateBackgroundSize();
 
-    // Run the star tunnel effect at a set interval
-    setInterval(createStarTunnelEffect, 30);
+    // Run the star tunnel effect using requestAnimationFrame for smoother animations
+    const animate = () => {
+        createStarTunnelEffect();
+        requestAnimationFrame(animate);
+    };
+    animate();
 
     // Adjust canvas size when the window is resized
     window.addEventListener('resize', updateBackgroundSize);
