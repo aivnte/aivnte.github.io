@@ -120,3 +120,22 @@ body, html {
 #subtitle {
   font-family: 'PPSupplyMono-Regular', sans-serif;
 }
+
+
+.cta-button {
+  font-family: 'PPSupplyMono-Ultralight', monospace;
+  background-color: #d3d3d3;
+  color: #030303;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 2px 0px; 
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #b0b0b0;
+}
+
