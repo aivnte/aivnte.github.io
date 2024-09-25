@@ -27,17 +27,48 @@ body {
   color: #030303;
 }
 
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure body and html take full height */
+}
+
 #header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  background-color: transparent; /* Make the header background transparent */
+  width: 100%; 
+  background-color: transparent;
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
+  height: 40px; /* Define the exact height of the header */
 }
+
+#content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px); /* Adjust to subtract the fixed header's height */
+  text-align: center;
+  padding: 0 40px;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+#content p {
+  font-family: 'PPSupplyMono-Regular', monospace;
+  font-size: 24px; 
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  max-width: 800px;
+  margin: 0;
+}
+
+
+
 
 #logo {
   flex: 1; /* Takes up available space on the left */
@@ -49,42 +80,7 @@ body {
   color: #888888;
 }
 
-#username {
-  flex: 1; /* Takes up available space in the center */
-  text-align: center;
-  font-family: 'PPSupplyMono-Ultralight', monospace;
-  font-size: 16px; 
-  color: #888888;
-  letter-spacing: 1px;
-}
 
-#contact-info {
-  flex: 1; /* Takes up available space on the right */
-  text-align: right;
-  font-family: 'PPSupplyMono-Ultralight', sans-serif;
-  font-size: 16px;
-  color: #888888;
-  letter-spacing: 1px;
-}
-
-
-#content {
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 40px; 
-}
-
-#content p {
-  font-family: 'PPSupplyMono-Regular', monospace;
-  font-size: 20px;
-  font-weight: 300;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  max-width: 800px;
-}
 
 #lorem {
   font-family: 'SctoGroteskA', sans-serif;
