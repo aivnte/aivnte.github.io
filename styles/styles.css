@@ -67,9 +67,6 @@ body, html {
   margin: 0;
 }
 
-
-
-
 #logo {
   flex: 1; /* Takes up available space on the left */
   text-align: left;
@@ -78,9 +75,37 @@ body, html {
   letter-spacing: 0px;
   line-height: 2px;
   color: #888888;
+  position: relative;
+  overflow: hidden;
 }
 
+#logo::before,
+#logo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  opacity: 0.6;
+  animation: shimmer 3s infinite;
+}
 
+#logo::after {
+  top: 50%;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation-duration: 4s;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 100%;
+  }
+}
 
 #lorem {
   font-family: 'SctoGroteskA', sans-serif;
