@@ -1,3 +1,7 @@
+/* ================================
+   Font Definitions
+   ================================ */
+
 @font-face {
   font-family: 'SctoGroteskA';
   src: url('../fonts/SctoGroteskA.woff') format('woff');
@@ -19,6 +23,10 @@
   font-style: normal;
 }
 
+/* ================================
+   Body and General Styles
+   ================================ */
+
 body {
   margin: 0;
   padding: 0;
@@ -30,8 +38,12 @@ body {
 body, html {
   margin: 0;
   padding: 0;
-  height: 100%; /* Ensure body and html take full height */
+  height: 100%;
 }
+
+/* ================================
+   Header Styles
+   ================================ */
 
 #header {
   position: fixed;
@@ -43,14 +55,18 @@ body, html {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  height: 40px; /* Define the exact height of the header */
+  height: 40px;
 }
+
+/* ================================
+   Content Container Styles
+   ================================ */
 
 #content {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 60px); /* Adjust to subtract the fixed header's height */
+  height: calc(100vh - 60px);
   text-align: center;
   padding: 0 40px;
   margin: 0;
@@ -67,8 +83,12 @@ body, html {
   margin: 0;
 }
 
+/* ================================
+   Logo Styles
+   ================================ */
+
 #logo {
-  flex: 1; /* Takes up available space on the left */
+  flex: 1; 
   text-align: left;
   font-size: 1.9px;
   font-weight: 900;
@@ -79,7 +99,6 @@ body, html {
   overflow: hidden;
 }
 
-/* Logo styles remain unchanged */
 #logo::before,
 #logo::after {
   content: '';
@@ -108,6 +127,10 @@ body, html {
   }
 }
 
+/* ================================
+   Lorem Container Styles
+   ================================ */
+
 #lorem {
   font-family: 'SctoGroteskA', sans-serif;
   margin: 0 auto;
@@ -122,7 +145,10 @@ body, html {
   font-family: 'PPSupplyMono-Regular', sans-serif;
 }
 
-/* Button shimmer styles */
+/* ================================
+   Button Styles
+   ================================ */
+
 .cta-button {
   font-family: 'PPSupplyMono-Ultralight', monospace;
   background-color: #d3d3d3;
@@ -151,7 +177,7 @@ body, html {
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
   opacity: 0.6;
-  animation: button-shimmer 5s infinite; /* Use separate animation */
+  animation: button-shimmer 5s infinite;
 }
 
 @keyframes button-shimmer {
@@ -159,9 +185,9 @@ body, html {
     left: -50%;
   }
   20% {
-    left: 100%; /* Shimmer happens */
+    left: 100%; 
   }
   100% {
-    left: 100%; /* Pause shimmer for the remaining duration */
+    left: 100%; 
   }
 }
