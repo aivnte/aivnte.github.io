@@ -1,53 +1,82 @@
+/* styles/styles.css */
+
+@font-face {
+  font-family: 'PPNeueMontrealMono';
+  src: url('../fonts/PPNeueMontrealMono-Medium.woff2') format('woff2');
+  font-weight: medium;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPNeueMontreal';
+  src: url('../fonts/PPNeueMontreal-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-    margin: 0;
-    background: #f3f3f3;
-    color: #000000;
-    font-family: monospace;
-    display: flex;
-    flex-direction: column; /* Arrange logo and content vertically */
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  font-family: 'PPNeueMontreal', sans-serif;
+  color: #000;
 }
 
 #logo-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: 20%; /* Adjust height as needed */
-}
-
-#background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0; /* Behind the ASCII art */
-    overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px;
 }
 
 #logo {
-    white-space: pre;
-    font-size: clamp(5px, 1.5vw, 10px);
-    position: relative;
-    z-index: 1; /* Above the background */
-    pointer-events: none; /* Prevents interaction */
+  font-size: 1.9px;
+  font-weight: 900;
+  letter-spacing: 0px;
+  line-height: 2px;
 }
 
+#username {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'PPNeueMontreal', monospace;
+  font-size: 16px; /* Adjust size as needed */
+}
+
+#contact-info {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-family: 'PPNeueMontreal', sans-serif;
+  font-size: 16px;
+}
+
+
 #content {
-    position: relative;
-    z-index: 1;
-    text-align: left;
-    width: 600px;
-    max-width: 100%;
-    font-size: 14px;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 40px; /* Adjust padding values as needed */
+}
+
+
+#content p {
+  font-family: 'PPNeueMontrealMono', monospace;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#lorem {
+  font-family: 'PPNeueMontreal', sans-serif;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 100px 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: left;
 }
