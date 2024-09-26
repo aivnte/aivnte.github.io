@@ -142,7 +142,7 @@ body, html {
 }
 
 #subtitle {
-  font-family: 'PPSupplyMono-Regular', sans-serif;
+  font-family: 'PPSupplyMono-Ultralight', sans-serif;
 }
 
 /* ================================
@@ -155,7 +155,7 @@ body, html {
   color: #030303;
   border: none;
   padding: 7px 15px;
-  border-radius: 10px;
+  border-radius: 7px;
   cursor: pointer;
   margin: 2px 0px; 
   font-size: 14px;
