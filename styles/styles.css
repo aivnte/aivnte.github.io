@@ -23,58 +23,93 @@
   font-style: normal;
 }
 
+.mono-ultralight {
+  font-family: 'PPSupplyMono-Ultralight', monospace;
+}
+
+.mono-regular {
+  font-family: 'PPSupplyMono-Regular', monospace;
+}
+
+.text-regular {
+  font-family: 'SctoGroteskA', sans-serif;
+}
+
 /* ================================
    Body and General Styles
    ================================ */
-
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  font-family: 'SctoGroteskA', sans-serif;
-  color: #030303;
-}
 
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
+  background-color: #f4f4f4;
+  font-family: 'SctoGroteskA', sans-serif;
+  color: #030303;
 }
 
 /* ================================
    Header Styles
    ================================ */
 
-#header {
+.header {
   position: fixed;
   top: 0;
   width: 100%; 
   background-color: transparent;
   padding: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   align-items: center;
   z-index: 1000;
   height: 40px;
 }
 
+.logo {
+  font-size: 1.9px;
+  font-weight: 900;
+  line-height: 2px;
+  color: #888888;
+  position: relative;
+  overflow: hidden;
+  text-align: center; /* Center the ASCII art */
+}
+
+.logo::before,
+.logo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  opacity: 0.6;
+}
+
+.logo::before {
+  animation: shimmer 3s infinite;
+}
+
+.logo::after {
+  animation: shimmer 4s infinite;
+}
+
 /* ================================
-   Content Container Styles
+   Main Heading Styles
    ================================ */
 
-#content {
+.main-heading {
   display: flex;
   justify-content: center;
   align-items: center;
   height: calc(100vh - 60px);
   text-align: center;
   padding: 0 40px;
-  margin: 0;
   background-color: #f4f4f4;
 }
 
-#content p {
-  font-family: 'PPSupplyMono-Ultralight', monospace;
+.heading {
   font-size: 24px; 
   font-weight: 300;
   letter-spacing: 2px;
@@ -84,55 +119,10 @@ body, html {
 }
 
 /* ================================
-   Logo Styles
+   Content Container Styles
    ================================ */
 
-#logo {
-  flex: 1; 
-  text-align: left;
-  font-size: 1.9px;
-  font-weight: 900;
-  letter-spacing: 0px;
-  line-height: 2px;
-  color: #888888;
-  position: relative;
-  overflow: hidden;
-}
-
-#logo::before,
-#logo::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -50%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
-  opacity: 0.6;
-  animation: shimmer 3s infinite;
-}
-
-#logo::after {
-  top: 100%;
-  left: -50%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  animation-duration: 4s;
-}
-
-@keyframes shimmer {
-  100% {
-    left: 100%;
-  }
-}
-
-/* ================================
-   Lorem Container Styles
-   ================================ */
-
-#lorem {
-  font-family: 'SctoGroteskA', sans-serif;
+.content {
   margin: 0 auto;
   max-width: 800px;
   padding: 100px 20px;
@@ -141,8 +131,13 @@ body, html {
   text-align: left;
 }
 
-#subtitle {
+.section {
+  margin-bottom: 500px; /* Adjust spacing between sections as needed */
+}
+
+.subtitle {
   font-family: 'PPSupplyMono-Ultralight', sans-serif;
+  margin-bottom: 10px;
 }
 
 /* ================================
@@ -157,7 +152,7 @@ body, html {
   padding: 7px 15px;
   border-radius: 7px;
   cursor: pointer;
-  margin: 2px 0px; 
+  margin: 10px 0; 
   font-size: 14px;
   transition: background-color 0.3s ease;
   position: relative;
@@ -178,6 +173,16 @@ body, html {
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
   opacity: 0.6;
   animation: button-shimmer 5s infinite;
+}
+
+/* ================================
+   Keyframe Animations
+   ================================ */
+
+@keyframes shimmer {
+  100% {
+    left: 100%;
+  }
 }
 
 @keyframes button-shimmer {

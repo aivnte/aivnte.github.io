@@ -1,10 +1,3 @@
-  <!-- ================================
-       TODO:
-       - move the logo to the middle above the text
-       - when scrolling the logo hits the top and stays there
-       - when scrolling back up the logo hits the point above the text
-       - the logo then stays there
-       ================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +9,8 @@
   <!-- ================================
        Header Section with ASCII Art
        ================================ -->
-  <div id="header">
-    <pre id="logo">
+  <div class="header">
+    <pre class="logo">
                @@@@@@@@@        @@@@@@@@         @@@@@@@@@@@@@@@@@@@@@@@@@@       @@@@@@@@
              @@@@@@@@@@@@@        @@@@@@@@     @@@@@@@@@@@@@@@@@@@@@@@@@@@@@      @@@@@@@@@
            @@@@@@@@@@@@@@@@         @@@@@@@@ @@@@@@@                    @@@@@        @@@@@@
@@ -33,45 +26,51 @@
   <!-- ================================
        Main Content Section
        ================================ -->
-  <div id="content">
-    <p>/ ENTER THE ERA OF VIRTUAL BRAINS</p>
+  <div class="main-heading">
+    <p class="heading mono-ultralight">/ ENTER THE ERA OF VIRTUAL BRAINS</p>
   </div>
 
   <!-- ================================
        Description Section with CTA
        ================================ -->
-  <div id="lorem">
-    <p id="subtitle">/ VIRTUAL_EDGE</p>
-    <p>
-      AI consultancy and research lab reformulating business processes as text reasoning problems.
-      Our virtual brains analyze data and make real-time decisions. Become faster, smarter, and leaner by eliminating inefficiencies.
-    </p>
-    <button class="cta-button">READ MORE</button>
+  <div class="content">
+    <div class="section">
+      <p class="subtitle mono-ultralight">/ VIRTUAL_EDGE</p>
+      <p>
+        AI consultancy and research lab reformulating business processes as text reasoning problems.
+        Our virtual brains analyze data and make real-time decisions. Become faster, smarter, and leaner by eliminating inefficiencies.
+      </p>
+      <button class="cta-button mono-ultralight">READ MORE</button>
+    </div>
 
-    <!-- Section Breaks -->
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <p id="subtitle">/ LIGHT_SPEED</p>
-    <p>
-      We communicate through dedicated Slack channels, ensuring swift, efficient communication.
-      Our team is always available, providing quick responses and updates, making the collaboration seamless and allowing us to adapt in real-time to your needs.
-    </p>
-    <button class="cta-button">READ MORE</button>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <p id="subtitle">/ LIGHT_WEIGHT</p>
-    <p>
-      Our subscription model is flexible and cost-efficient, building virtual brains on a retainer or fixed fee.
-      Eliminating the lengthy, expensive hiring process, allowing you to access AI expertise on-demand without the burden of recruitment, training, or overhead costs.
-    </p>
-    <button class="cta-button">PRICING</button>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <p id="subtitle">/ SUPER_FOCUS</p>
-    <p>
-      We focus our research in areas like chain-of-thought and LLM control theory.
-      This ensures our solutions are not only innovative but grounded in the latest advances in AI, delivering high-quality, intelligent decision-making for your business.
-    </p>
-    <button class="cta-button">RESEARCH</button>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="section">
+      <p class="subtitle mono-ultralight">/ LIGHT_SPEED</p>
+      <p>
+        We communicate through dedicated Slack channels, ensuring swift, efficient communication.
+        Our team is always available, providing quick responses and updates, making the collaboration seamless and allowing us to adapt in real-time to your needs.
+      </p>
+      <button class="cta-button mono-ultralight">READ MORE</button>
+    </div>
+
+    <div class="section">
+      <p class="subtitle mono-ultralight">/ LIGHT_WEIGHT</p>
+      <p>
+        Our subscription model is flexible and cost-efficient, building virtual brains on a retainer or fixed fee.
+        Eliminating the lengthy, expensive hiring process, allowing you to access AI expertise on-demand without the burden of recruitment, training, or overhead costs.
+      </p>
+      <button class="cta-button mono-ultralight">PRICING</button>
+    </div>
+
+    <div class="section">
+      <p class="subtitle mono-ultralight">/ SUPER_FOCUS</p>
+      <p>
+        We focus our research in areas like chain-of-thought and LLM control theory.
+        This ensures our solutions are not only innovative but grounded in the latest advances in AI, delivering high-quality, intelligent decision-making for your business.
+      </p>
+      <button class="cta-button mono-ultralight">RESEARCH</button>
+    </div>
   </div>
+
   <script src="scripts/scripts.js"></script>
 </body>
 </html>
