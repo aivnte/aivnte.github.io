@@ -43,7 +43,7 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #f4f4f4;
+  background-color: #f7f7f7;
   font-family: 'SctoGroteskA', sans-serif;
   color: #030303;
 }
@@ -83,7 +83,7 @@ body, html {
   left: -50%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
   opacity: 0.6;
 }
 
@@ -106,7 +106,7 @@ body, html {
   height: calc(100vh - 60px);
   text-align: center;
   padding: 0 40px;
-  background-color: #f4f4f4;
+  background-color: #f7f7f7;
 }
 
 .heading {
@@ -170,7 +170,7 @@ body, html {
   left: -50%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
   opacity: 0.6;
   animation: button-shimmer 5s infinite;
 }
