@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+  width: 100vw;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .hero h1 {
+      font-size: 2rem;
+  }
+}
+
+/* Desktop responsiveness */
+@media (min-width: 769px) {
+  .hero h1 {
+      font-size: 3rem;
+  }
+}
