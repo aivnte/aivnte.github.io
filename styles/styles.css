@@ -138,13 +138,26 @@
   box-sizing: border-box;
 }
 
-/* ================================
-  HTML and Body
-================================ */
-
 html, body {
   height: 100%;
-  font-family: Arial, sans-serif;
+}
+
+/* ================================
+  Main Container and Divs
+================================ */
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero, .about, .work, .research, .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 /* ================================
@@ -152,21 +165,26 @@ html, body {
 ================================ */
 
 .hero {
-  display: flex;
-  flex-direction: column; 
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   background-color: #ffffff;
   color: #000000;
   text-align: center;
-  width: 100vw;
 }
 
 .hero .title h1 {
+  font-family: 'Inter Display', sans-serif;
+  font-weight: 200; 
+  font-size: 35px;
+  margin-top: 20px; 
+}
+
+.hero .subtitle {
   font-family: 'Inter', sans-serif;
   font-weight: 200; 
+  font-size: 20px;
   margin-top: 20px; 
+  margin-right: 10%;
+  margin-left: 10%;
+  color: #6e6e6e; 
 }
 
 /* ================================
