@@ -17,11 +17,9 @@ html, body {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
-  grid-auto-rows: 100vh; /* Each row takes full viewport height */
-  grid-gap: 10px;
-  padding: 10px;
-  scroll-snap-type: y mandatory; /* Scroll snapping */
-  overflow-y: scroll;
+  grid-auto-rows: calc(100vh - 55px); /* Subtract padding and gap */
+  grid-gap: 8px;
+  padding: 25px;
 }
 
 .box {
@@ -40,26 +38,28 @@ html, body {
 }
 
 /* Adding unique colors for each box */
-.box1 { background-color: red; }
-.box2 { background-color: blue; }
-.box3 { background-color: green; }
-.box4 { background-color: yellow; }
-.box5 { background-color: orange; }
-.box6 { background-color: purple; }
-.box7 { background-color: pink; }
-.box8 { background-color: teal; }
-.box9 { background-color: brown; }
+.box1 { background-color: #ececec; }
+.box2 { background-color: #e0e0e0; }
+.box3 { background-color: #d4d4d4; }
+.box4 { background-color: #c7c7c7; }
+.box5 { background-color: #bbb; }
+.box6 { background-color: #afafaf; }
+.box7 { background-color: #a3a3a3; }
+.box8 { background-color: #969696; }
+.box9 { background-color: #8a8a8a; }
 
-/* Hover effect: boxes grow slightly and apply a blur to the rest */
+/* Box */
 .box:hover {
-  transform: scale(1.05);
-  filter: brightness(110%);
   cursor: pointer;
+}
+
+.box {
+  animation: fadeIn 0.6s ease both;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 3px;
 }
 
 ::-webkit-scrollbar-track {
@@ -68,7 +68,6 @@ html, body {
 
 ::-webkit-scrollbar-thumb {
   background: #b3b3b3;
-  border-radius: 10px;
 }
 
 /* Adding backdrop blur effect */
@@ -78,7 +77,7 @@ html, body {
 }
 
 /* Responsive adjustments */
-@media (max-width: 1700px) and (min-width: 700px) {
+@media (max-width: 1800px) and (min-width: 700px) {
   .grid-container {
       grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
   }
@@ -102,6 +101,3 @@ html, body {
   }
 }
 
-.box {
-  animation: fadeIn 0.6s ease both;
-}
