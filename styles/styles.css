@@ -1,16 +1,159 @@
+/* ================================
+  Font Definitions
+================================ */
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 900;
+  font-style: normal;
+  src: url('/fonts/Inter-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/fonts/Inter-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 800;
+  font-style: normal;
+  src: url('/fonts/Inter-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 200;
+  font-style: normal;
+  src: url('/fonts/Inter-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 300;
+  font-style: normal;
+  src: url('/fonts/Inter-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 500;
+  font-style: normal;
+  src: url('/fonts/Inter-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 600;
+  font-style: normal;
+  src: url('/fonts/Inter-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 100;
+  font-style: normal;
+  src: url('/fonts/Inter-Thin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-weight: 900;
+  font-style: normal;
+  src: url('/fonts/InterDisplay-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/fonts/InterDisplay-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-weight: 800;
+  font-style: normal;
+  src: url('/fonts/InterDisplay-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-weight: 200;
+  font-style: normal;
+  src: url('/fonts/InterDisplay-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-weight: 300;
+  font-style: normal;
+  src: url('/fonts/InterDisplay-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-weight: 500;
+  font-style: normal;
+  src: url('/fonts/InterDisplay-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/InterDisplay-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-weight: 600;
+  font-style: normal;
+  src: url('/fonts/InterDisplay-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter Display';
+  font-weight: 100;
+  font-style: normal;
+  src: url('/fonts/InterDisplay-Thin.ttf') format('truetype');
+}
+
+/* ================================
+  All
+================================ */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ================================
+  HTML and Body
+================================ */
+
 html, body {
   height: 100%;
   font-family: Arial, sans-serif;
 }
 
+/* ================================
+  Hero Section
+================================ */
+
 .hero {
   display: flex;
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -20,14 +163,26 @@ html, body {
   width: 100vw;
 }
 
-/* Mobile responsiveness */
+.hero .title h1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200; 
+  margin-top: 20px; 
+}
+
+/* ================================
+  Mobile Responsiveness
+================================ */
+
 @media (max-width: 768px) {
   .hero h1 {
       font-size: 2rem;
   }
 }
 
-/* Desktop responsiveness */
+/* ================================
+  Desktop responsiveness
+================================ */
+
 @media (min-width: 769px) {
   .hero h1 {
       font-size: 3rem;
