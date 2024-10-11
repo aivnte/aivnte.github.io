@@ -1,0 +1,23 @@
+/* Grid Layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
+  grid-auto-rows: calc(100vh - 55px); /* Subtract padding and gap */
+  grid-gap: 8px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1800px) and (min-width: 700px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+  }
+}
+
+@media (max-width: 1100px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* 1 column for small screens */
+  }
+}
