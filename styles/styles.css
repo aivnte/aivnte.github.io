@@ -1,12 +1,11 @@
-/* Basic resets - Removes default padding and margins */
+/* Basic resets */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth; /* Smooth scrolling */
+  scroll-behavior: smooth;
 }
 
-/* General styling for html and body */
 html, body {
   height: 100%;
   overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -14,32 +13,31 @@ html, body {
   background-color: white;
 }
 
-/* Grid container setup */
+/* Scroll snapping for smoother section transitions */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Default: 3 equal-width columns */
-  grid-auto-rows: calc(100vh - 55px); /* Responsive row heights based on viewport */
-  grid-gap: 8px; /* Spacing between grid items */
-  padding: 25px; /* Padding inside the grid */
+  grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
+  grid-auto-rows: calc(100vh - 55px); /* Subtract padding and gap */
+  grid-gap: 8px;
+  padding: 25px;
 }
 
-/* Box styling inside the grid */
 .box {
   background-color: lightgray;
   width: 100%;
   height: 100%;
-  scroll-snap-align: start; /* Snap to viewport on scroll */
+  scroll-snap-align: start; /* Snaps the box to the start of the viewport */
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.5s ease, filter 0.5s ease; /* Smooth hover transition */
-  font-size: 24px; /* Font size for box content */
-  font-weight: bold; /* Bold text */
+  transition: transform 0.5s ease, filter 0.5s ease; /* Smooth hover effect */
+  font-size: 24px;
+  font-weight: bold;
   color: white;
-  border-radius: 12px; /* Rounded corners */
+  border-radius: 12px;
 }
 
-/* Different background colors for each box */
+/* Adding unique colors for each box */
 .box1 { background-color: #ececec; }
 .box2 { background-color: #e0e0e0; }
 .box3 { background-color: #d4d4d4; }
@@ -50,38 +48,41 @@ html, body {
 .box8 { background-color: #969696; }
 .box9 { background-color: #8a8a8a; }
 
-/* Animation applied to boxes for fade-in effect */
+/* Box */
+.box:hover {
+  cursor: pointer;
+}
+
 .box {
   animation: fadeIn 0.6s ease both;
 }
 
-/* Custom scrollbar styling */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 3px; /* Thin scrollbar */
+  width: 3px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fff; /* Track color */
+  background: #fff;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #b3b3b3; /* Scroll thumb color */
+  background: #b3b3b3;
 }
 
-/* Backdrop blur effect for grid container */
+/* Adding backdrop blur effect */
 .grid-container {
-  backdrop-filter: blur(10px); /* Blur effect */
-  -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
-/* Responsive design - 2 columns for medium-sized screens */
+/* Responsive adjustments */
 @media (max-width: 1800px) and (min-width: 700px) {
   .grid-container {
       grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
   }
 }
 
-/* Responsive design - 1 column for small screens */
 @media (max-width: 1100px) {
   .grid-container {
       grid-template-columns: 1fr; /* 1 column for small screens */
@@ -91,11 +92,12 @@ html, body {
 /* Keyframe animations for fade-in effect */
 @keyframes fadeIn {
   from {
-      opacity: 0; /* Initial invisible state */
-      transform: translateY(20px); /* Slight translation down */
+      opacity: 0;
+      transform: translateY(20px);
   }
   to {
-      opacity: 1; /* Fully visible */
-      transform: translateY(0); /* Move back to original position */
+      opacity: 1;
+      transform: translateY(0);
   }
 }
+
