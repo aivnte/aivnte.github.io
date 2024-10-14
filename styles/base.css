@@ -22,3 +22,7 @@ html, body {
 ::-webkit-scrollbar-thumb {
   background: #b3b3b3;
 }
+
+:root {
+  --black: #000000;
+}
