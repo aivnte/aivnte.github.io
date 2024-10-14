@@ -25,11 +25,13 @@
   position: absolute;
   top: 20px;
   left: 20px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.766);
   color: black;
   padding: 5px 10px;
   border-radius: 20px;
   font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
 }
 
 .top-right-circle {
@@ -38,7 +40,7 @@
   right: 20px;
   width: 30px;
   height: 30px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.766);
   color: black;
   border-radius: 50%;
   display: flex;
@@ -52,6 +54,19 @@
   position: absolute;
   top: 16px;
   right: 16px;
+}
+
+.home_svg_1__5T6WY,
+.home_svg_2__kvwmY {
+    transition: transform 0.5s cubic-bezier(.5, 0, .25, 1);
+}
+
+.top-right-circle:hover .home_svg_1__5T6WY {
+    transform: translate(200%, -200%);
+}
+
+.top-right-circle:hover .home_svg_2__kvwmY {
+    transform: translate(100%, -100%);
 }
 
 @keyframes fadeIn {
