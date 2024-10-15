@@ -21,7 +21,7 @@
   background-color: rgba(255, 255, 255, 0.766);
   color: black;
   padding: 5px 10px;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 14px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
@@ -94,27 +94,31 @@
 }
 
 .box1 {
-  position: relative; /* Make sure the container is relatively positioned */
+  position: relative;
   background-image: url('../assets/9a48d8a5-bc8c-4029-a812-f272dfe58fdc.webp');
   background-size: cover;
   background-position: center;
-  width: 100%; /* Adjust based on your needs */
-  height: 500px; /* Adjust based on your needs */
+  width: 100%;
+  height: 500px;
 }
 
 .box-1-text {
   position: absolute;
-  top: 50%; /* Move to vertical center */
-  left: 50%; /* Move to horizontal center */
-  transform: translate(-50%, -50%); /* Offset by half the element’s own size */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.766);
   color: black;
   padding: 5px 10px;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 14px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
 }
+
 
 
 .box2 { background-color: #e0e0e0; }
