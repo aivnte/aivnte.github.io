@@ -1,24 +1,28 @@
-.hero-section { 
-  display: flex;
-  justify-content: space-between;
-  padding-top: 20px;
-  padding-bottom: 4px;
-  border-radius: 20px;
-}
-
 .text-left {
-  margin-left: 16px;
   font-size: clamp(16px, 2vw, 20px); /* Minimum 16px, Maximum 20px */
   font-family: 'Inter Display', sans-serif;
   font-weight: 200;
   color: rgb(98, 98, 98);
+  display: block; /* Makes each text sit on top of each other */
+  text-align: left; /* Aligns the text to the left */
 }
 
 .text-right {
-  margin-right: 16px;
+  position: absolute; /* Position the text in the top-right corner */
+  top: 16px; /* Align to the top with 16px margin, matching the hero-section padding */
+  right: 16px; /* Align to the right with 16px margin */
   text-align: right;
   font-size: clamp(12px, 1.5vw, 16px); /* Minimum 12px, Maximum 16px */
   font-family: 'Inter Display', sans-serif;
   font-weight: 200;
   color: rgb(98, 98, 98);
+}
+
+.hero-section {
+  position: relative; /* Relative positioning to allow absolute positioning of .text-right */
+  width: 100%; /* Full width container */
+  margin: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
 }
