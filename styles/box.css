@@ -94,6 +94,20 @@
   }
 }
 
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .box1 {
   position: relative;
   background-image: url('../assets/DALL·E 2024-10-16 17.28.40 - A serene sky with soft, fluffy clouds spread across a clear blue background. The clouds are minimal, large, and have gentle white hues with slight tin.webp');
