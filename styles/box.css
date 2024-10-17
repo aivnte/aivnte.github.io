@@ -1,24 +1,52 @@
-.box {
-  border-radius: 12px;
-  position: relative;
-  margin: 0px;
-  padding: 16px;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  padding-bottom: calc(404 / 323 * 100%);
-  min-width: 323px; 
-  transition: transform 0.3s ease;
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: flex-start;
 }
 
-.box:hover {
+.button {
+  font-size: min(max(60px, 5vw), 120px);
+  font-family: 'Inter Display', sans-serif;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  padding: 16px;
+  color: transparent;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text; 
   cursor: pointer;
+  transition: transform 0.3s ease;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); 
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);  
+}
+
+.button:hover {
+  transform: scale(1.01); /**/
+}
+
+
+#about-button {
+  background-image: url('../assets/cd9290050483b560e3b6cc91e6584a96-Landscape near Antwerp.avif'); 
+}
+
+#system-button {
+  background-image: url('../assets/GZ-XaEIXgAARlbp.jpeg'); 
+}
+
+#work-button {
+  background-image: url('../assets/Caspar_David_Friedrich_-_Wanderer_above_the_Sea_of_Fog.jpeg'); 
+}
+
+.button:hover {
   transform: scale(1.01);
 }
 
 .top-right-circle {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 8px;
+  right: -20px;
   width: 30px;
   height: 30px;
   display: flex;
@@ -31,7 +59,6 @@
   border-radius: 1000px;
   width: fit-content;
   padding: 6px;
-  background-color: var(--gray);
 }
 
 .home_project_client_svg__fDBaR > svg {
@@ -58,14 +85,14 @@
   transform: translate(-200%, 200%);
 }
 
-.box:hover .home_project_client_svg__fDBaR > svg > .home_svg_1__5T6WY {
+.button:hover .home_project_client_svg__fDBaR > svg > .home_svg_1__5T6WY {
   transform: translate(200%, -200%);
 }
 
-.box:hover .home_project_client_svg__fDBaR > svg > .home_svg_2__kvwmY {
+.button:hover .home_project_client_svg__fDBaR > svg > .home_svg_2__kvwmY {
   transform: translate(100%, -100%);
 }
 
-.box:hover .home_project_client_svg__fDBaR > svg > .home_svg_3__ax8LJ {
+.button:hover .home_project_client_svg__fDBaR > svg > .home_svg_3__ax8LJ {
   transform: translate(0);
 }
