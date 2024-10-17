@@ -15,19 +15,6 @@
   transform: scale(1.01);
 }
 
-.top-left-title {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: rgba(255, 255, 255, 0.766);
-  color: black;
-  padding: 5px 10px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-}
-
 .top-right-circle {
   position: absolute;
   top: 16px;
@@ -81,56 +68,4 @@
 
 .box:hover .home_project_client_svg__fDBaR > svg > .home_svg_3__ax8LJ {
   transform: translate(0);
-}
-
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-      transform: translateY(20px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
-.center-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 20px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.box1 {
-  position: relative;
-  background-image: url('../assets/DALL·E 2024-10-16 17.28.40 - A serene sky with soft, fluffy clouds spread across a clear blue background. The clouds are minimal, large, and have gentle white hues with slight tin.webp');
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 500px;
-}
-
-.box2 {
-  position: relative;
-  background-image: url('../assets/DALL·E 2024-10-16 17.25.34 - A highly realistic and detailed cloudscape in soft pastel tones of blue and pink. The clouds should be fluffy and natural, blending seamlessly into th.webp');
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 500px;
-}
-
-.box3 {
-  position: relative;
-  background-image: url('../assets/DALL·E 2024-10-16 17.28.41 - A serene sky with soft, fluffy clouds spread across a clear blue background. The clouds are minimal, large, and have gentle white hues with slight tin.webp');
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 500px;
 }
