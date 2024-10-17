@@ -2,17 +2,9 @@
   font-size: clamp(20px, 2vw, 40px);
   font-family: 'Inter Display', sans-serif;
   font-weight: 300;
-  color: black;
+  color: rgb(150, 150, 150);
   display: block; 
   text-align: left;
 }
 
-.hero-section {
-  position: relative;
-  width: 100%;
-  margin: 0;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-bottom: 16px;
-  padding-top: 16px;
-}
+

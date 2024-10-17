@@ -1,25 +1,16 @@
 .button-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(323px, 1fr)); 
-  grid-gap: 16px;
-  padding: 16px;
-  justify-items: stretch; 
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: flex-start;
 }
 
-@media (min-width: 1201px) {
-  .grid-container {
-    grid-template-columns: repeat(3, minmax(323px, 1fr)); 
-  }
-}
-
-@media (min-width: 701px) and (max-width: 1200px) {
-  .grid-container {
-    grid-template-columns: repeat(2, minmax(323px, 1fr)); 
-  }
-}
-
-@media (max-width: 700px) {
-  .grid-container {
-    grid-template-columns: 1fr; 
-  }
+.hero-section {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  padding-top: 16px;
 }
