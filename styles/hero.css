@@ -2,7 +2,7 @@
   font-size: clamp(20px, 2vw, 40px);
   font-family: 'Inter Display', sans-serif;
   font-weight: 300;
-  color: rgb(150, 150, 150);
+  color: rgb(100, 100, 100);
   display: block; 
   text-align: left;
 }
